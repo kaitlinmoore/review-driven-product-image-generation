@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": "Leather patch on the back waistband.",
+    "brand_visibility": "subtle",
+    "decorative_elements": [
+      "contrast stitching",
+      "back pocket embroidery"
+    ],
+    "finish": "washed",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Casual and stylish with a classic denim look.",
+    "primary_colors": [
+      "blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "These jeans have a classic bootcut shape with a fitted waist and flared legs.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pockets",
+      "belt loops",
+      "button",
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 3647,
+    "output_tokens": 117
+  }
+}

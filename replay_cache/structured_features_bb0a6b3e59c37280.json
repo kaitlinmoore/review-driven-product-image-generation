@@ -1,0 +1,37 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [
+      "hand-burned decorative flourishes",
+      "algebraic coordinates"
+    ],
+    "finish": "matte",
+    "materials": [
+      "beech wood",
+      "birch wood",
+      "hornbeam wood",
+      "sycamore wood",
+      "plastic"
+    ],
+    "measurements": "21.65 inches square",
+    "overall_aesthetic": "The set exudes understated elegance with a focus on traditional craftsmanship and natural materials.",
+    "primary_colors": [
+      "brown",
+      "green"
+    ],
+    "product_type": "chess set",
+    "shape_and_form": "The chessboard is a large square that folds in half, with intricately carved chess pieces.",
+    "size_descriptor": "large",
+    "texture": "smooth",
+    "visible_parts": [
+      "board",
+      "pieces",
+      "clasps"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1157,
+    "output_tokens": 145
+  }
+}

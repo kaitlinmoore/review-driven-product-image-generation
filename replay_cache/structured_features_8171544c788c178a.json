@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": "HYDRO CELL text logo on the bottle.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "powder-coated",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": "24 oz",
+    "overall_aesthetic": "Modern and vibrant with a sleek, functional design.",
+    "primary_colors": [
+      "fuchsia"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "The bottle has a cylindrical shape with a narrow neck and a screw cap.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "screw cap",
+      "sports cap",
+      "straw"
+    ]
+  },
+  "usage": {
+    "input_tokens": 9869,
+    "output_tokens": 114
+  }
+}

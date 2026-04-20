@@ -5,24 +5,28 @@
     "gold"
   ],
   "materials": [
-    "polyester"
+    "polyester",
+    "plastic",
+    "aluminum"
   ],
-  "finish": "coated",
+  "finish": "matte",
   "texture": "unspecified",
   "size_descriptor": "large",
-  "measurements": "26 inches in length",
-  "shape_and_form": "The backpack has a streamlined silhouette with a substantial presence and multi-directional compression straps.",
+  "measurements": "26 in, 75 L",
+  "shape_and_form": "The backpack has a sleek, contoured shape with an internal frame and multiple compartments.",
   "decorative_elements": [],
   "visible_parts": [
-    "rain cover",
-    "compression straps",
-    "sleeping-bag compartment",
+    "internal frame",
+    "zipper",
     "side pockets",
-    "top flap",
+    "top pockets",
+    "back pockets",
+    "compression straps",
     "shoulder straps",
-    "back panel"
+    "lumbar pad",
+    "rainfly"
   ],
   "brand_visibility": "absent",
   "brand_description": null,
-  "overall_aesthetic": "The backpack's aesthetic is utilitarian yet stylish, with a focus on functionality and durability."
+  "overall_aesthetic": "The backpack has a modern, understated, and rugged aesthetic with a focus on practicality and durability."
 }

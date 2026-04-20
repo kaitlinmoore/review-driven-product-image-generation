@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "Amazon Basics logo embroidered on the bag.",
+    "brand_visibility": "subtle",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "polyester"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A basic, durable, and spacious black hiking backpack with a utilitarian design.",
+    "primary_colors": [
+      "black"
+    ],
+    "product_type": "hiking backpack",
+    "shape_and_form": "The backpack is spacious with a compact configuration that fits close to the body.",
+    "size_descriptor": "large",
+    "texture": "unspecified",
+    "visible_parts": [
+      "pockets",
+      "straps",
+      "loops",
+      "rain cover",
+      "compartments"
+    ]
+  },
+  "usage": {
+    "input_tokens": 5609,
+    "output_tokens": 121
+  }
+}

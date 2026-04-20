@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [
+      "decorative stitching on the back pockets"
+    ],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "spandex"
+    ],
+    "measurements": "34 in inseam (long version)",
+    "overall_aesthetic": "The jeans exude a casual yet polished vibe, suitable for both everyday wear and more dressed-up occasions.",
+    "primary_colors": [
+      "blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "The jeans have a mid-rise fit with a subtle bootcut design that gently flares out.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": [
+      "pockets",
+      "waistband",
+      "belt loops"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1112,
+    "output_tokens": 141
+  }
+}

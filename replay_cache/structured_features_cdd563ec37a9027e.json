@@ -1,0 +1,27 @@
+{
+  "parsed": {
+    "brand_description": "WallFlower branding on the jeans.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "spandex"
+    ],
+    "measurements": "34 in inseam, 12.5 in front rise, 19.5 in leg opening",
+    "overall_aesthetic": "Throwback inspired mid-rise fit with a classic bootcut style.",
+    "primary_colors": [],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "Mid-rise bootcut jeans with a leg-lengthening silhouette.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": [
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1194,
+    "output_tokens": 126
+  }
+}

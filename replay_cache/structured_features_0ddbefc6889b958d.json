@@ -1,0 +1,34 @@
+{
+  "parsed": {
+    "brand_description": "Amazon Basics text logo on the front.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [
+      "hexagonal pattern"
+    ],
+    "finish": "unspecified",
+    "materials": [
+      "polyester"
+    ],
+    "measurements": "35 in / 88.9 cm",
+    "overall_aesthetic": "A functional and rugged hiking backpack with a sleek black design and ample storage.",
+    "primary_colors": [
+      "black",
+      "yellow"
+    ],
+    "product_type": "hiking backpack",
+    "shape_and_form": "Tall and cylindrical with multiple compartments and straps.",
+    "size_descriptor": "large",
+    "texture": "woven",
+    "visible_parts": [
+      "straps",
+      "pockets",
+      "compartments",
+      "buckles",
+      "rainfly"
+    ]
+  },
+  "usage": {
+    "input_tokens": 9852,
+    "output_tokens": 127
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "Beats logo subtly embossed on the outer side of each ear cup.",
+    "brand_visibility": "subtle",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "synthetic leather",
+      "metallic core"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Sleek and modern with a bold, deep blue color and minimalistic branding.",
+    "primary_colors": [
+      "blue"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Large, oval-shaped ear cups with a sturdy, flexible headband.",
+    "size_descriptor": "large",
+    "texture": "smooth",
+    "visible_parts": [
+      "ear cups",
+      "headband",
+      "hinges",
+      "controls"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1124,
+    "output_tokens": 126
+  }
+}

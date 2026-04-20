@@ -1,8 +1,7 @@
 {
   "product_type": "bootcut jeans",
   "primary_colors": [
-    "navy blue",
-    "vibrant blue"
+    "blue"
   ],
   "materials": [
     "cotton",
@@ -10,19 +9,19 @@
     "spandex"
   ],
   "finish": "unspecified",
-  "texture": "smooth",
+  "texture": "unspecified",
   "size_descriptor": "unspecified",
-  "measurements": "19.5 in leg opening",
-  "shape_and_form": "Mid-rise fit with a subtle bootcut design and gentle flare.",
+  "measurements": "34 in inseam (long version)",
+  "shape_and_form": "The jeans have a mid-rise fit with a subtle bootcut design that gently flares out.",
   "decorative_elements": [
-    "decorative stitching on back pockets"
+    "decorative stitching on the back pockets"
   ],
   "visible_parts": [
-    "zipper",
-    "belt loops",
-    "pockets"
+    "pockets",
+    "waistband",
+    "belt loops"
   ],
   "brand_visibility": "absent",
   "brand_description": null,
-  "overall_aesthetic": "Classic denim look with a modern twist and retro flair."
+  "overall_aesthetic": "The jeans exude a casual yet polished vibe, suitable for both everyday wear and more dressed-up occasions."
 }

@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [
+      "hand-burned decorative flourishes",
+      "inlays",
+      "carvings"
+    ],
+    "finish": "matte",
+    "materials": [
+      "wood"
+    ],
+    "measurements": "20 x 20 in",
+    "overall_aesthetic": "The chess set has a classic, handcrafted appearance with a rustic charm.",
+    "primary_colors": [
+      "light wood",
+      "dark wood"
+    ],
+    "product_type": "chess set",
+    "shape_and_form": "The chess set features a large, foldable board with intricately carved pieces.",
+    "size_descriptor": "large",
+    "texture": "smooth",
+    "visible_parts": [
+      "board",
+      "pieces"
+    ]
+  },
+  "usage": {
+    "input_tokens": 7452,
+    "output_tokens": 124
+  }
+}

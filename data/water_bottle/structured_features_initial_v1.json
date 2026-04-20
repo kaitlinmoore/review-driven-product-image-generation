@@ -4,21 +4,22 @@
     "fuchsia"
   ],
   "materials": [
-    "stainless steel"
+    "stainless steel",
+    "plastic"
   ],
   "finish": "powder-coated",
   "texture": "matte",
   "size_descriptor": "unspecified",
   "measurements": null,
-  "shape_and_form": "The bottle has a smooth cylindrical shape that tapers slightly towards the top.",
+  "shape_and_form": "Smooth cylindrical shape that tapers slightly towards the top.",
   "decorative_elements": [],
   "visible_parts": [
     "screw cap",
     "sports cap",
-    "straw",
+    "flip-up straw",
     "handle"
   ],
   "brand_visibility": "prominent",
   "brand_description": "HYDRO CELL text logo on the front in cream",
-  "overall_aesthetic": "The water bottle combines a bold fuchsia color with a sleek, modern design and functional features."
+  "overall_aesthetic": "Vibrant and modern with a sleek, streamlined design."
 }

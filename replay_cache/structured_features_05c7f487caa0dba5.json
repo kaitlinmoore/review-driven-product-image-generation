@@ -1,0 +1,28 @@
+{
+  "parsed": {
+    "brand_description": "Amazon Basics branding is visible on the backpack.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "coated",
+    "materials": [
+      "polyester"
+    ],
+    "measurements": "26 inches long",
+    "overall_aesthetic": "The backpack has a functional and rugged aesthetic suitable for outdoor activities.",
+    "primary_colors": [],
+    "product_type": "hiking backpack",
+    "shape_and_form": "The backpack has an internal frame with a large, elongated form and multiple compartments.",
+    "size_descriptor": "large",
+    "texture": "unspecified",
+    "visible_parts": [
+      "straps",
+      "pockets",
+      "compartments",
+      "rainfly"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1028,
+    "output_tokens": 118
+  }
+}

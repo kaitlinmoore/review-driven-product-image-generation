@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": "Breville logo on the front panel.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "brushed",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A sleek and professional-looking espresso machine with a brushed stainless steel finish.",
+    "primary_colors": [
+      "stainless steel"
+    ],
+    "product_type": "espresso machine",
+    "shape_and_form": "Compact rectangular form with a built-in grinder and portafilter.",
+    "size_descriptor": "unspecified",
+    "texture": "smooth",
+    "visible_parts": [
+      "grinder",
+      "portafilter",
+      "filters"
+    ]
+  },
+  "usage": {
+    "input_tokens": 981,
+    "output_tokens": 113
+  }
+}

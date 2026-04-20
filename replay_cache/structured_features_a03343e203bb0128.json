@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "HYDRO CELL text logo on the front in cream",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "powder-coated",
+    "materials": [
+      "stainless steel",
+      "plastic"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Vibrant and modern with a sleek, streamlined design.",
+    "primary_colors": [
+      "fuchsia"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "Smooth cylindrical shape that tapers slightly towards the top.",
+    "size_descriptor": "unspecified",
+    "texture": "matte",
+    "visible_parts": [
+      "screw cap",
+      "sports cap",
+      "flip-up straw",
+      "handle"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1142,
+    "output_tokens": 120
+  }
+}

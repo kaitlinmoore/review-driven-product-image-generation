@@ -1,0 +1,32 @@
+{
+  "parsed": {
+    "brand_description": "WallFlower branding is subtle, with decorative stitching on the pockets.",
+    "brand_visibility": "subtle",
+    "decorative_elements": [
+      "pocket detail stitching"
+    ],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "spandex"
+    ],
+    "measurements": "34\" inseam, 12.5\" Front Rise, 19.5\" Leg Opening",
+    "overall_aesthetic": "The jeans offer a classic, versatile look with a modern bootcut style and subtle decorative stitching.",
+    "primary_colors": [
+      "blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "These jeans have a classic bootcut shape with a mid-rise waist and a slight flare at the bottom.",
+    "size_descriptor": "medium",
+    "texture": "unspecified",
+    "visible_parts": [
+      "zipper",
+      "pockets"
+    ]
+  },
+  "usage": {
+    "input_tokens": 7007,
+    "output_tokens": 156
+  }
+}
