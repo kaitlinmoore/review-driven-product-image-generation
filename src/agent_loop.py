@@ -119,8 +119,10 @@ def agentLoop(
     '''Outer orchestration: generate imageCount images, refitting descriptiveness
     threshold and per-image iteration budget via quadratic fit between runs.
 
-    Returns (itersTaken, descriptivenesses, prompts, images, qualities) lists
-    of length imageCount.'''
+    Returns (itersTaken, descriptivenesses, prompts, images, qualities, run_dir).
+    The first five are lists of length imageCount; run_dir is the absolute-ish
+    path (relative to cwd) of the timestamped run output directory under
+    run_root, so callers can locate per-iteration artifacts after return.'''
     # Create run directory under run_root (default: ./runs/).
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     run_dir = os.path.join(run_root, f'run_{timestamp}')
@@ -191,4 +193,4 @@ def agentLoop(
                 iterMax,
             )
 
-    return itersTaken, descriptivenesses, prompts, images, qualities
+    return itersTaken, descriptivenesses, prompts, images, qualities, run_dir
