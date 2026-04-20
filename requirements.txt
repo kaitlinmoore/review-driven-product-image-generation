@@ -11,7 +11,8 @@ torch>=2.1
 transformers>=4.44        # Mistral-7B-Instruct-v0.3
 accelerate>=0.33          # HF infrastructure for quantized inference
 bitsandbytes>=0.46.1      # 4-bit quantization for Mistral
-diffusers>=0.29           # Stable Diffusion 1.5 pipeline
+diffusers>=0.29           # local diffusion pipelines (if run locally)
+huggingface_hub>=0.26     # InferenceClient with provider routing for FLUX.1-schnell
 Pillow>=10.0              # image IO
 
 # === Evaluation (CLIP / DINOv2 / SigLIP per REPRODUCIBILITY.md) ===

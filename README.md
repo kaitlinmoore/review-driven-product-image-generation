@@ -1,6 +1,6 @@
 # Review-Driven Product Image Generation
 
-This pipeline reconstructs product images from the product metadata, descripton,
+This pipeline reconstructs product images from the product metadata, description,
 and customer reviews, with no direct image input. Amazon product reviews pass through an LLM
 visual-content filter, feed an LLM that writes a free-form visual description,
 and that description drives a diffusion model. Iterative refinement is used for both prompt tuning and image tuning. Generated images are then compared to the real product images via learned-embedding similarity (CLIP + DINOv2 + SigLIP) to quantify how close the pipeline got.
@@ -49,9 +49,8 @@ python -m venv .venv
 pip install -r requirements.txt
 
 # 4. Add API keys to a .env file in the repo root:
-#    OPENAI_API_KEY=...        # required for the filter-gate + initial-prompt calls
-#    HUGGINGFACE_TOKEN=...     # required for Mistral-7B-Instruct-v0.3 (gated model)
-#    REPLICATE_API_TOKEN=...   # optional — for the second image-generation model
+#    OPENAI_API_KEY=...        # filter-gate, initial prompt, structured extraction, gpt-image-1.5 generation
+#    HUGGINGFACE_TOKEN=...     # gated Mistral-7B-Instruct-v0.3 download + FLUX.1-schnell (routed via fal-ai)
 
 # 5. Pull raw review data (reproducible from the UCSD Amazon-2023 dump).
 python src/pull_product_data.py
@@ -79,7 +78,7 @@ reviews_ranked    ◄─── dedupe + hygiene + gate ◄───────�
                                               (Mistral-7B stepPrompt/ratePrompt)
                                                                 │
                                                                 ▼
-                                              genImage (SD 1.5) → generated image
+                                    genImage (FLUX.1-schnell | gpt-image-1.5) → generated image
                                                                 │
                                                                 ▼
                                     evaluation: CLIP + DINOv2 + SigLIP cosine
@@ -89,9 +88,10 @@ reviews_ranked    ◄─── dedupe + hygiene + gate ◄───────�
 **Key Models:**
 
 - Filter gate: `gpt-4o-mini` (temperature 0, JSON mode)
-- Initial prompt: `gpt-4o` (temperature 0)
+- Initial prompt + structured extraction: `gpt-4o` (temperature 0)
 - Prompt refinement + rating: `mistralai/Mistral-7B-Instruct-v0.3` (4-bit quantized)
-- Image generation: `runwayml/stable-diffusion-v1-5`
+- Image generation (open-weights): `black-forest-labs/FLUX.1-schnell` via HuggingFace `InferenceClient(provider='fal-ai')`
+- Image generation (proprietary): `gpt-image-1.5` via OpenAI API
 - Evaluation: `sentence-transformers/clip-ViT-B-32`, `facebook/dinov2-base`, `google/siglip-base-patch16-224`
 
 ## Reproducibility
