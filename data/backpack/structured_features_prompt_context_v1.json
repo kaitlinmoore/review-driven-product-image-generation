@@ -1,0 +1,24 @@
+{
+  "product_type": "hiking backpack",
+  "primary_colors": [
+    "black"
+  ],
+  "materials": [
+    "polyester"
+  ],
+  "finish": "unspecified",
+  "texture": "unspecified",
+  "size_descriptor": "large",
+  "measurements": "26 inches long",
+  "shape_and_form": "The backpack has a tall, rectangular shape with multiple compartments and straps.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "straps",
+    "pockets",
+    "compartments",
+    "rainfly"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "Amazon Basics logo embroidered on the bag.",
+  "overall_aesthetic": "A functional and spacious black hiking backpack with a utilitarian design."
+}

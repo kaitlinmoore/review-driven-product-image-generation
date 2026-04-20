@@ -1,0 +1,28 @@
+{
+  "product_type": "espresso machine",
+  "primary_colors": [
+    "silver",
+    "black"
+  ],
+  "materials": [
+    "stainless steel",
+    "plastic"
+  ],
+  "finish": "brushed",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": "15.9 x 12.5 x 13.8 in",
+  "shape_and_form": "Rectangular with a compact, boxy form and rounded edges.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "grinder",
+    "portafilter",
+    "steam wand",
+    "control panel",
+    "tamper",
+    "milk jug"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "Breville logo on the front panel.",
+  "overall_aesthetic": "A sleek and modern espresso machine with a professional appearance."
+}

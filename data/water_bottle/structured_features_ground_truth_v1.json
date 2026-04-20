@@ -1,0 +1,24 @@
+{
+  "product_type": "water bottle",
+  "primary_colors": [
+    "pink"
+  ],
+  "materials": [
+    "stainless steel"
+  ],
+  "finish": "matte",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": null,
+  "shape_and_form": "Cylindrical with a wide mouth and a loop handle on the lid.",
+  "decorative_elements": [
+    "logo"
+  ],
+  "visible_parts": [
+    "lid",
+    "handle"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "HYDRO CELL text logo on the front in white.",
+  "overall_aesthetic": "A vibrant and sleek water bottle with a modern design."
+}

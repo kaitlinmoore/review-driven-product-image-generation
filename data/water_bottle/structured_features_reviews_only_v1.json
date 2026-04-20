@@ -1,0 +1,29 @@
+{
+  "product_type": "water bottle",
+  "primary_colors": [
+    "orange",
+    "teal",
+    "navy",
+    "black",
+    "white",
+    "coral",
+    "pink"
+  ],
+  "materials": [
+    "stainless steel"
+  ],
+  "finish": "matte",
+  "texture": "smooth",
+  "size_descriptor": "large",
+  "measurements": "40 oz",
+  "shape_and_form": "The bottle is cylindrical with a narrow neck and a wide body.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "sport cap",
+    "straw",
+    "screw-on lid"
+  ],
+  "brand_visibility": "subtle",
+  "brand_description": "Hydro Cell logo on the bottle.",
+  "overall_aesthetic": "The water bottle has a vibrant and modern look with a sleek matte finish."
+}

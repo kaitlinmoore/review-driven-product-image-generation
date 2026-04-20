@@ -1,0 +1,25 @@
+{
+  "product_type": "headphones",
+  "primary_colors": [
+    "blue"
+  ],
+  "materials": [
+    "plastic",
+    "metal",
+    "leather"
+  ],
+  "finish": "matte",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": null,
+  "shape_and_form": "Over-ear headphones with a sleek, curved headband and round ear cups.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "headband",
+    "ear cups",
+    "ear pads"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "'b' logo on ear cups and 'studio3' text on the headband.",
+  "overall_aesthetic": "Modern and sleek with a minimalist design."
+}

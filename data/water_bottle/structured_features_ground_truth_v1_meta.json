@@ -1,0 +1,16 @@
+{
+  "slug": "water_bottle",
+  "source": "ground_truth",
+  "source_artifact": "data\\water_bottle\\images",
+  "model": "gpt-4o",
+  "temperature": 0,
+  "max_tokens": 800,
+  "prompt_version": "v1",
+  "prompt_sha256": "7586f38b9515301058ccb1da51cfc7287633b696dd4be40a1e0c98c43802fb1c",
+  "input_tokens": 4924,
+  "output_tokens": 111,
+  "cost_usd": 0.01342,
+  "elapsed_seconds": 3.95,
+  "schema_warnings": [],
+  "timestamp_utc": "2026-04-20T20:53:50Z"
+}

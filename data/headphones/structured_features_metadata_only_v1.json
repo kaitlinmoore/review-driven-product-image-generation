@@ -1,0 +1,20 @@
+{
+  "product_type": "headphones",
+  "primary_colors": [
+    "blue"
+  ],
+  "materials": [],
+  "finish": "unspecified",
+  "texture": "unspecified",
+  "size_descriptor": "unspecified",
+  "measurements": null,
+  "shape_and_form": "Over-ear headphones with a sleek, rounded form.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "ear cups",
+    "headband"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "Beats logo likely visible on the ear cups or headband.",
+  "overall_aesthetic": "Sleek and modern with a focus on high-performance audio."
+}

@@ -1,0 +1,27 @@
+{
+  "product_type": "chess set",
+  "primary_colors": [
+    "brown",
+    "beige"
+  ],
+  "materials": [
+    "wood"
+  ],
+  "finish": "natural",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": null,
+  "shape_and_form": "The chess set features traditional Staunton-style pieces with a square board.",
+  "decorative_elements": [
+    "carvings",
+    "inlays"
+  ],
+  "visible_parts": [
+    "pieces",
+    "board",
+    "case"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "A classic wooden chess set with intricately carved pieces and a decorative board."
+}

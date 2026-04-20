@@ -1,0 +1,16 @@
+{
+  "slug": "backpack",
+  "source": "metadata_only",
+  "source_artifact": "data\\backpack\\metadata.json",
+  "model": "gpt-4o",
+  "temperature": 0,
+  "max_tokens": 800,
+  "prompt_version": "v1",
+  "prompt_sha256": "7586f38b9515301058ccb1da51cfc7287633b696dd4be40a1e0c98c43802fb1c",
+  "input_tokens": 1028,
+  "output_tokens": 118,
+  "cost_usd": 0.00375,
+  "elapsed_seconds": 2.64,
+  "schema_warnings": [],
+  "timestamp_utc": "2026-04-20T20:14:25Z"
+}

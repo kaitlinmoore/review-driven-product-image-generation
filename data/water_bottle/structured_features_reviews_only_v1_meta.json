@@ -1,0 +1,16 @@
+{
+  "slug": "water_bottle",
+  "source": "reviews_only",
+  "source_artifact": "data\\water_bottle\\reviews_ranked.jsonl",
+  "model": "gpt-4o",
+  "temperature": 0,
+  "max_tokens": 800,
+  "prompt_version": "v1",
+  "prompt_sha256": "7586f38b9515301058ccb1da51cfc7287633b696dd4be40a1e0c98c43802fb1c",
+  "input_tokens": 9510,
+  "output_tokens": 129,
+  "cost_usd": 0.02507,
+  "elapsed_seconds": 2.34,
+  "schema_warnings": [],
+  "timestamp_utc": "2026-04-20T20:14:53Z"
+}

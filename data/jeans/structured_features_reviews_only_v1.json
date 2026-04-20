@@ -1,0 +1,28 @@
+{
+  "product_type": "bootcut jeans",
+  "primary_colors": [
+    "blue"
+  ],
+  "materials": [
+    "cotton",
+    "rayon",
+    "polyester",
+    "spandex"
+  ],
+  "finish": "unspecified",
+  "texture": "smooth",
+  "size_descriptor": "unspecified",
+  "measurements": null,
+  "shape_and_form": "These jeans have a classic bootcut shape with a fitted waist and thighs, flaring out slightly at the bottom.",
+  "decorative_elements": [
+    "pocket detail stitching",
+    "decorative stitching"
+  ],
+  "visible_parts": [
+    "pockets",
+    "belt loops"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "The jeans offer a stylish and comfortable look with a classic bootcut silhouette and decorative stitching."
+}

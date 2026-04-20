@@ -1,0 +1,16 @@
+{
+  "slug": "espresso_machine",
+  "source": "prompt_context",
+  "source_artifact": "data\\espresso_machine\\prompt_context.txt",
+  "model": "gpt-4o",
+  "temperature": 0,
+  "max_tokens": 800,
+  "prompt_version": "v1",
+  "prompt_sha256": "7586f38b9515301058ccb1da51cfc7287633b696dd4be40a1e0c98c43802fb1c",
+  "input_tokens": 10086,
+  "output_tokens": 128,
+  "cost_usd": 0.0265,
+  "elapsed_seconds": 2.54,
+  "schema_warnings": [],
+  "timestamp_utc": "2026-04-20T20:14:14Z"
+}

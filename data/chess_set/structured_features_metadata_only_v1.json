@@ -1,0 +1,29 @@
+{
+  "product_type": "chess set",
+  "primary_colors": [
+    "brown"
+  ],
+  "materials": [
+    "beech wood",
+    "birch wood",
+    "hornbeam wood",
+    "sycamore wood"
+  ],
+  "finish": "natural",
+  "texture": "smooth",
+  "size_descriptor": "large",
+  "measurements": "21.65 x 21.65 in",
+  "shape_and_form": "The chess set features a square board with carved wooden pieces, each with intricate details.",
+  "decorative_elements": [
+    "algebraic coordinates",
+    "intricate carvings"
+  ],
+  "visible_parts": [
+    "board",
+    "pieces",
+    "clasps"
+  ],
+  "brand_visibility": "subtle",
+  "brand_description": "Wegiel branding is subtle, likely on the board or pieces.",
+  "overall_aesthetic": "The chess set has a classic and handcrafted aesthetic with intricate details and natural wood finishes."
+}

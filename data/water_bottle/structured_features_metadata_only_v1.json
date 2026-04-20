@@ -1,0 +1,23 @@
+{
+  "product_type": "water bottle",
+  "primary_colors": [
+    "fuchsia"
+  ],
+  "materials": [
+    "stainless steel"
+  ],
+  "finish": "powder-coated",
+  "texture": "unspecified",
+  "size_descriptor": "medium",
+  "measurements": "24 oz",
+  "shape_and_form": "Cylindrical with a screw cap and sports cap with straws.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "screw cap",
+    "sports cap",
+    "straws"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "HYDRO CELL text logo on the bottle.",
+  "overall_aesthetic": "Modern and sleek with a vibrant fuchsia color."
+}
