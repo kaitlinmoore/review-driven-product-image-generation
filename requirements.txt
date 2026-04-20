@@ -7,10 +7,16 @@ python-dotenv>=1.0
 openai>=1.40              # filter gate, initial prompt, structured extraction, gpt-image-1.5
 
 # === Prompt refinement + remote image generation (src/) ===
+# NOTE: `pip install torch` from PyPI gives a CPU-only wheel. For GPU
+# execution (required for local Mistral inference at speed), install
+# torch + torchvision from PyTorch's platform-specific CUDA index.
+# See REPRODUCIBILITY.md "Environment Setup — GPU Wheel Selection"
+# for the GPU → CUDA-version mapping and exact install commands.
 torch>=2.1                # Mistral inference, eval-model inference, DataLoader
 transformers>=4.44        # Mistral-7B-Instruct-v0.3 + CLIP/DINOv2/SigLIP processors
 accelerate>=0.33          # HF infrastructure for quantized inference
 bitsandbytes>=0.46.1      # 4-bit quantization for Mistral
+sentencepiece>=0.2        # tokenizer backend required by Mistral (Llama family)
 huggingface_hub>=0.26     # InferenceClient with provider routing for FLUX.1-schnell
 Pillow>=10.0              # image IO
 

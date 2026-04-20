@@ -130,7 +130,7 @@ are the ones currently in use:
 |---|---|---|
 | `filter_gate` | `build_filter_cache.py` | `json` |
 | `initial_prompt` | `generate_initial_prompt.py` | `json` |
-| `structured_extract` | `extract_structured_features.py` | `json` |
+| `structured_features` | `extract_structured_features.py` | `json` |
 | `step_prompt` | `PromptWriter.stepPrompt` | `text` |
 | `rate_prompt` | `PromptWriter.ratePrompt` | `json` |
 | `flux_gen` | `gen_image_flux.py` | `png` |
@@ -160,6 +160,77 @@ without downloading ~2 GB of model checkpoints.
 **For replay mode:** Only the repository contents and Python 3.13+. Set
 `REPLAY_MODE=replay` in the environment and run the same script sequence
 as record mode. No API keys, no GPU, no gated-model access.
+
+## Environment Setup — GPU Wheel Selection
+
+`pip install -r requirements.txt` does NOT automatically give you a
+CUDA-enabled PyTorch build. The `torch>=2.1` pin is loose, and PyPI's
+default torch wheel is CPU-only. Running the agent loop with a CPU-only
+wheel raises `AssertionError: Torch not compiled with CUDA enabled` the
+moment `bitsandbytes` tries to place the quantized Mistral model on the
+GPU.
+
+The fix is to install torch (and torchvision, which `transformers` pulls
+in transitively) from PyTorch's platform-specific wheel index. For modern
+NVIDIA GPUs:
+
+| GPU generation | Compute capability | Recommended CUDA index |
+|---|---|---|
+| Ada Lovelace (RTX 40-series) | sm_89 | `cu124` or `cu126` |
+| Hopper (H100/H200) | sm_90 | `cu124` or `cu126` |
+| Blackwell (RTX 50-series, B100) | sm_120 | `cu128` |
+
+For the RTX 5080 / 5090 family specifically, `cu128` is required — earlier
+CUDA builds predate sm_120 support. The canonical install recipe:
+
+```powershell
+# PowerShell (Windows)
+pip uninstall -y torch torchvision
+pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision
+```
+
+```bash
+# bash (Linux / macOS-with-eGPU)
+pip uninstall -y torch torchvision
+pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision
+```
+
+Verify the install picked up CUDA:
+
+```bash
+python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else '')"
+# expected: 2.11.0+cu128 True NVIDIA GeForce RTX 5080 ...
+```
+
+**If `torch.cuda.is_available()` returns False** after this install, check
+for a shadowing install in `C:\Program Files\Python313\Lib\site-packages\`
+(Windows system-site) or `/usr/lib/python3/dist-packages/` (Linux). User-site
+installs take precedence only if user-site appears first in `sys.path`,
+which is the default but occasionally gets overridden. Run
+`python -c "import torch; print(torch.__file__)"` to confirm which location
+is actually loaded.
+
+Other packages that commonly fail silently on a fresh install because they
+are transitive dependencies not all pins catch:
+
+- `sentencepiece` — tokenizer backend for Mistral (Llama family). Listed in
+  `requirements.txt`.
+- `accelerate` — needed by `transformers` for any device-mapped load.
+  Listed in `requirements.txt`.
+- `bitsandbytes` — 4-bit quantization. Listed in `requirements.txt`.
+
+Run this check after `pip install -r requirements.txt` to confirm nothing
+is missing:
+
+```bash
+python -c "
+import importlib
+for m in ['torch','transformers','accelerate','bitsandbytes','sentencepiece',
+         'huggingface_hub','PIL','sentence_transformers','openai','dotenv']:
+    try: importlib.import_module(m); print('OK  ', m)
+    except Exception as e: print('FAIL', m, e)
+"
+```
 
 ## Known Non-Determinism in the Canonical Run
 

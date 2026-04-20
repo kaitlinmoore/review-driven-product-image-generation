@@ -73,6 +73,29 @@ After these steps, each product directory contains an `initial_prompt.txt`
 ready for the image-generation + refinement loop, and a
 `structured_features/` subdirectory with the four comparison artifacts.
 
+### GPU users: install CUDA-enabled PyTorch
+
+`pip install -r requirements.txt` pulls the CPU-only PyTorch wheel from
+PyPI. The image-generation + refinement loop (Phase 3) needs CUDA-enabled
+torch to drive the local 4-bit Mistral at speed. Install the matching
+CUDA wheel *after* the requirements step:
+
+```powershell
+# PowerShell (Windows); replace cu128 with cu126/cu124 per your GPU
+pip uninstall -y torch torchvision
+pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision
+```
+
+```bash
+# bash (Linux)
+pip uninstall -y torch torchvision
+pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision
+```
+
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) "Environment Setup — GPU Wheel
+Selection" for the GPU-generation → CUDA-version mapping and a verification
+one-liner.
+
 ### Replay mode (no API costs, no GPU)
 
 Every external call (OpenAI, HuggingFace, FLUX via fal-ai, local Mistral,
