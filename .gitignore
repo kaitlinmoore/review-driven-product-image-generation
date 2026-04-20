@@ -46,3 +46,8 @@ Thumbs.db
 
 # === Model / framework caches ===
 .cache/
+
+# === Replay cache ===
+# replay_cache/ contents are INTENTIONALLY committed — they are the canonical
+# record that lets a grader reproduce the pipeline offline with REPLAY_MODE=replay.
+# See replay_cache/README.md and REPRODUCIBILITY.md for details.

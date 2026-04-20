@@ -1,56 +1,78 @@
 # replay_cache/
 
-Cached outputs of external API calls, keyed by a deterministic hash of the
-call's function name and inputs. Lets the pipeline be re-run offline against
-the canonical record, without API keys or GPU.
+Cached outputs of external API calls and heavy model inference, keyed by a
+deterministic hash of the call's function name and inputs. Lets the pipeline
+be re-run offline against the canonical record, without API keys or GPU.
 
-## Intended Layout
+## Layout
 
 ```
 replay_cache/
 ├── README.md                          # this file
 ├── .gitkeep                           # keeps the directory tracked when empty
-├── {fn_name}_{key}.json               # text-producing calls
-└── {fn_name}_{key}/                   # binary-producing calls
-    └── image.png
+├── {fn_name}_{key}.json               # JSON-encoded outputs (default)
+├── {fn_name}_{key}.txt                # plain-text outputs (e.g. step_prompt)
+├── {fn_name}_{key}.png                # PIL.Image outputs (FLUX, gpt-image)
+└── {fn_name}_{key}.bin                # raw bytes outputs (rarely used)
 ```
 
-`{fn_name}` is the caller (e.g. `initial_prompt`, `step_prompt`,
-`rate_prompt`, `gen_image`). `{key}` is the first 16 hex chars of
-`SHA256(json({"fn": fn_name, "inputs": inputs}))`.
+All entries are flat files — no subdirectories per call.
 
-## Design Source
+- `{fn_name}` is the caller tag (e.g. `initial_prompt`, `step_prompt`,
+  `flux_gen`, `eval_clip_image`).
+- `{key}` is the first 16 hex chars of
+  `SHA256(json({"fn": fn_name, "inputs": inputs}, sort_keys=True))`.
 
-The wrapper that populates this directory is defined in replay.py.
+For the full inventory of currently-used `fn_name` values, see the
+"What Gets Cached" table in `REPRODUCIBILITY.md`.
+
+## Wrapper API
+
+`src/replay.py` exports `cached_call` and `path_hash`. Typical usage:
 
 ```python
-REPLAY_DIR = Path('replay_cache')
-REPLAY_MODE = os.environ.get("REPLAY_MODE", "record")  # 'record' or 'replay'
+from replay import cached_call, path_hash
 
-def cached_call(fn_name, inputs, live_fn, output_encoder, output_decoder):
-    key = _cache_key(fn_name, inputs)
-    cache_path = REPLAY_DIR / f'{fn_name}_{key}.json'
-    if REPLAY_MODE == 'replay':
-        if not cache_path.exists():
-            raise FileNotFoundError(f'No replay data for {fn_name} key {key}')
-        return output_decoder(json.loads(cache_path.read_text()))
-    # record: call live_fn, save, return
-    result = live_fn()
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
-    cache_path.write_text(json.dumps(output_encoder(result)))
+def _live():
+    # body that calls the live API / model
     return result
+
+result = cached_call(
+    fn_name='initial_prompt',
+    inputs={                           # everything that affects the output
+        'model': 'gpt-4o',
+        'temperature': 0,
+        'prompt_version': 'v1',
+        'prompt_sha256': '...',        # hash the system prompt so edits bust cache
+        'context_text': '...',
+    },
+    live_fn=_live,
+    format='json',                     # 'json' | 'text' | 'png' | 'bytes'
+    mode=None,                         # None → reads REPLAY_MODE env var
+)
 ```
 
-## Status
+When an input is a local file path, wrap it with `path_hash(path)` so the
+cache key is stable across machines with different absolute paths. When an
+input is a `PIL.Image` (as in the image-vs-image evaluation calls), use
+`_image_hash` from `eval_image.py` to hash pixel bytes.
 
-The directory is scaffolded so the wrapper can drop into `src/replay.py`
-without any layout changes downstream. Outstanding work (from the KMM TODO
-list in `working_image_refinement.ipynb` cell 0):
+## Modes
 
-- Confirm append semantics, not overwrite.
-- Handle image outputs (`.png` files) alongside JSON.
-- Allow inputs that reference local file paths (e.g. prompt text file).
-- Wrap all external API calls in the pipeline:
+Selected by the `REPLAY_MODE` environment variable (or the per-call `mode=`
+override):
 
-Once wired, setting `REPLAY_MODE=replay` will let a grader reproduce the
-canonical run without API keys, gated-model access, or a GPU.
+- `record` (default) — cache hit returns cached value; cache miss calls
+  `live_fn`, saves the result, and returns it. Safe memoization.
+- `replay` — cache hit returns cached value; cache miss raises
+  `FileNotFoundError`. Grader path — no live calls ever.
+- `force_record` — always calls `live_fn`, overwrites the cache entry,
+  returns. Used when intentionally re-recording a call after a prompt or
+  model change.
+
+## What's committed
+
+The canonical record's cache is committed to git so a grader can clone and
+run in replay mode with zero API setup. That's the whole point — excluding
+cache contents would defeat the purpose. The `.gitignore` at the repo root
+intentionally does not exclude anything under `replay_cache/`.

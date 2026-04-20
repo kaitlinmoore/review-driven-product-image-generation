@@ -26,7 +26,7 @@ contributed to the work.
 ├── data/
 │   ├── filter_caches/        # cached LLM gate decisions — committed, scientific
 │   └── {product}/            # per-product metadata, images, intermediate outputs
-├── replay_cache/             # scaffolding for offline re-runs (design landed, wrapper pending)
+├── replay_cache/             # cached API / model outputs for offline re-runs (see REPRODUCIBILITY.md)
 ├── docs/                     # candidate-product documentation
 ├── requirements.txt
 ├── REPRODUCIBILITY.md
@@ -60,10 +60,33 @@ python src/build_filter_cache.py --workers 8
 python src/preprocess_reviews.py
 python src/build_prompt_context.py
 python src/generate_initial_prompt.py
+
+# 7. Extract structured visual features for the four comparison sources
+#    (prompt_context, metadata_only, reviews_only, ground_truth). Feeds Q2/Q3.
+python src/extract_structured_features.py --source prompt_context
+python src/extract_structured_features.py --source metadata_only
+python src/extract_structured_features.py --source reviews_only
+python src/extract_structured_features.py --source ground_truth
 ```
 
 After these steps, each product directory contains an `initial_prompt.txt`
-ready for the image-generation + refinement loop.
+ready for the image-generation + refinement loop, and a
+`structured_features/` subdirectory with the four comparison artifacts.
+
+### Replay mode (no API costs, no GPU)
+
+Every external call (OpenAI, HuggingFace, FLUX via fal-ai, local Mistral,
+CLIP / DINOv2 / SigLIP) is wrapped in a replay cache. To rerun the canonical
+pipeline offline from the committed cache, set `REPLAY_MODE=replay` before
+running any of the scripts above:
+
+```bash
+# PowerShell: $env:REPLAY_MODE = 'replay'
+# bash:       export REPLAY_MODE=replay
+```
+
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for details on record vs. replay
+semantics and the `force_record` mode used when re-recording specific calls.
 
 ## Pipeline Overview
 

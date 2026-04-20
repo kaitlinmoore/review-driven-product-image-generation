@@ -42,6 +42,12 @@ import time
 from dotenv import load_dotenv
 
 from replay import cached_call, path_hash
+from build_prompt_context import (
+    clean_text,
+    flatten_description,
+    load_top_ranked,
+    DEFAULT_TOP_N,
+)
 
 # Try to prevent encoding errors.
 try:
@@ -136,18 +142,83 @@ STRUCTURED_FEATURES_SCHEMA_V1 = {
 
 ## SOURCE HANDLING ##
 
-SOURCES = ('initial', 'converged', 'ground_truth', 'generated')
+SOURCES = (
+    'initial',          # synthesized visual description (generate_initial_prompt output)
+    'converged',        # orchestration loop output (pending Phase 4 run)
+    'prompt_context',   # raw metadata + top-N reviews (pre-synthesis)
+    'metadata_only',    # just the listing fields (no reviews)
+    'reviews_only',     # just the top-N reviews (no listing metadata)
+    'ground_truth',     # all product images for the listing (via gpt-4o vision, multi-image)
+    'generated',        # a pipeline-generated image (via gpt-4o vision, single image)
+)
+
+# Per-product image exclusions for the ground_truth extraction. These files
+# exist on disk (they're real Amazon listing images we want to keep as
+# artifacts of what the listing contains) but are excluded from the VLM call
+# because they'd distort the structured features of the product ITSELF.
+# Reasons are in the comments. Audit new products by inspecting the output
+# JSON after a run; add entries here if pollution shows up.
+GROUND_TRUTH_IMAGE_EXCLUDES: dict[str, set[str]] = {
+    'water_bottle': {
+        'alt_02.jpg',   # infographic with feature callouts (text-heavy)
+        'alt_03.jpg',   # dimension guide with full specs table
+        'alt_04.jpg',   # lifestyle shot — cream cable-knit sweater dominates
+        'alt_05.jpg',   # lifestyle shot — puppy + red harness dominate
+        'alt_06.jpg',   # lifestyle shot — woman + large dog + autumn scene dominate
+    },
+    'headphones': {
+        'alt_05.jpg',   # carrying case only, no headphones visible
+    },
+    # Other products: none excluded yet. Re-audit after the first run if any
+    # output shows non-product content leaking into primary_colors / texture / etc.
+}
+
+ALLOWED_IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.webp'}
+
+
+def _list_product_images(slug: str, images_dir: str) -> list[str]:
+    '''Return sorted full paths to ground-truth images for a product, after
+    applying GROUND_TRUTH_IMAGE_EXCLUDES. Deterministic order (sorted by
+    filename) so the cache key is stable.'''
+    if not os.path.isdir(images_dir):
+        return []
+    excludes = GROUND_TRUTH_IMAGE_EXCLUDES.get(slug, set())
+    out = []
+    for name in sorted(os.listdir(images_dir)):
+        ext = os.path.splitext(name)[1].lower()
+        if ext not in ALLOWED_IMAGE_EXTENSIONS:
+            continue
+        if name in excludes:
+            continue
+        out.append(os.path.join(images_dir, name))
+    return out
+
+# Reviews count used for reviews_only source. Matches build_prompt_context's
+# default so the reviews_only comparison lines up with prompt_context.
+REVIEWS_ONLY_TOP_N = DEFAULT_TOP_N
 
 
 def source_artifact_path(slug: str, source: str, pdir: str, image_path_override: str | None = None) -> str | None:
     '''Return the expected filesystem path for a product/source pair.
-    Returns None for 'generated' when no --image-path is supplied.'''
+    Returns None for 'generated' when no --image-path is supplied.
+
+    For metadata_only and reviews_only, the path points at the source-of-truth
+    file on disk (metadata.json or reviews_ranked.jsonl); the actual text
+    sent to the LLM is constructed from that file's contents at call time.'''
     if source == 'initial':
         return os.path.join(pdir, 'initial_prompt.txt')
     if source == 'converged':
         return os.path.join(pdir, 'converged_prompt.txt')
+    if source == 'prompt_context':
+        return os.path.join(pdir, 'prompt_context.txt')
+    if source == 'metadata_only':
+        return os.path.join(pdir, 'metadata.json')
+    if source == 'reviews_only':
+        return os.path.join(pdir, 'reviews_ranked.jsonl')
     if source == 'ground_truth':
-        return os.path.join(pdir, 'images', 'main.jpg')
+        # Directory of images (multiple per product). _list_product_images
+        # enumerates the files and applies GROUND_TRUTH_IMAGE_EXCLUDES.
+        return os.path.join(pdir, 'images')
     if source == 'generated':
         return image_path_override
     raise ValueError(f'unknown source: {source}')
@@ -155,6 +226,71 @@ def source_artifact_path(slug: str, source: str, pdir: str, image_path_override:
 
 def source_is_image(source: str) -> bool:
     return source in {'ground_truth', 'generated'}
+
+
+## SOURCE TEXT BUILDERS ##
+# For sources that don't have a single pre-built text file, we construct the
+# LLM input text here from the underlying data. Kept parallel to the layout
+# that build_prompt_context.py produces, so reviews_only is a fair
+# subset-comparison to prompt_context (same HTML cleanup, same formatting).
+
+def _build_metadata_only_text(metadata: dict) -> str:
+    '''Format metadata.json as LLM input: title/brand/category/reception/price/
+    features/description. No reviews.'''
+    lines: list[str] = []
+    lines.append('=== PRODUCT METADATA ===')
+    title = (metadata.get('title') or '').strip()
+    if title:
+        lines.append(f'Title: {title}')
+    store = (metadata.get('store') or '').strip()
+    if store:
+        lines.append(f'Brand: {store}')
+    main_cat = (metadata.get('main_category') or '').strip()
+    if main_cat:
+        lines.append(f'Category: {main_cat}')
+    avg = metadata.get('average_rating')
+    n_ratings = metadata.get('rating_number')
+    if avg is not None and n_ratings is not None:
+        lines.append(f'Reception: {avg}/5 stars across {n_ratings:,} ratings')
+    price = metadata.get('price')
+    if price is not None:
+        lines.append(f'Price: ${price}')
+
+    features = metadata.get('features') or []
+    if features:
+        lines.append('')
+        lines.append('=== FEATURES (from listing) ===')
+        for f in features:
+            f_str = str(f).strip()
+            if f_str:
+                lines.append(f'- {f_str}')
+
+    desc = flatten_description(metadata.get('description'))
+    if desc:
+        lines.append('')
+        lines.append('=== DESCRIPTION (from listing) ===')
+        lines.append(desc)
+
+    return '\n'.join(lines) + '\n'
+
+
+def _build_reviews_only_text(reviews: list[dict]) -> str:
+    '''Format the top-N ranked reviews as LLM input. No metadata block.'''
+    lines: list[str] = []
+    lines.append(f'=== TOP {len(reviews)} REVIEWS (ranked by helpful_vote DESC) ===')
+    for r in reviews:
+        rating = int(r.get('rating', 0) or 0)
+        hv = r.get('helpful_vote', 0) or 0
+        rank = r.get('_rank', '?')
+        title = clean_text(r.get('title') or '')
+        body = clean_text(r.get('text') or '')
+        lines.append('')
+        lines.append(f'[Rank {rank} | {rating}\u2605 | {hv} helpful votes]')
+        if title:
+            lines.append(f'Title: {title}')
+        if body:
+            lines.append(f'Body: {body}')
+    return '\n'.join(lines) + '\n'
 
 
 def output_paths(slug: str, pdir: str, source: str) -> tuple[str, str]:
@@ -202,19 +338,55 @@ def image_data_url(path: str) -> str:
     return f'data:{mime};base64,{b64}'
 
 
+def _build_text_for_source(source: str, artifact_path: str) -> str:
+    '''Assemble the LLM-input text for a non-image source.
+
+    - initial / converged / prompt_context: read the file directly.
+    - metadata_only: load metadata.json, format without reviews.
+    - reviews_only: load top-N rows of reviews_ranked.jsonl, format without
+      the metadata block.'''
+    if source == 'metadata_only':
+        with open(artifact_path, 'r', encoding='utf-8') as f:
+            metadata = json.load(f)
+        return _build_metadata_only_text(metadata)
+    if source == 'reviews_only':
+        reviews = load_top_ranked(artifact_path, REVIEWS_ONLY_TOP_N)
+        return _build_reviews_only_text(reviews)
+    # initial / converged / prompt_context: direct file read.
+    with open(artifact_path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+
 def call_llm(client, source: str, artifact_path: str, slug: str) -> tuple[dict, dict]:
     '''Returns (parsed_dict, usage_dict).
 
-    Replay-aware: text sources key on the file's text content; image sources
-    key on path_hash() of the image bytes so the cache survives across
-    machines with different absolute paths but identical artifact content.'''
+    Replay-aware: text sources key on the source-specific text content
+    (either file contents or constructed text); image sources key on
+    path_hash() of the image bytes so the cache survives across machines
+    with different absolute paths but identical artifact content.'''
     # Build the inputs dict that uniquely identifies this call for caching.
-    # Image sources hash the bytes; text sources include the raw text.
-    if source_is_image(source):
+    # Image sources hash the bytes; text sources include the constructed text.
+    image_paths: list[str] = []
+    if source == 'ground_truth':
+        image_paths = _list_product_images(slug, artifact_path)
+        if not image_paths:
+            raise RuntimeError(
+                f'No included ground-truth images for {slug} under {artifact_path} '
+                f'(after applying GROUND_TRUTH_IMAGE_EXCLUDES).'
+            )
+        # Per-file hash + basenames so the cache key invalidates cleanly when
+        # any included image changes, is added, or is removed.
+        source_input = {
+            'image_hashes': [path_hash(p) for p in image_paths],
+            'image_basenames': [os.path.basename(p) for p in image_paths],
+        }
+        text = None
+    elif source == 'generated':
+        image_paths = [artifact_path]
         source_input = {'image_hash': path_hash(artifact_path)}
+        text = None
     else:
-        with open(artifact_path, 'r', encoding='utf-8') as f:
-            text = f.read()
+        text = _build_text_for_source(source, artifact_path)
         source_input = {'text': text}
 
     inputs = {
@@ -231,18 +403,31 @@ def call_llm(client, source: str, artifact_path: str, slug: str) -> tuple[dict, 
 
     def _live() -> dict:
         if source_is_image(source):
-            user_content = [
-                {'type': 'text', 'text':
+            # Single intro text, followed by one image_url part per included image.
+            # For ground_truth the VLM is asked to aggregate across views of the
+            # same product; for generated we're showing one image.
+            if source == 'ground_truth' and len(image_paths) > 1:
+                header = (
+                    f'Product slug: {slug}. You are being shown multiple views '
+                    f'of the SAME product from its listing. Extract structured '
+                    f'visual features that characterize the product itself, '
+                    f'aggregating across the views. Return JSON per the schema.'
+                )
+            else:
+                header = (
                     f'Product slug: {slug}. Extract the structured visual features '
-                    f'from this product image and return them as JSON per the schema.'},
-                {'type': 'image_url', 'image_url': {'url': image_data_url(artifact_path)}},
-            ]
+                    f'from this product image and return them as JSON per the schema.'
+                )
+            user_content = [{'type': 'text', 'text': header}]
+            for p in image_paths:
+                user_content.append({
+                    'type': 'image_url',
+                    'image_url': {'url': image_data_url(p)},
+                })
         else:
-            with open(artifact_path, 'r', encoding='utf-8') as f:
-                text_body = f.read()
             user_content = (
                 f'Product slug: {slug}. Extract the structured visual features from the following '
-                f'product description and return them as JSON per the schema.\n\n{text_body}'
+                f'product description and return them as JSON per the schema.\n\n{text}'
             )
 
         resp = client.chat.completions.create(
@@ -303,9 +488,13 @@ def estimate_cost(n_calls: int, source: str, avg_input_chars: int = 6000) -> tup
     sys_tokens = len(EXTRACTION_PROMPT_SYSTEM_V1) / 4
     # Text sources: ~1.5K tokens of user text (initial_prompt.txt is ~250 words).
     # Image sources: add ~1.1K tokens per image tile (gpt-4o default detail).
+    # ground_truth is multi-image (typically 4-8 per product after exclusions);
+    # estimate at 5 tiles on average for rough budget reporting.
     per_call_in = sys_tokens + avg_input_chars / 4
-    if source_is_image(source):
-        per_call_in += 1100  # one tile allowance
+    if source == 'ground_truth':
+        per_call_in += 1100 * 5
+    elif source == 'generated':
+        per_call_in += 1100
     est_in = n_calls * per_call_in
     est_out = n_calls * 500
     est_usd = est_in * LLM_INPUT_PRICE + est_out * LLM_OUTPUT_PRICE
