@@ -41,6 +41,8 @@ import time
 # Use for local .env-defined OpenAI API key.
 from dotenv import load_dotenv
 
+from replay import cached_call, path_hash
+
 # Try to prevent encoding errors.
 try:
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
@@ -201,46 +203,75 @@ def image_data_url(path: str) -> str:
 
 
 def call_llm(client, source: str, artifact_path: str, slug: str) -> tuple[dict, dict]:
-    '''Returns (parsed_dict, usage_dict).'''
+    '''Returns (parsed_dict, usage_dict).
+
+    Replay-aware: text sources key on the file's text content; image sources
+    key on path_hash() of the image bytes so the cache survives across
+    machines with different absolute paths but identical artifact content.'''
+    # Build the inputs dict that uniquely identifies this call for caching.
+    # Image sources hash the bytes; text sources include the raw text.
     if source_is_image(source):
-        user_content = [
-            {'type': 'text', 'text':
-                f'Product slug: {slug}. Extract the structured visual features '
-                f'from this product image and return them as JSON per the schema.'},
-            {'type': 'image_url', 'image_url': {'url': image_data_url(artifact_path)}},
-        ]
+        source_input = {'image_hash': path_hash(artifact_path)}
     else:
         with open(artifact_path, 'r', encoding='utf-8') as f:
             text = f.read()
-        user_content = (
-            f'Product slug: {slug}. Extract the structured visual features from the following '
-            f'product description and return them as JSON per the schema.\n\n{text}'
-        )
+        source_input = {'text': text}
 
-    resp = client.chat.completions.create(
-        model=LLM_MODEL,
-        temperature=LLM_TEMPERATURE,
-        max_tokens=LLM_MAX_TOKENS,
-        response_format={
-            'type': 'json_schema',
-            'json_schema': {
-                'name': 'structured_features_v1',
-                'strict': True,
-                'schema': STRUCTURED_FEATURES_SCHEMA_V1,
-            },
-        },
-        messages=[
-            {'role': 'system', 'content': EXTRACTION_PROMPT_SYSTEM_V1},
-            {'role': 'user', 'content': user_content},
-        ],
-    )
-    raw = (resp.choices[0].message.content or '').strip()
-    parsed = json.loads(raw)  # strict schema guarantees shape + enum compliance
-    usage = {
-        'input_tokens': resp.usage.prompt_tokens if resp.usage else 0,
-        'output_tokens': resp.usage.completion_tokens if resp.usage else 0,
+    inputs = {
+        'model': LLM_MODEL,
+        'temperature': LLM_TEMPERATURE,
+        'max_tokens': LLM_MAX_TOKENS,
+        'prompt_version': EXTRACTION_PROMPT_VERSION,
+        'prompt_sha256': EXTRACTION_PROMPT_SHA256,
+        'schema_name': 'structured_features_v1',
+        'source': source,
+        'slug': slug,
+        **source_input,
     }
-    return parsed, usage
+
+    def _live() -> dict:
+        if source_is_image(source):
+            user_content = [
+                {'type': 'text', 'text':
+                    f'Product slug: {slug}. Extract the structured visual features '
+                    f'from this product image and return them as JSON per the schema.'},
+                {'type': 'image_url', 'image_url': {'url': image_data_url(artifact_path)}},
+            ]
+        else:
+            with open(artifact_path, 'r', encoding='utf-8') as f:
+                text_body = f.read()
+            user_content = (
+                f'Product slug: {slug}. Extract the structured visual features from the following '
+                f'product description and return them as JSON per the schema.\n\n{text_body}'
+            )
+
+        resp = client.chat.completions.create(
+            model=LLM_MODEL,
+            temperature=LLM_TEMPERATURE,
+            max_tokens=LLM_MAX_TOKENS,
+            response_format={
+                'type': 'json_schema',
+                'json_schema': {
+                    'name': 'structured_features_v1',
+                    'strict': True,
+                    'schema': STRUCTURED_FEATURES_SCHEMA_V1,
+                },
+            },
+            messages=[
+                {'role': 'system', 'content': EXTRACTION_PROMPT_SYSTEM_V1},
+                {'role': 'user', 'content': user_content},
+            ],
+        )
+        raw = (resp.choices[0].message.content or '').strip()
+        parsed = json.loads(raw)  # strict schema guarantees shape + enum compliance
+        usage = {
+            'input_tokens': resp.usage.prompt_tokens if resp.usage else 0,
+            'output_tokens': resp.usage.completion_tokens if resp.usage else 0,
+        }
+        return {'parsed': parsed, 'usage': usage}
+
+    result = cached_call('structured_features', inputs, _live, format='json')
+    return result['parsed'], result['usage']
 
 
 ## VALIDATION ##

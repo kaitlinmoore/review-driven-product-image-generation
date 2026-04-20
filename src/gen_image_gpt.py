@@ -32,6 +32,8 @@ from PIL import Image
 # Use for locally .env defined API keys/tokens.
 from dotenv import load_dotenv
 
+from replay import cached_call
+
 
 ## CONSTANTS ##
 
@@ -70,18 +72,34 @@ def generate_gpt_image(
     output_format: str = DEFAULT_OUTPUT_FORMAT,
 ) -> Image.Image:
     '''Generate one image via gpt-image-1.5. Returns PIL.Image in RGB mode.
-    Raises on API error; OpenAI SDK handles transient retries internally.'''
-    client = _client()
-    resp = client.images.generate(
-        model=GPT_IMAGE_MODEL,
-        prompt=prompt,
-        size=size,
-        quality=quality,
-        output_format=output_format,
-        n=1,
-    )
-    b64 = resp.data[0].b64_json
-    return Image.open(io.BytesIO(base64.b64decode(b64))).convert('RGB')
+    Raises on API error; OpenAI SDK handles transient retries internally.
+
+    Replay-aware: in record mode, a cache hit skips the live call; in replay
+    mode, a missing cache raises FileNotFoundError. gpt-image-1.5 has no
+    seed parameter, so repeat calls with identical inputs cache to the
+    first-observed image.'''
+    inputs = {
+        'model': GPT_IMAGE_MODEL,
+        'prompt': prompt,
+        'size': size,
+        'quality': quality,
+        'output_format': output_format,
+    }
+
+    def _live() -> Image.Image:
+        client = _client()
+        resp = client.images.generate(
+            model=GPT_IMAGE_MODEL,
+            prompt=prompt,
+            size=size,
+            quality=quality,
+            output_format=output_format,
+            n=1,
+        )
+        b64 = resp.data[0].b64_json
+        return Image.open(io.BytesIO(base64.b64decode(b64))).convert('RGB')
+
+    return cached_call('gpt_image_gen', inputs, _live, format='png')
 
 
 ## SMOKE TEST ##

@@ -33,6 +33,8 @@ import time
 # Use for local .env defined API keys.
 from dotenv import load_dotenv
 
+from replay import cached_call
+
 # Try to prevent encoding errors.
 try:
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
@@ -110,22 +112,40 @@ def resolve_only(products, needle: str) -> dict[str, str]:
 ## LLM CALL ##
 
 def call_llm(client, context_text: str) -> tuple[str, dict]:
-    '''Returns (description, usage_dict). Raises on error.'''
-    resp = client.chat.completions.create(
-        model=LLM_MODEL,
-        temperature=LLM_TEMPERATURE,
-        max_tokens=LLM_MAX_TOKENS,
-        messages=[
-            {'role': 'system', 'content': INITIAL_PROMPT_SYSTEM_V1},
-            {'role': 'user', 'content': context_text},
-        ],
-    )
-    text = (resp.choices[0].message.content or '').strip()
-    usage = {
-        'input_tokens': resp.usage.prompt_tokens if resp.usage else 0,
-        'output_tokens': resp.usage.completion_tokens if resp.usage else 0,
+    '''Returns (description, usage_dict). Raises on error.
+
+    Replay-aware: in record mode, a cache hit skips the live call; in replay
+    mode, a missing cache raises FileNotFoundError. Cache key is derived from
+    the prompt version + hash + context_text so any change to either
+    invalidates cached entries automatically.'''
+    inputs = {
+        'model': LLM_MODEL,
+        'temperature': LLM_TEMPERATURE,
+        'max_tokens': LLM_MAX_TOKENS,
+        'prompt_version': INITIAL_PROMPT_VERSION,
+        'prompt_sha256': INITIAL_PROMPT_SHA256,
+        'context_text': context_text,
     }
-    return text, usage
+
+    def _live() -> dict:
+        resp = client.chat.completions.create(
+            model=LLM_MODEL,
+            temperature=LLM_TEMPERATURE,
+            max_tokens=LLM_MAX_TOKENS,
+            messages=[
+                {'role': 'system', 'content': INITIAL_PROMPT_SYSTEM_V1},
+                {'role': 'user', 'content': context_text},
+            ],
+        )
+        text = (resp.choices[0].message.content or '').strip()
+        usage = {
+            'input_tokens': resp.usage.prompt_tokens if resp.usage else 0,
+            'output_tokens': resp.usage.completion_tokens if resp.usage else 0,
+        }
+        return {'text': text, 'usage': usage}
+
+    result = cached_call('initial_prompt', inputs, _live, format='json')
+    return result['text'], result['usage']
 
 
 ## COST ESTIMATE ##

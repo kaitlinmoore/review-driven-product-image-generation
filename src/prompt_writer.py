@@ -13,10 +13,13 @@ Mistral is loaded separately via load_mistral() and passed in, so a single
 model can be reused across many PromptWriter instances (one per product run).
 '''
 
+import hashlib
 import re
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, pipeline
+
+from replay import cached_call
 
 
 ## CONSTANTS ##
@@ -85,6 +88,12 @@ RATE_PROMPT_SYSTEM = (
     'Only output the float number.'
 )
 
+# System-prompt hashes baked into cache keys so an accidental edit
+# automatically invalidates cached entries rather than silently mixing
+# pre- and post-edit results.
+STEP_PROMPT_SHA256 = hashlib.sha256(STEP_PROMPT_SYSTEM.encode('utf-8')).hexdigest()[:16]
+RATE_PROMPT_SHA256 = hashlib.sha256(RATE_PROMPT_SYSTEM.encode('utf-8')).hexdigest()[:16]
+
 
 class PromptWriter:
     '''Iterative prompt refiner backed by Mistral-7B.
@@ -120,55 +129,95 @@ class PromptWriter:
             return DEFAULT_PROMPT_FALLBACK
 
     def stepPrompt(self, batch):
-        '''Rewrite self.prompt using the batch's reviews (stochastic sampling).'''
-        reviews_summary = '\n'.join(
-            f"- {r.get('title', '')}: {r.get('text', '')[:120]}" for r in batch
-        )
-        messages = [
-            {'role': 'system', 'content': STEP_PROMPT_SYSTEM},
-            {'role': 'user', 'content':
-                f'Current Prompt: {self.prompt}\n\nNew details to add: {reviews_summary}'},
+        '''Rewrite self.prompt using the batch's reviews (stochastic sampling).
+
+        Replay-aware: first call with a given (current_prompt, batch, params)
+        combination hits live Mistral, subsequent identical calls return the
+        cached result. This makes agentLoop deterministic across re-runs on
+        the same machine. Set REPLAY_MODE=force_record in the shell to force
+        fresh sampling.'''
+        # Normalize the batch for the cache key so dict-iteration order and
+        # unused review fields don't perturb the hash.
+        batch_key = [
+            {'title': r.get('title', '') or '',
+             'text_truncated': (r.get('text', '') or '')[:120]}
+            for r in batch
         ]
+        inputs = {
+            'model': DEFAULT_MISTRAL_MODEL,
+            'system_prompt_sha256': STEP_PROMPT_SHA256,
+            'current_prompt': self.prompt,
+            'batch': batch_key,
+            'max_new_tokens': STEP_MAX_NEW_TOKENS,
+            'temperature': STEP_TEMPERATURE,
+            'repetition_penalty': STEP_REPETITION_PENALTY,
+            'prompt_char_cap': PROMPT_CHAR_CAP,
+        }
 
-        output = self.generator(
-            messages,
-            max_new_tokens=STEP_MAX_NEW_TOKENS,
-            do_sample=True,
-            temperature=STEP_TEMPERATURE,
-            repetition_penalty=STEP_REPETITION_PENALTY,
-            use_cache=False,
-        )
+        def _live() -> str:
+            reviews_summary = '\n'.join(
+                f"- {r.get('title', '')}: {r.get('text', '')[:120]}" for r in batch
+            )
+            messages = [
+                {'role': 'system', 'content': STEP_PROMPT_SYSTEM},
+                {'role': 'user', 'content':
+                    f'Current Prompt: {self.prompt}\n\nNew details to add: {reviews_summary}'},
+            ]
 
-        raw_text = output[0]['generated_text'][-1]['content'].strip()
-        # Strip non-ASCII (the pipeline occasionally emits unicode artifacts)
-        # and collapse whitespace; truncate to PROMPT_CHAR_CAP.
-        cleaned_text = re.sub(r'[^\x00-\x7F]+', '', raw_text)
-        self.prompt = ' '.join(cleaned_text.split())[:PROMPT_CHAR_CAP]
+            output = self.generator(
+                messages,
+                max_new_tokens=STEP_MAX_NEW_TOKENS,
+                do_sample=True,
+                temperature=STEP_TEMPERATURE,
+                repetition_penalty=STEP_REPETITION_PENALTY,
+                use_cache=False,
+            )
+
+            raw_text = output[0]['generated_text'][-1]['content'].strip()
+            # Strip non-ASCII (the pipeline occasionally emits unicode artifacts)
+            # and collapse whitespace; truncate to PROMPT_CHAR_CAP.
+            cleaned_text = re.sub(r'[^\x00-\x7F]+', '', raw_text)
+            return ' '.join(cleaned_text.split())[:PROMPT_CHAR_CAP]
+
+        self.prompt = cached_call('step_prompt', inputs, _live, format='text')
 
     def ratePrompt(self):
-        '''Score self.prompt on descriptiveness 0-100 (deterministic).'''
-        messages = [
-            {'role': 'system', 'content': RATE_PROMPT_SYSTEM},
-            {'role': 'user', 'content':
-                f'Rate this image prompt for technical visual precision: {self.prompt}'},
-        ]
+        '''Score self.prompt on descriptiveness 0-100 (deterministic).
 
-        output = self.generator(
-            messages,
-            max_new_tokens=RATE_MAX_NEW_TOKENS,
-            do_sample=False,
-            use_cache=False,
-        )
+        Replay-aware: first call with a given prompt-to-rate hits live
+        Mistral; subsequent identical calls return the cached float.'''
+        inputs = {
+            'model': DEFAULT_MISTRAL_MODEL,
+            'system_prompt_sha256': RATE_PROMPT_SHA256,
+            'prompt_to_rate': self.prompt,
+            'max_new_tokens': RATE_MAX_NEW_TOKENS,
+        }
 
-        raw_score = output[0]['generated_text'][-1]['content'].strip()
-        try:
-            score_match = re.search(r'([0-9]*\.?[0-9]+)', raw_score)
-            self.descriptiveness = float(score_match.group(1)) if score_match else 0.0
-        except (ValueError, AttributeError):
-            self.descriptiveness = 0.0
+        def _live() -> float:
+            messages = [
+                {'role': 'system', 'content': RATE_PROMPT_SYSTEM},
+                {'role': 'user', 'content':
+                    f'Rate this image prompt for technical visual precision: {self.prompt}'},
+            ]
 
-        # Clamp to the documented 0-100 range.
-        self.descriptiveness = max(0.0, min(100.0, self.descriptiveness))
+            output = self.generator(
+                messages,
+                max_new_tokens=RATE_MAX_NEW_TOKENS,
+                do_sample=False,
+                use_cache=False,
+            )
+
+            raw_score = output[0]['generated_text'][-1]['content'].strip()
+            try:
+                score_match = re.search(r'([0-9]*\.?[0-9]+)', raw_score)
+                score = float(score_match.group(1)) if score_match else 0.0
+            except (ValueError, AttributeError):
+                score = 0.0
+            # Clamp to the documented 0-100 range before caching so cached
+            # values are always in-range regardless of parser behavior drift.
+            return max(0.0, min(100.0, score))
+
+        self.descriptiveness = cached_call('rate_prompt', inputs, _live, format='json')
 
     def improvementLoop(self, descriptivenessThreshold: float, iterMax: int) -> int:
         '''Iterate stepPrompt + ratePrompt until descriptiveness >= threshold

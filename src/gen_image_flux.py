@@ -36,6 +36,8 @@ from PIL import Image
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 
+from replay import cached_call
+
 
 ## CONSTANTS ##
 
@@ -81,34 +83,51 @@ def generate_flux(
     max_retries: int = DEFAULT_MAX_RETRIES,
 ) -> Image.Image:
     '''Generate one image via FLUX.1-schnell. Returns PIL.Image in RGB mode.
-    Retries transient failures with exponential backoff.'''
-    client = _client(provider)
-    last_err: Exception | None = None
+    Retries transient failures with exponential backoff.
 
-    for attempt in range(max_retries + 1):
-        try:
-            img = client.text_to_image(
-                prompt,
-                model=FLUX_MODEL,
-                width=width,
-                height=height,
-                num_inference_steps=num_inference_steps,
-            )
-            return img.convert('RGB')
-        except Exception as e:
-            last_err = e
-            if attempt < max_retries:
-                wait = 2 ** (attempt + 1)
-                print(f'[FLUX/{provider}] {type(e).__name__}, retrying in {wait}s '
-                      f'(attempt {attempt + 1}/{max_retries})')
-                time.sleep(wait)
-                continue
-            break
+    Replay-aware: in record mode, a cache hit skips the live call; in replay
+    mode, a missing cache raises FileNotFoundError. Cache key is computed
+    from the prompt + geometry + provider (no seed, so repeat calls with
+    identical inputs all return the first-observed cached image).'''
+    inputs = {
+        'model': FLUX_MODEL,
+        'prompt': prompt,
+        'width': width,
+        'height': height,
+        'num_inference_steps': num_inference_steps,
+        'provider': provider,
+    }
 
-    raise RuntimeError(
-        f'FLUX generation failed via provider={provider!r} after '
-        f'{max_retries + 1} attempts: {last_err}'
-    )
+    def _live() -> Image.Image:
+        client = _client(provider)
+        last_err: Exception | None = None
+
+        for attempt in range(max_retries + 1):
+            try:
+                img = client.text_to_image(
+                    prompt,
+                    model=FLUX_MODEL,
+                    width=width,
+                    height=height,
+                    num_inference_steps=num_inference_steps,
+                )
+                return img.convert('RGB')
+            except Exception as e:
+                last_err = e
+                if attempt < max_retries:
+                    wait = 2 ** (attempt + 1)
+                    print(f'[FLUX/{provider}] {type(e).__name__}, retrying in {wait}s '
+                          f'(attempt {attempt + 1}/{max_retries})')
+                    time.sleep(wait)
+                    continue
+                break
+
+        raise RuntimeError(
+            f'FLUX generation failed via provider={provider!r} after '
+            f'{max_retries + 1} attempts: {last_err}'
+        )
+
+    return cached_call('flux_gen', inputs, _live, format='png')
 
 
 ## SMOKE TEST ##
