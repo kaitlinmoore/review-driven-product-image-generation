@@ -52,6 +52,39 @@ automatically.
 
 All six production call sites are wrapped (see "What Gets Cached" below).
 
+## Experimental Design — No Ground-Truth Leakage
+
+The research question is: given only what customers *said* about a product,
+how closely can a generative pipeline reconstruct what the product *looks*
+like? This framing only holds if ground-truth product images (and any
+features derived from them) are never used as a feedback signal inside the
+generation loop. The current pipeline is structured to respect that
+boundary.
+
+**Ground-truth artifacts flow one direction only — into evaluation:**
+
+| Script | Reads ground-truth? | Why it's safe |
+|---|---|---|
+| `generate_initial_prompt.py` | No | Reads `prompt_context.txt` (metadata + filtered reviews) |
+| `PromptWriter.stepPrompt` | No | Reads review batches from the DataLoader |
+| `PromptWriter.ratePrompt` | No | Mistral self-scores prompt descriptiveness |
+| `agent_loop.agentLoop` | Title only | Uses `evalImage(img, ground_truth_text)` where `ground_truth_text` is the product **title string** from metadata — not image-derived |
+| `gen_image_flux.py` / `gen_image_gpt.py` | No | Prompt-only inputs |
+| `extract_structured_features.py --source ground_truth` | Yes | **Evaluation artifact.** Writes JSON to disk; no generation-path script reads its output |
+
+The title-string signal inside `agentLoop` is considered fair: any real-world
+caller of a text-to-image pipeline has *some* name for the product they want
+to generate, and the title is the minimal identifying string. It is
+metadata, not image-derived.
+
+**Status.** As of 2026-04, we are awaiting course-staff guidance on whether
+ground-truth-informed refinement would be considered fair game for this
+assignment. The pipeline is structured so an opt-in variant (e.g. a
+`stepPromptWithGT` method that takes a ground-truth feature record alongside
+the review batch) could be added without rearchitecting. **If the design
+changes, update this section, the `stepPrompt` row in the table below, and
+any affected Q2/Q3 report framing.**
+
 ## Deterministic vs. Stochastic
 
 | Stage | Behavior |
