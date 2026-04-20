@@ -247,6 +247,50 @@ for m in ['torch','transformers','accelerate','bitsandbytes','sentencepiece',
 In all three cases, replay mode pins the output to whatever was observed on
 the canonical record run.
 
+## Agent-Loop Run Configs
+
+`run_agent_pipeline.py` requires `--config-name` on every invocation. The
+config name is stamped into the per-run artifact filenames and into the
+`"config_name"` field of the provenance meta JSON so two runs with
+different designs (different quality signal, hyperparameters, etc.) stay
+distinguishable on disk.
+
+**Per-config artifacts** (always written):
+
+    data/{product}/converged_prompt_{model}_{config}.txt
+    data/{product}/generated_image_{model}_{config}.png
+    data/{product}/agent_run_{model}_{config}_meta.json
+
+**Canonical pointers** (written by default, skipped with `--no-promote`):
+
+    data/{product}/converged_prompt_{model}.txt
+    data/{product}/generated_image_{model}.png
+    data/{product}/converged_prompt.txt        # = FLUX-config converged
+                                                 (the path extract_structured_features
+                                                 --source converged reads by default)
+
+The per-config files are the true record. The canonical pointers are
+convenience aliases for downstream stages that don't know which config
+is currently blessed. Running a second config with `--no-promote`
+preserves the first config as canonical while still capturing the
+ablation on disk.
+
+**Typical ablation workflow:**
+
+```powershell
+# First run — promote to canonical.
+python src/run_agent_pipeline.py --config-name v1_title_clip_eval
+
+# Hypothesis-driven change, second run — keep v1 canonical, capture v2 as ablation.
+python src/run_agent_pipeline.py --config-name v2_image_clip_eval --no-promote
+
+# If v2 wins, re-run promoted:
+python src/run_agent_pipeline.py --config-name v2_image_clip_eval --force
+```
+
+Both the v1 and v2 artifact triplets remain on disk. The Q2/Q3 writeup
+references each config by name and compares the two.
+
 ## Ground-Truth Image Selection
 
 `extract_structured_features.py --source ground_truth` aggregates multiple

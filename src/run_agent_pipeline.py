@@ -373,22 +373,16 @@ def main():
             r = run_one(slug, pdir, image_model_num, dataloader, model, tokenizer, args)
             results.append(r)
 
-        # After both models have run (or whichever subset was selected), copy
-        # the FLUX converged prompt to the canonical `converged_prompt.txt`
-        # path that extract_structured_features.py --source converged reads
-        # with no flags. Reason for picking FLUX: it is the open-weights
-        # reproducible path. If only model 2 was run this session, fall back
-        # to the gpt tag.
-        flux_path = os.path.join(pdir, 'converged_prompt_flux.txt')
-        gpt_path = os.path.join(pdir, 'converged_prompt_gpt.txt')
-        canonical_path = os.path.join(pdir, 'converged_prompt.txt')
-        source_for_canonical = None
-        if os.path.exists(flux_path):
-            source_for_canonical = flux_path
-        elif os.path.exists(gpt_path):
-            source_for_canonical = gpt_path
-        if source_for_canonical is not None:
-            shutil.copyfile(source_for_canonical, canonical_path)
+        # Canonical `converged_prompt.txt` is written from the FLUX run
+        # inside run_one (tag == 'flux' branch) when --no-promote is not set.
+        # If only model 2 was run this session AND we want a canonical
+        # global prompt, fall back to the GPT per-config file. This only
+        # applies when both: promotion is on AND we didn't run FLUX.
+        if not args.no_promote and 1 not in models_to_run:
+            pc_gpt = per_config_paths(pdir, 'gpt', args.config_name)
+            can = canonical_paths(pdir, 'gpt')
+            if os.path.exists(pc_gpt['converged']):
+                shutil.copyfile(pc_gpt['converged'], can['converged_global'])
 
     # Summary.
     print()
@@ -400,13 +394,14 @@ def main():
     errors = [r for r in results if r.get('error')]
     for r in ok:
         q_best = r['qualities'][r['best_idx']]
+        promo = 'promoted' if r.get('promoted') else 'not-promoted'
         print(f'  {r["slug"]:<18} {r["model_tag"]:<5} '
               f'best_q={q_best:.4f}  best_idx={r["best_idx"]}  '
-              f'{r["elapsed_seconds"]}s')
+              f'{r["elapsed_seconds"]}s  ({promo})')
     if skipped:
-        print(f'  skipped: {[(r["slug"], r["model_tag"]) for r in skipped]}')
+        print(f'  skipped: {[(r["slug"], r["model_tag"], r["config_name"]) for r in skipped]}')
     if errors:
-        print(f'  errors:  {[(r["slug"], r["model_tag"], r["error"]) for r in errors]}')
+        print(f'  errors:  {[(r["slug"], r["model_tag"], r["config_name"], r["error"]) for r in errors]}')
 
 
 if __name__ == '__main__':
