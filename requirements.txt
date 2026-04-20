@@ -1,0 +1,22 @@
+# Review-driven product image generation — runtime dependencies.
+# Loose pins (>=) since the course environment tolerates minor variation.
+
+# === Data pulling + preprocessing (src/) ===
+requests>=2.31
+python-dotenv>=1.0
+openai>=1.40              # used by build_filter_cache, generate_initial_prompt
+
+# === Image-generation pipeline (notebooks/working_image_refinement.ipynb) ===
+torch>=2.1
+transformers>=4.44        # Mistral-7B-Instruct-v0.3
+accelerate>=0.33          # HF infrastructure for quantized inference
+bitsandbytes>=0.46.1      # 4-bit quantization for Mistral
+diffusers>=0.29           # Stable Diffusion 1.5 pipeline
+Pillow>=10.0              # image IO
+
+# === Evaluation (CLIP / DINOv2 / SigLIP per REPRODUCIBILITY.md) ===
+sentence-transformers>=3.0  # includes CLIP clip-ViT-B-32
+
+# Note: explore_candidates.py (exploration/) also uses `requests`, already listed above.
+# IPython/matplotlib/pandas appear only in notebooks that aren't on the production
+# path; add if/when that code is extracted into src/.

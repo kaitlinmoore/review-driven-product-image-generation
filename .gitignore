@@ -1,0 +1,42 @@
+# === Secrets ===
+.env
+.env.local
+*.key
+*.pem
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+
+# === Jupyter ===
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# === Project data ===
+# Raw pulls are reproducible via pull_product_data.py and too large to track.
+data/*/reviews.jsonl
+# data/filter_caches/ IS committed — those are real scientific artifacts.
+# All other per-product outputs (metadata.json, summary.json, images/,
+# reviews_ranked.jsonl, prompt_context.txt, initial_prompt.txt,
+# filter_spotcheck.txt, gate_comparison.csv) remain committed for now;
+# curate before push.
+
+# === Runtime / generated ===
+*.log
+runs/
+
+# === IDE / OS ===
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# === Model / framework caches ===
+.cache/
