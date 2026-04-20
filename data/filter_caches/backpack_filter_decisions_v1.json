@@ -1,0 +1,3226 @@
+{
+  "prompt_version": "v1",
+  "prompt_sha256": "060e34fb3a4297f96aabff59dde3c3b09692854b76203246ebfc83c3ed7c89ec",
+  "model": "gpt-4o-mini",
+  "temperature": 0,
+  "review_id_scheme": "user_id_timestamp",
+  "total_reviews": 813,
+  "dropped_empty_text": 0,
+  "passes_gate": 33,
+  "fails_gate": 770,
+  "errors": 0,
+  "decisions": {
+    "AE52IYY3INTAPFLOZBD77LJC5OGA_1562335697897": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGZ3KUY26ITLDH3JKKEY3D2OL7OQ_1552234463717": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AF2GMZL2WYR7S4RT4NUUF4DTLBRQ_1527018159771": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AFVPVEIRTYUIZDPWHS7MAUS5RQCA_1554770356285": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AGZZXSMMS4WRHHJRBUJZI4FZDHKQ_1531052715968": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AH665SQ6SQF6DXAGYIQFCX76LALA_1505063783831": {
+      "passes_gate": true,
+      "reason": "The review describes the backpack's color, materials, and features."
+    },
+    "AH7H3ODCFAPOJIRBTY7YF5UO5D3Q_1527523667877": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AGE522R3Q7EE2UQ5VLYH4CT4VBBQ_1506723679232": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, lacking visual descriptions."
+    },
+    "AEKIGT3HOGPH3DJBTROHG2Q5347Q_1605403989524": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AF7SNQLIJTPSUTJSPGC4AHINVDEQ_1531630707232": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGBSMOMU5T3ZIR3TE4BRQRNAWFTA_1537070017494": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality and price, no visual description provided."
+    },
+    "AHV44S7PPP6RWWE47TXGK27IWNYA_1529369316301": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AF6ISVWPABATHJLDX2EBYQBS4CFQ_1506274205449": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGX7VV2R7X5CUFAHIHKVIULIDTMA_1585173051139": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AG7BLXGCWCXHXMN574SP7PKUYSBQ_1601362407217": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AG77AL5H3ZQAE7SXO6MAMQM5CM5Q_1533871115050": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGON3GV6Q37EUUSTQUWEAZ35D5JA_1534311359415": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEG4VWZJ4WCEFX2MQ5T4HWZUJZEQ_1541460556944": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AF7KDRE7VXBFVF4F6XQWTNNKQJKQ_1525757827630": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEB5R4AU3242FXZFI6LJWQMYHKXA_1506698694499": {
+      "passes_gate": true,
+      "reason": "The review describes the backpack's colors, materials, and structural details."
+    },
+    "AH5EARYK475SVN4OUR36QORSN46Q_1585623662517": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AEGZUGS74AIXKND3LQEAZAS4NVNA_1506212802377": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and value, lacking visual description."
+    },
+    "AGKTN7B7BR3YVZESF6WG4RR75ZDA_1601831105089": {
+      "passes_gate": false,
+      "reason": "Review focuses on comfort and functionality, lacking visual descriptions."
+    },
+    "AE4KD6JF7FIZNUAELRR6OV2NLVPQ_1507732593533": {
+      "passes_gate": true,
+      "reason": "The review mentions the pleasing colors of the backpack."
+    },
+    "AGWRUU4YA7MD55XMKVK2UDY2DQCQ_1534793325838": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHTJ2ZXW5CYJO4MRCUMBCWAJXZCA_1537660205694": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AHTYF3VPBAQOUYCVPHUN45MEFIHQ_1555687857921": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description."
+    },
+    "AHZ4KDHDCBMM7FCHH7WUIA5WHW7A_1610754023440": {
+      "passes_gate": false,
+      "reason": "Review focuses on fit and function, lacking visual description of the pack."
+    },
+    "AEX2TWRUQ6NGPZUVGAPKV5DXJ3BA_1535999483000": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AEOVUNTR4XBJBGBBGWZ3KBED2JEA_1547449857197": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description."
+    },
+    "AECFCF5MOXAXNEPGVWG5MBA3RQPQ_1597247640818": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AG4G7WPILZBMJ4LXPGAADIXJYJKQ_1519956628835": {
+      "passes_gate": true,
+      "reason": "The review mentions the backpack looked as described, indicating visual content."
+    },
+    "AGXWASJCWU44VXU3KYPVATKPWVAA_1537184030831": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AFXGDYHFBCVZNZC5CX3UOGBAFLNA_1552234646374": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, lacking visual description of the product."
+    },
+    "AEGEICRD5NPYJ5JPBII4RV2U6LGQ_1541159192655": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AHVI2NS74WGEYKWGL3IEL3P4RXEQ_1505488084371": {
+      "passes_gate": true,
+      "reason": "Describes colors, materials, and various visual features of the backpack."
+    },
+    "AH2IJM2MWQDH467EKOTVJCDCDRZA_1591532092538": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AE3FTJ42GWJCI7VZFRIB27RQHODQ_1548519720035": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AE7SJMGUXCAK2ZTY3XF2G2IFSDTA_1532500023483": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGI7Q67LEC564DC6HJQ3FAVIYCVQ_1505415037779": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEXUVZFCWSL4RBG67ALG4AYATEWA_1532314728412": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AHNAKU775FJBQ7ZFC37NIUA324FA_1519016139390": {
+      "passes_gate": false,
+      "reason": "The review does not describe the bag's visual appearance."
+    },
+    "AHNY2MHCR3LYNLRKLZVLTUX553ZA_1528616366367": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHAEQTEWQ7J3AZOGZ2WEYFVWCX6A_1569178271565": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AGNV56UD26QF4W4774PT5JOA2KOQ_1562005010677": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description of the packs."
+    },
+    "AHWDRN3VWOH2V2ZD67SZJ5QL2AXQ_1527320524946": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AEKTKMFOW43AMJAOSKCHJ3ZMHQAQ_1540924600885": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AENL5JXNIR7QN6FS36NDACKKHEAA_1560034453588": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AECSGX2O7PJNKAUDX23N73732QOA_1526478568835": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and performance, lacking visual descriptions."
+    },
+    "AGCVEBJKJ7MUFLLXRLWDONBK2LUA_1524790901772": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGBAHJR45V6RMHIINVO26WXXDEKA_1588372676613": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and customer service, no visual description provided."
+    },
+    "AFM5OCE7MIREZQG237YXCMC5YYWA_1579662821298": {
+      "passes_gate": false,
+      "reason": "Review focuses on size and comfort, lacking visual description of the product."
+    },
+    "AHNWN3DXE2WW3WAQDGMWC7JBZZCQ_1506479603059": {
+      "passes_gate": true,
+      "reason": "The review mentions the color and size of the pack."
+    },
+    "AHC2MRR2J544HJN5IUYA2OKK4TPQ_1591117979742": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFUAPGK2B4J27V5DGOMHXDE2VJKQ_1673041924781": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHS2NBG4QSH5N67ZUSWGNXPCNAZQ_1539228823948": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AHUZGRZSECDP4FN62PRE5HDBWUTA_1558658126854": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AFIQ3ZOQTHVGDHG7RXDJBPRUTNUA_1569222624928": {
+      "passes_gate": false,
+      "reason": "Review lacks any visual description of the bags."
+    },
+    "AHDUJNO5S4D4DHSTD7MYQKH76PXA_1520809961491": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the bag."
+    },
+    "AGI6PC7MP5NSNTD24AFUBFNSDW6A_1537819172846": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFRQPFKR3T3GSFYWUHXNLUX3CZQQ_1568932919728": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AGV2VHQBU2CMATN6A5OUVVHVGDXA_1570388905021": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AGV5PGJHNZ2X7RNEZ7XNGIPX6ZGA_1591185332179": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHONK5R6OPQXUSIVY2THPVRPHSOA_1536705397765": {
+      "passes_gate": false,
+      "reason": "Review focuses on performance and value, lacking visual description."
+    },
+    "AHJKTG7MMWQ777NKPBVX3IDE2WMQ_1588100854530": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AGEW7GIIOCXAM2BA3VUEK6BDYITQ_1546225218171": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEMEHPKIKOBFUYHVMSRFPFTSIFNQ_1583877907995": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AESKJCWMK4ZGS4IOZ66WY2ZHWOTA_1536031217964": {
+      "passes_gate": false,
+      "reason": "Review focuses on performance and safety, no visual description provided."
+    },
+    "AFQLETWAJLNWXY2BELXROCVZINRA_1521997916995": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGBGBSYB2ZD27ZZJCFKFFHQMWHLQ_1562175757093": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGTJSJR44MB6IGN7G6OSWU5BNRZA_1537229313373": {
+      "passes_gate": false,
+      "reason": "Review focuses on damage, not on visual details of the product."
+    },
+    "AFM6CDVUP6L7SVM2OPIXOCUUVJIQ_1507672978489": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the backpack's appearance."
+    },
+    "AHCEGWSCYDNQJSRG65SBB5GOUEVQ_1505776986817": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AGMBYHN7EVWZZE2RDLVZBTYDLFGQ_1524339921904": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the backpack."
+    },
+    "AEOUVML56BBLGLS2W552ZM47STLA_1557603474748": {
+      "passes_gate": false,
+      "reason": "No visual description of the product's appearance or features."
+    },
+    "AG743CJ5YLY7NUFFRSA6SUOVP7WA_1534623986859": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFS7CZPQ2Y3ZVAGL7DFTFVEYPDNQ_1522348273043": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHCWG4MJMIPBXL33T47AFV7WP2KA_1524120183657": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AG7W2ZXKA65FIPPA3YFBO65IU3IA_1528595237164": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AGPGKUTLTD5OOKEL3HWKNTT7GOXQ_1595835690675": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the product."
+    },
+    "AH3CQI5H5LRUW4BIWA633Y6PLX4Q_1521568170055": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not visual aspects of the product."
+    },
+    "AESNP77HNQOEBIS257BKGI46DQPQ_1528540438189": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality, no visual description provided."
+    },
+    "AEL44AEHUR7JQ5V2XKGWRPZ7GICQ_1592022876561": {
+      "passes_gate": true,
+      "reason": "The review mentions the backpack's awesome look and sturdy material."
+    },
+    "AFW3C7URKQMWN7ZR67FUSW4B4RAA_1563887277198": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AGQ6GJJLQF3UQ6YJEMBAILBNE4PQ_1524601292329": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AG2USVLY4FR2ABVG3TB7JAB77F2A_1567795311090": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGQOADESXBTZFMSDCGNGV6TRTH7Q_1531785552154": {
+      "passes_gate": true,
+      "reason": "The review mentions the symmetric appearance and color preference for the bag."
+    },
+    "AFMAVY3ZFY3LEYACDM6QQYGKQBSA_1654805196403": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AFTXXDAIJ5N7OO7HAZHF57YUFNXA_1603906723667": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGRAQY2AVAQALQ7IVM37RF2R2TIA_1530712988708": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and usability, lacking visual descriptions."
+    },
+    "AF5N43RAJQBOH6X2WZUO2DM5PONA_1533933882349": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHZA5E6ANLVTIMHYIVRTYYA2CVDA_1589692748832": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AERAOUA2CPIYB7QXYNVNPSGEEOQQ_1613264030780": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AHUEWO4MZJAQ2RE5I7HND2OBHCSQ_1569415822676": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not visual aspects of the product."
+    },
+    "AEV7R6WCFI3NQDHIN4LIQ2I2QQDA_1542140641915": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFNCF3C7FLJKO4CXNHVM7TJ4CQGA_1594041511197": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the backpack."
+    },
+    "AG6FYGUMXO4TSTPFWPFTNHJXC7WQ_1555693122690": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AF4MF2TEL724JVL42HY3LH2EZEOA_1537539463757": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHGKQDNWNVIOMQRWZ3UINQNYHO5Q_1555881712300": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AH44F5JJ3SSDPLZ3RBOJMUG334FA_1519933884924": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, lacking visual description."
+    },
+    "AHL7AOBDY6JIIRAADBFZNXEE4BDQ_1586693424001": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, not visual appearance."
+    },
+    "AFRFSBFZSGNHFUATRYRFOIMMQC3A_1566835195652": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AEF2O2TC2PRWQ35WEIYXVYNNHZWQ_1525311301856": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, lacking visual descriptions of the pack."
+    },
+    "AFPIUEDSVJEZUGOCVTRKJEL64NEQ_1553705686555": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AFHCEVFWKPNCSGAGSSQZM22D7RVA_1550126472682": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AH5XLWV3OVJJIGFFXRP6JH5MLXHA_1600270972680": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEGI2BGP6DE7Q6KTJJ7CJPPWKMYA_1526410002484": {
+      "passes_gate": true,
+      "reason": "Review mentions design and colors, providing visual details about the product."
+    },
+    "AF5XRZKMTO3GITCAU53LJ7BF4KYA_1590501556608": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AHCK2Q7S7GJRMC5TAISOTYPZ633A_1538693426748": {
+      "passes_gate": true,
+      "reason": "The review mentions pictures of the peeling inner coating."
+    },
+    "AE6ASAPTS7AZAE5ADIVHKALO2NPQ_1541477443450": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFDS3HXCFUQA5QCYI7P7VXLN5AAQ_1557881522165": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGH7JRPXFZWPEJIH6DFBZB7UPTLA_1560911686537": {
+      "passes_gate": false,
+      "reason": "Review only covers shipping and does not describe the product's appearance."
+    },
+    "AF2EVPKAROFFM2TVCITVZCCFOQUQ_1523409496002": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AGZ3TMAVZOAAYZQ53JU7GBMZSV7A_1552854281497": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality, lacking visual description."
+    },
+    "AHWLYUVEBNJZD5ZLMXEWYO6M4BTQ_1511982676197": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AG7WAVKAIFUEP4X5KAFCIAY4QFTQ_1522259381766": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGUWF2YKY4S55D3AZ2OOMIFZZTKA_1574574182291": {
+      "passes_gate": false,
+      "reason": "Review focuses on storage and comfort, lacking visual description of the backpack."
+    },
+    "AHJQG35WZVORW2TG3C4X76FXP7WQ_1632492296957": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEKWYXOOGWA6NHQIC2PT4OLS4LWQ_1522341429412": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGO5PDB5N3YGNYFN2BW7SD6LMV7Q_1520648608747": {
+      "passes_gate": true,
+      "reason": "The review mentions the bag's build and cosmetic concerns about the logo."
+    },
+    "AE7BHXLYJ422TAIMEFUFBU6RPN7Q_1535273586440": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the hiking bag."
+    },
+    "AFIRUGC36JJCSOEDVRR7JRBR2PLQ_1548969459085": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AH73NITATRJP4IW2ALQBQ6KOYHJA_1620494050902": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AE4BJZJ7THGLMBNP7EQEGFU4OAFA_1544049536699": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEB2JGVZ6UG3M2QVJRZKO36YGBIQ_1526412029774": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGZAKLUAMTYGC4Z6PVNZHCOD5UHQ_1526946512258": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEIMCRP4ZPBPJN56KBC62FVSLRKA_1538857134882": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEPGMBFUMXDL53IRIWE5S3YJOLWA_1538831405485": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and personal experience, lacking visual descriptions."
+    },
+    "AGP5RGUSGUT5NF7FNI5DZMFEM53Q_1532016560214": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGVIXSL5QG423CMNKN6IL5MRTTEA_1548439008782": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AH5SQ2LSG3AIW2UI6RKXRSA6DCXQ_1530410483859": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality and functionality, lacking visual description of the product."
+    },
+    "AHJMUMWSC7RZ6WSWCMRUCD44TGFA_1604493246335": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AE5CPFXQA5DZAQNSYN4AVZVNFFNA_1569884685188": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AF7OSUE7CRAODEIA6QK2OM3DS4XQ_1518972418388": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AH5ZLCLTYZ5BJMYUXPNYXM4575VA_1550759189325": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AG7P3AJ4TGY5WUVG4NB7LH3QRMYA_1576424144571": {
+      "passes_gate": false,
+      "reason": "No visual description of the backpack's appearance or features provided."
+    },
+    "AHC2FNDVX25KQDVG2H66L4BWAFTQ_1554129753992": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the product."
+    },
+    "AEZ67ZJQDSQPEPLXXJ2OZWCBNPTA_1512341428597": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEV4K4XRNQ4ACTEOKSONG6ZF4HCQ_1563687864048": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description."
+    },
+    "AGHEF6A5A625SWAVPW3DRJFBQNXQ_1540241448807": {
+      "passes_gate": false,
+      "reason": "The review does not describe the backpack's visual appearance."
+    },
+    "AEEDJJRVN73AGUCG5DT4C5CENDZA_1563403989495": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AE73D6SUTU5PZHWCDAIYADF3IYKA_1586594217242": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGIKJ5AVNJLDCZV6FOCIIUZQSOKQ_1520187880570": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AH3IBILCZAXWCM3AZPBIL64NAEOQ_1523822283020": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHTFCHR7EEPL74GXYDKXEPITDMUA_1506718069750": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFTK4JKMEOYTHUHNKEKV4S3KKUOQ_1542253447337": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and price, lacking visual description."
+    },
+    "AFBCC4UQDHZRJO4QROXQXC2HVA4Q_1505262679618": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AGBH6SLMLNOSQ63WFD6BQL2IDTDQ_1545535906183": {
+      "passes_gate": true,
+      "reason": "The review describes the bag's appearance and material quality."
+    },
+    "AGPDMUFNNJG4FFC5ODD2WXDXLWJA_1524284886193": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AH3N5QOIBPDIZR6WZN5GBWNMZJBQ_1527802815374": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and budget, lacking visual description of the product."
+    },
+    "AEOX2KIYL3C22JLTXP4KTZ4EW66A_1549353650365": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and materials, lacking visual description."
+    },
+    "AHZFVA33Q3K3V2FITFPUN46VQ6RQ_1526869309147": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability without visual descriptions."
+    },
+    "AEC7547N6IANNLKKBV3P476JQQGQ_1532622566921": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AFSXDQFZSJPXT2P73TLY54IFLF3Q_1558750767738": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AHEYRF3CDDXODPSZ5WUU66KP6TRA_1521728174037": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFQUH37K7V4GBZPFFYODYM2WZGKQ_1575952865450": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual details about the product's appearance."
+    },
+    "AH2OFSTQCPBPO52NA5IPAYUCNCMA_1526140874548": {
+      "passes_gate": false,
+      "reason": "No visual description of the product's appearance is provided."
+    },
+    "AFLOYESDBAGP5XOZTB76PA3ISYBQ_1549772489771": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEQHDU77KZMSNPQSCWVIOHCTQHBA_1547251969507": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and fit, not visual details."
+    },
+    "AGHRKXP3VQ4HM3SSCTLPV5QPZPZQ_1564618599422": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AG7VLN7NJDZLTLHHR63VZIPCPL5A_1521147567884": {
+      "passes_gate": false,
+      "reason": "Review focuses on fit and construction, lacking visual description of the pack."
+    },
+    "AGKT7PADVYMJOGODJPGQDXCWDM7A_1572915876030": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AEJEBL36UE3Z27E6WQ2AKIGN5XUA_1553221221515": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AEG7MOXKPEL6CQS4R7SPQJY62RFA_1546144606150": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFMWHJ3N53IX75H6XSKY46ZKDRLQ_1572716823474": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the bag."
+    },
+    "AGCPFJKQSSUT6BEEN7L5ETHRJHDQ_1524606497765": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AGKGNGLF5YM7LTLGJ3VUCHB6B4RA_1530541736402": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AGVCTR4NOLQQ5RPUJKNIRAUIWDRQ_1533013062464": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AH7IG6QN6FY63CQU7JUX3FMTGZBA_1595720284588": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AEW3WN45BO5QRGK3RPQ2DREV4NGA_1525061554791": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AH4PIO56M5PCWQU6N4XJB2YHCVRA_1545441300469": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHCCMH3PJ6PQFWO57ARYCCF6AJLA_1589858276264": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AH4VF3WZX3I4J2YX24AKNY6LH7PQ_1560031718659": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGV5U7QVNPMH6QAZY6T3YFUSJFIA_1535327915790": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHO5IUHM456O6KVGMEUGX7YO7X4Q_1561169026634": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AGIDZDSI5KHKCBOCAXX5IZIYZDVA_1560115596607": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AGSQCYWH4F3QA4F4XSCOAE4UQNRQ_1526605972555": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AEYPCGZ7WJP6TN46MC5CLNSHRCEQ_1519010768683": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AG2HC6G4C6OZFKQ7HJ56VLHKHSFA_1522719011806": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AGULZJO76TAGEG6VVDCRRJ5P7TEA_1551718960769": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AHI4QYMXTL2KF6VK7X2ND3PQGKEA_1541771511721": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGYRSVE4SQBVL2XREF4VCHEQU2BA_1538674255560": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGCWDBO4NV27XU2JBZDRH7QEDGBQ_1565577680256": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality, no visual description provided."
+    },
+    "AGWOJDENTJ6X4WFKP574OEC2DLFA_1548275898085": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AG4FAAXZB2PH3HXHQOGPM66M26LQ_1568718194735": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AE4O5GTZBMJRY7OWSSOYP3MFEQWQ_1561651370049": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AHH3VLV6NWJ4BUPRKHNIUXHTGHBA_1531500846743": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the product."
+    },
+    "AHZRXIUEV7ZX2BSKBHG5RQ7BF76A_1535042498025": {
+      "passes_gate": true,
+      "reason": "The review describes the bag's appearance and its spacious, inconspicuous look."
+    },
+    "AENQGOV2XTCUP7GGSL52VASMEZDA_1536539299689": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and price, lacking visual description of the pack."
+    },
+    "AHYBB7ZMRFI27UU3V3BR7IWWZNNQ_1560226310937": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AH7JT57252VW6HH6TW6YODF265ZQ_1524578511024": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and performance, no visual description provided."
+    },
+    "AFLDNRJCTPIVJGBQJXEUVKPE7OEQ_1525461121107": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the pack."
+    },
+    "AGOLIYHYE3CTULRO2WQ4DPKT6KKA_1526610029580": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AHJW334TTG52DQKJ23WFTY5VXYXQ_1530987368163": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AF3WAVSWJWJAYK6UMYERLLMUMUSA_1545968696991": {
+      "passes_gate": true,
+      "reason": "Review mentions sturdy material and overall appearance of the pack."
+    },
+    "AHSIOGV4667J3EH4EALDLMFYTBVQ_1562076345930": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and complaints, no visual description provided."
+    },
+    "AEWCNCXWBLLOTEAMCADUTG5WDIZQ_1632056407182": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and usability, lacking visual descriptions."
+    },
+    "AEU7GYAXJJ42E774WK7WK2UDNJOQ_1544822112863": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGM2JHN6ZNYFAUTQWIHR4FMFVMLA_1558965972035": {
+      "passes_gate": false,
+      "reason": "Review focuses on comfort and functionality, lacking visual description of the pack."
+    },
+    "AFSUASNMB73XTTMV3K6CAB55NPAQ_1538913655964": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AFDORVNFBJFE3FKXASYK2JL5DMFA_1530375281576": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGX4BZYTB4ZECSRVVCIATF73QHRQ_1537195258133": {
+      "passes_gate": false,
+      "reason": "Review does not provide specific visual details about the product."
+    },
+    "AGFLJDFW2ANOO7SCP3Z7NVFRGRGQ_1527795122702": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEFWUBNNFBEXLXX43N3M23I6NVUA_1536266282123": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AE3DCEJKKFGPTK5TLH7TZKQ5XU4A_1532098033065": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHW2M23EDR7JEF3E5DZZBKMVZHBA_1547256508137": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGEJQ6RDA4MLL3GL7RRXJIMQPYQA_1539041549551": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's appearance or visual details."
+    },
+    "AFPNXE2MHRSYIYTUUYXX3FMPIKEA_1567213039497": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AG6F6PCSBBKOEZE6V3RH2WDIGYMQ_1596341378350": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AEFAXHMK3XBIQBLLE7ZRZVWV6AXA_1532262301920": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AGZWIYICWEUTEPEBG54HAUD2TVAQ_1563384739730": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AGXQP3I3TMBE2BGO6QC5IMKB6BDA_1552449976905": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AFD65RKYYDSXKNSPU4LTX7YBMZIQ_1585308778103": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGSRH472ZMLJLFSUO24LUMJD5S6A_1562621628152": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFNQT5PW7NVJRK2TLV33PKVZYP4Q_1519771325062": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFGWU6CPDRZ24R5VCPNFSCPISHDQ_1567296855212": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AHMJCMFSZVZ4MFE3U36RRROQWHBA_1543018517299": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AGYESGQDVXDIQR7QOM5BGXCY6APQ_1522275668943": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AEXE3ZNYEIZ3PGAZ75TXGEAWFBQQ_1525378166707": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGPCI7G2R2NSM4P7HZR6GIRWTAHA_1534161634763": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and noise, not visual appearance."
+    },
+    "AFKFOXVJXYAHTYOF6G7PNDESGAHA_1540525279153": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AHL2TC5PGCTHF323HXQ5GSRGSURA_1600863561168": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AG4ODHXALFFC7NMQQGHEZTTMAXFA_1519938912239": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AGVOYO5W45UWJY4I6MBEPU2GTW2A_1505740583176": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the backpack's appearance."
+    },
+    "AHKADS7LVZVUGZWPOYIDMZMNPJRA_1506725393744": {
+      "passes_gate": true,
+      "reason": "The review describes the backpack's color, material, and adjustable features."
+    },
+    "AESONBKHKRBQR74VITGVSEA6U5JQ_1580170677013": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGAATCZ7RWOGCVD3BJPCUIC6YAFQ_1508178221949": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AGLIMVXSGKMCYPX2E4IFUM3556LQ_1508785452885": {
+      "passes_gate": false,
+      "reason": "Review focuses on usability and quality, lacking visual description of the bag."
+    },
+    "AHCGC2ZT55AHXO4YDMYTMZ4HQJ4A_1505764465688": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the bag's appearance."
+    },
+    "AGOUZSHCI67P6NADWOJ5RV2STJVA_1525924024104": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and personal feelings, not visual details."
+    },
+    "AH34QG4IHEXY7N6Q6W2PUGQKY77Q_1539450783240": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHUYLRGF7QKRDPINRFEWH5O5KSXA_1558909805104": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGFWOBM44CYQJ6SRLXQ7R6MMKLCQ_1563978079091": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AENEVPSG3FZG2UAWXRQJ5LOSFTXQ_1590575806844": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFIWCHTJIEGFP4VIZCBECIYEYGZQ_1631916378443": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual appearance of the backpack."
+    },
+    "AG5VIEPOHQFGT27R767ZJCXNZG6A_1551750111456": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and reliability, no visual description provided."
+    },
+    "AHCP76ZDHAUZVA6QERGNRXALF4TQ_1533452255027": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFGYS7LXSFPFC4I32CHLHSJDB4OA_1532290430026": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AFZVUP3ZBKXHLUOTE6NVRU52FFEA_1565125910730": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AENZZVB2TASD3XD6D6Q63N3ONO5Q_1508097102645": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHAJTSNYEXBOM6GEKWGSIYQJPKDQ_1564446486048": {
+      "passes_gate": true,
+      "reason": "The review mentions the colors and material of the bag."
+    },
+    "AFPIISN7SMPZ5LNBTLDOVG455S4Q_1554783822884": {
+      "passes_gate": false,
+      "reason": "Review lacks any visual description of the product's appearance."
+    },
+    "AFASIN6H4CI763YA4YXGRLIN43QQ_1529165258119": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AECKTUJXTLUCSQVIP4G57Z23FO2Q_1582426464414": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AFOPEYOT4CED24RR5TK345W6HIZA_1534197211930": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AF6LPSPIRL3YIBUE22AUFP3R5X3A_1522665950092": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHE5S7RE3E4YUDPBO5CLTTZ2MPKQ_1529615944032": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AHQ4H5EMYOGF7PPDL6HXRBG3BYJQ_1534217442058": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AHARSA27FVKUPTU6OZPAMJXWXYBA_1554175480057": {
+      "passes_gate": false,
+      "reason": "No visual description of the product's appearance or features."
+    },
+    "AGZMCQF2YHG3SNSFIJQTDUD73AOQ_1521813702103": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHYQFBSXIGSNVJT7HQBOYGGRMSXQ_1549544090534": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHZXIP7JWDFCRUZEGNBWPCNBIKPQ_1547583033587": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the bag."
+    },
+    "AEGJQQ4O5BFWHGAQ7NQYNLBSQKHA_1597852392249": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AGSXS42ZPTPMP6XZOMUTPRDUQOCA_1524833841486": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGKAZR4XNPRZDYBJW2BYHLXGZIGQ_1544332336229": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and personal experience, no visual description provided."
+    },
+    "AFPYUOMI563NQUPIUKJWFHRP5XDQ_1595875938492": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, lacking visual description."
+    },
+    "AEV2EWYAISHT52Q33KGYZBTCOCJA_1592676605243": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AEFRHJ5LVBHJGPILR2V7BRM5GHYQ_1563024549006": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AGYAQSJCJSRG2JSRTXFESAJDEAPA_1551333941353": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and adjustments, no visual description provided."
+    },
+    "AFT3WJOWJSDSWE3YK4DKXXPQPHYA_1529359046663": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description."
+    },
+    "AFCCUFTRSMRXC2FCSBHXG7YHF27A_1593612524755": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEVKQ72R42BYWBG5RMA6LDRJHBMA_1547133114511": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEVYL35LJJYDST7ETY3U24PBWN3A_1585769069787": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGDQCJWEQ5D4LRTWNYR4BUG54N7Q_1506813353060": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AHZDXG7XY7SF3RSKHBSITYA7OBCA_1529974252885": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHF47FMN7IZ2C5R23QDR7XNMPJ4A_1560005861904": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AHPAKVE6PNNIDPFWLWFMC4HQEYJA_1525978530308": {
+      "passes_gate": true,
+      "reason": "The review mentions the appearance and desire for different colors."
+    },
+    "AFWSHKMHJFJGB2XD4L3AAUEZ4MJA_1526082480769": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFPV2D2V3LI33AQCBKTWDLN226JA_1539037690589": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGMU56I3VPBBS5VKTVKF32NFFR6Q_1568058666960": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not visual aspects of the product."
+    },
+    "AHATAZFIPRSETG5XL2TBXYBVIEPQ_1530315551689": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEYVMQKUGBBCY3Q47QXT6TJ4H5OQ_1538423194685": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the bag."
+    },
+    "AHYFHVK3OWPNEMFDR26K2TW5M63Q_1544137403591": {
+      "passes_gate": false,
+      "reason": "Review lacks any description of the bag's visual appearance."
+    },
+    "AGS7DJMMNZYC67FBOHQYAU6WU5CA_1561594128916": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AF65OSLMC64D4HMHE7QMOSRRHTBQ_1527282925147": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHRZYGLBH5OSFIV6JT23RZUK56QQ_1553437962352": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEZ4WPPRWOC434ALMKFOC53GJHHA_1523460416099": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGQA3PKAQGVUQKPU45WFIYNWILCQ_1539829424790": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHMAMJJ5IMHB7PQOCCVSUEIYBSXA_1594316384568": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGJ5L5KYSSZZCUI3M5ZYS6VDMDFA_1530941839635": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEHLAY25RF7WRZLTW4ZXT2P5SR7A_1526311605228": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and price, lacking visual description."
+    },
+    "AGU6Y6SWEG66QOZHVZO5B6BRNHSA_1534211433582": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AHXPEF3D7Q6MKKWNE56TYLXHGUAQ_1572095844167": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comparison, lacking visual description."
+    },
+    "AEQ7PTR43DPEL7Y2JXUQPVIKNL6A_1556680526336": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and personal experience, lacking visual description."
+    },
+    "AHNVVPRZT3VN5NCERPOPVIYRD5SA_1527794104485": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and safety, not visual appearance."
+    },
+    "AHO7AI2RK4ERFD3Z25LWKTYJ427A_1566704999327": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AHDTDNOMGJOZWHQBQ7HNIWLGQIZQ_1550334901658": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AH5KPIYQDVUI6MDE5VCJXN2NKHVA_1524619442453": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AG4JHGLXWXJ7VKWVIPUUTJ3AEBPA_1523052245791": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AEAVAU5FXDW2NKCFYB44ISBPR5WQ_1528561942294": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AG2HFCQZ3XMWCEMAO6OLNIJEVQPQ_1528830695104": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AF6ZZJNLFNJXUDNPQGDFSCTG3J3Q_1594000838607": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHJF7RTUUKJ3Q2LGYCD52DBYZUCQ_1559493515891": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGOW5HCOAGM466XKEZBEGMHLPITQ_1529212055584": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description of the pack."
+    },
+    "AHLCNKPLSAYLFKXVXPRMUW332XJA_1599257849791": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AG6WMYI6WI5SIIOGMZYY6TAAKQAA_1522733524738": {
+      "passes_gate": false,
+      "reason": "The review does not describe the bag's visual appearance or features."
+    },
+    "AEFQ6RC55NUKCKDNI23AO5LPSEIA_1518840519920": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability without visual description."
+    },
+    "AGB4Q4SBNH5JDNVTGE5Z4HN764YQ_1548381886585": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AGWCIADUJROML3LIGWKTTXTVK6LA_1581032339072": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AH3BMDWTHN7BCSOPHI26RQ5YXQ5A_1544306137612": {
+      "passes_gate": true,
+      "reason": "Review mentions the backpack's size and storage capacity visually."
+    },
+    "AHJFXD2ZT623Y3I3HUSSZB4Y7SHA_1539092485028": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AFZENBNUSNKRRTWMDJFAG3772V4Q_1566100430360": {
+      "passes_gate": true,
+      "reason": "The review mentions the product looks nice and has great capacity."
+    },
+    "AHLKA3QPSUU7H2QDD3Q3XQKDFOTA_1547752878796": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the backpack's appearance."
+    },
+    "AHFZSZRIIAUCW3HXA3XK6OK7TPAA_1528326159212": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, not visual appearance."
+    },
+    "AGATRDG2TWDGPCM257OUY73GBJEA_1546135305429": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AG63G7MBP3PE4BQKZFNCKYIKXPBQ_1547561771398": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AH5U2ZMEI4PYJFXAZULNWYWAZS3Q_1549465766075": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEFN3SA7TLAHPQV2FUL2EBGS4DUA_1538684003871": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the backpack's appearance."
+    },
+    "AHQPUUDV7DMZQS4FY5AETB7RTOSQ_1571951404253": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AGQC5ORVGIQO6FAUGSPS4TLRQUXQ_1529128037075": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AE257GSKGMRRYQF3MY5B2QTVWI7Q_1533532617713": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGT6LYNFIDMXUUTLRGAF577O3YEA_1590565112741": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AH7SXNOX4HDVV7YLEKLFUMTTRVPQ_1601297131949": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AE64HKPKO6JLHXQVJG7NQVCIHCTA_1587585032128": {
+      "passes_gate": true,
+      "reason": "The review mentions the bag's attractive design and space."
+    },
+    "AFVNK27OKUAMOI7ZBYRTC4LBRHUQ_1521927903393": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHNLSVEAIXAC5KWZ4VNTCV5HXBOA_1520905817896": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AHXJFWBVTN3IF7EMUXKMLFZM2LCQ_1617217639997": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AH6XGEAA4SUAS6IB5SXGBVQI6XPQ_1542152765035": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHJE7NJA2BLV5CB42DBLYFAWMQDA_1543935790539": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AEB24C225CPLGIV756VSJ5MI5M6Q_1564504924253": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and user experience, not visual details."
+    },
+    "AFAJKCB3UN2QHIXFRD6TULS5E5RA_1527169081289": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGB52XCYYAAKWIRCPX4RQF6HRDTA_1558934107240": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGLCVVQLDRQFLOVEFP62XA42XWOA_1558369691982": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AE3ZQDRDC4HBTMGYKTICL77OR6RQ_1600791687651": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGEMCGKJMUJLFGRPPFCQI5RBLVZA_1517467704477": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGUJ6PHSLZVAQU47CGRRIC37K2LA_1555071500290": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AF4VU7YMXBYGE56LH6OIK3AICI3A_1599938295589": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the hiking pack."
+    },
+    "AG6T22VBFFTHMGEF7TW5HUQUA3RA_1564510774441": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AGC6UPMIEXW2O4CSN4O3EIEJ45ZQ_1530310519557": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFE6AAWEEBOVZASNWUBD7BJUFCSQ_1520374536046": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AH36MIYRLEWM3UVM7K7FBCRYWPVQ_1525728511033": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AE32KQBRDQ7NQUB3N6IM5JWF3CCQ_1528923966012": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFII4FO255JLHTDWM5P53A4UJYUQ_1571897491521": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGPY4LD47GMXNEYTDMGW2ANKHIPA_1544431584125": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGHYIWSLKNU3NM24WZRQOPJBZU3A_1578518627068": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AFAMBPD2ZR7X554TNIAS43P5JGMQ_1561931518210": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's appearance or visual details."
+    },
+    "AGJC2MBKUSQV7GGU6UCUSSCG3JKA_1524356914509": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AH53NHNBN5JABXHAVZOKPVDM5EFQ_1577569840444": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFNEIEPMJYL6BBY3MUIUPXND5FDA_1531447116834": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGBOZOGIV7JJ4LBZ32G2R3MECNDA_1537966892292": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and function, no visual description provided."
+    },
+    "AFMVEAF3LGIGZFOYQLLGBRTDCU6A_1611006531013": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHVEMUXK7QOH6KY6TI5VWYUGWZZQ_1528757484380": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHDIUA7P7UO7BXOE6LB4N6KN2MLQ_1510625771295": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHDIUA7P7UO7BXOE6LB4N6KN2MLQ_1508787545787": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and personal experience, lacking visual description."
+    },
+    "AHPDPDXQMB2LE6KAOGNPDIC2ABLA_1529425636307": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description."
+    },
+    "AGDYTQURFD4L5KQKK6V3LFYINNQA_1523586278435": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AFNZ5SB2AJKCUKELWKW3MLDL4GTA_1521488853382": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AF5ZHNF7JUUEJZUCIK3PBYSKY2ZA_1536582859020": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AE7AQINA5I2VMVGE6J73WY6GR2DQ_1560566673839": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AG5NZ2GW5TZGJ4JXPY7AX6SV7XGQ_1524058630594": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AHQ2VG7BD2FR57D3PQWM76OERZUQ_1545709446783": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AFIOED65JRXDONO6J7ESFZBBUGFA_1625710800291": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AG3NVK5WGRBS7ND7ZD6UG6EJ6XFQ_1548905944304": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFPMNIKPFZHKRMVRZJX55IUDFXOQ_1559339937786": {
+      "passes_gate": false,
+      "reason": "Review focuses on comfort and functionality, no visual description provided."
+    },
+    "AEYCXYH2RLRBTZUA3M5HZKUELKTA_1565462272187": {
+      "passes_gate": false,
+      "reason": "Review focuses on design quality, lacking specific visual descriptions."
+    },
+    "AF3G4ASEZULYXFG7BSFWQ2IBDELA_1600003908739": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AEF2Z465HJ47NLBPVBREUWVV2CJQ_1561313103502": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGFJGYOIQCPRRMPNVY6PH6VZ24JA_1523842846216": {
+      "passes_gate": false,
+      "reason": "The review does not describe the backpack's visual appearance."
+    },
+    "AEZQWO7IJV5NQPVTPB52MKIU6HYQ_1542862411665": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and size, lacking visual descriptions of the product."
+    },
+    "AG2JJUUIPXGIXLRCY322AMQRBDAQ_1549422443872": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEYKGV4BCBNJZNL5GIZGF4WMKZPA_1536349929749": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality, no visual description provided."
+    },
+    "AEH6XYJU56D2S2PDQADX3ZMIGDQA_1533353453513": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFMKOHHRQFV3JPBFCUTYTTWPR6LQ_1628128150881": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFLSZ6NAM4ASZINY2DPYK6KCE2GA_1577396189731": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHLFOXSTM53DVMPXRCLLOWOTHLKA_1524617635475": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGHDRQZ2TD6UZREA6ZX6IESQVOGQ_1600540387327": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AEWUENDWYK6ZEGLKAZ4T2MYQRQYA_1549081344423": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AEY3Y44Y44OGEHIYCFSDWQ7Z3I5A_1577707518126": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's appearance or visual details."
+    },
+    "AETFATAAT4WING6TS65JGNLXI2IA_1533224572124": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGLPAE42SFCW6VHWAIYHOYGD77FQ_1545419014658": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AEY6XFV3SB6U6BN372I4CEXENRYQ_1549591099679": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHCTZGBT3NBGD4QVIIDGSP7KNPXQ_1527425125747": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFRQCQ4KZBXFBUXCFE7ECARXW3TA_1525823060638": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual appearance of the backpack."
+    },
+    "AHVPUFDCK5YTZGTE7LPZYBCYVNMQ_1567967664357": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGTKNEJWYLTE4M6FFK7CQVENNMIQ_1540225568067": {
+      "passes_gate": false,
+      "reason": "Review focuses on discomfort and quality, lacking visual description."
+    },
+    "AFDW2TOF7C7VUTYY2AK5FALXP6XQ_1545881958279": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHNJ6HWSFOROHZMVPV7SSGUZT4IA_1530163996897": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFMEJM7AQAUQWC6KR7S2RND6TEWA_1588054221477": {
+      "passes_gate": false,
+      "reason": "Review focuses on comfort and durability, lacking visual description."
+    },
+    "AEA57HBAQGJOG463I5FQCPFDXNRQ_1545711145014": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGWI7OD3HCLJHGUZFXNJ6ZMFA6NA_1530674519235": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFO4Z3LGTI4K7I4BBLQTN6NF5C2A_1546191537517": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFQASCGX6P3N6KZEMWFEWKWLCWKQ_1529345812321": {
+      "passes_gate": true,
+      "reason": "The review mentions the bag's size and appearance, indicating it looks good."
+    },
+    "AE2JGVG5XQSA4FZ3RAYS4KTK3SYA_1584451052848": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AHFY4NXIEXTJFEGSO5KY3DZBFTRQ_1560739467315": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AEQ5TNFTGKDUWZWRVW5UXR2NC3NA_1564138777339": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHZB7NTKLSRJPFD7M535OTLVL2UA_1568850738524": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHAJYEP7ITQRLFKAUM4FDJ5YCEXA_1551835486289": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGOMNIURQOPWI6TYZ4HANDSGNAOA_1533891034558": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AEANGRI5P6PS4PS5XG3V74BTEZDA_1567459260955": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AEKFTYU7F3LFZEG32SE4KL5UDI6Q_1526221111896": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AG7X3R33EFKOE6FQIKNXUFAQFSGA_1536628276161": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's appearance or visual details."
+    },
+    "AEVUKONZEYBZNYMT7AFCJ2PAND2Q_1548546084686": {
+      "passes_gate": false,
+      "reason": "Review focuses on comfort and functionality, lacking visual descriptions of the product."
+    },
+    "AGRHCP3K7STJC2MOC34FWLSKKVOQ_1529712599659": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AHCNRWWRT2YNOHMF3P2Q2MBK5DFA_1679509715556": {
+      "passes_gate": true,
+      "reason": "The packs are described as attractive and similar to popular backpack models."
+    },
+    "AEZ6WXP572MOB62FFNSYLEOG65SA_1528993188209": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AEIXMW3QLPZ2RWWQ5CNJR44WD36A_1557803606348": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHAVMSU26DINLFUVSG2RTVWRCJCA_1569461399359": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFF5BCDR5D7IUCACS4NUQTH2EHKA_1516590432169": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AEMLMPQPXR4VJPM2UI3WRX4CYHJA_1541539373041": {
+      "passes_gate": false,
+      "reason": "The review does not describe the backpack's appearance or visual details."
+    },
+    "AFYU6GMKXU4V6O3DRXFHZMKX4H7A_1577074715813": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AHZGT566FFP3OIGTSK6BRJ43ZPIQ_1536966449709": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AECFI4NR5ZYCK3SM74B6ZHJMWYDQ_1577661943483": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AEGWJ3EJKXKL5BNOK7R5L2EAH6PQ_1550636181786": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFPC3JILOHCB72UR7FXUMH4WZPCA_1524511442460": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual descriptions."
+    },
+    "AHTFYUMMRAAJMWHVTH3TFRBEISRA_1576677792416": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGTU377GZB7MPY5VLN4DO3CVD5GA_1526783873831": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AE3VWED2YM7E7UFCERYIBH4CJJRQ_1570558893929": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's appearance or visual details."
+    },
+    "AHHIOXJ6THQST5S4XFDE2S5G3L7A_1587389052551": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGYIJKY4RZARG276XKFRS62FDKZQ_1562682200391": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AFZUEDTQGHXUH5FE7JVNUCOY2XHQ_1590983172996": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, no visual description provided."
+    },
+    "AFGNVBQOUKQQBSMGXUO6Y6GFHMQQ_1646423012788": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AGSQCIEDRFY2F5WXBA23BJQ5SB4A_1546883176251": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEMCKH3ZBD73JUN5SKMCHT6IVX2Q_1553887322154": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AEHORJRLPUGREVKE4OF3PD464JDQ_1537801741594": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEO2AWVUGS7DADVYJNTEFXKX6PRA_1524490713975": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFRNOSYU7OV22BW36SCL3BAVLDZA_1561018218264": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AFDRXVNFMKY22N5ZNU7GYPVFZXXQ_1578789568046": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHQRNFKHRFEC5RMSS26JEDSNB76Q_1562522753176": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AGSNW4TCDLL7LNQGW32SWV7FQXDQ_1573697198686": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality without visual description."
+    },
+    "AHGI6IYGBYIOPMBOGZAH7T2Q4THA_1563148724164": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFEKNFUDXL2G2SVXHI32XIXS5YZQ_1535551444463": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, no visual description provided."
+    },
+    "AHBXJ3X2M7VCIKE7XN7GQ62QBYYQ_1548867206812": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AG5LQPI7FUAAPILLGP3IOHFX75QQ_1519254956043": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual descriptions of the bag."
+    },
+    "AGJD36R5ZZ3TRJTLJZLVZGITUJ6Q_1522627796332": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHXOSZEI73MKLMBMUVTSMJYVXGLA_1525957382602": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AFVETKGA2BIZLB53HSGC6SBFMLOA_1558993298976": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, no visual description provided."
+    },
+    "AHQU2JPK6O5GKNSCSZANULAV3R4A_1524498678464": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AEVQ4CGABBDPP4FDFAJJHDSZJSXA_1527213393829": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality, lacking visual description."
+    },
+    "AFGAL3C5NGQPZY36S7RWQ7775TYQ_1569872284621": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and does not describe visual aspects."
+    },
+    "AFN4CIIEKJEJG7ZSK5EJYW25AD4Q_1523452005315": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AFW4DVBVQRSMXRMVCKM6Q2NOX3MQ_1546361803348": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AE7Q33A6PTNMLHIXKB2IBDCWWMIA_1533680182385": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AFU4HTCG672MHACLOTUZPNJ3P4QA_1526585687671": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality and functionality, lacking visual description."
+    },
+    "AGTZDWGNOTTOJRROEQMOSKF6SBZA_1540793015551": {
+      "passes_gate": false,
+      "reason": "Review lacks any visual description of the product's appearance."
+    },
+    "AFAKIE4SLOO26YN7R7PSS65WVT5A_1616266579282": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the bag's appearance."
+    },
+    "AH3IBXHTYICNO6CXW7ZCCZ46SX4A_1533056267110": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFKP4UERXMCHAEHVD4LSEUIGQZBA_1521397543755": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGNW6ELQJPX4JZCOVOVWFOJC33BQ_1541184565167": {
+      "passes_gate": false,
+      "reason": "Review lacks any visual description of the backpack's appearance."
+    },
+    "AEQ5AM5X2EV47IB6P5BYGF6FK4OQ_1539408413870": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AEU7P4PQC4DO3QJNVRWP5XPZTYLA_1554483396682": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AF7KTSFNNXB273I45TTDEKX74UBQ_1568687106801": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not visual aspects of the product."
+    },
+    "AHGG566HY4CTUFEQBWU4W2RO3WBQ_1577903385295": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the backpack."
+    },
+    "AE24ZOYVYJPXWALLJDRVXQB5DNJQ_1527451477891": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHVXFUCOELXOBRQJGUY7QQQN2SRQ_1530108132542": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHRW7BATJRX2YSURMSQN4OAKHOPQ_1599575335062": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AFEYY4ER253MMYMYTVWGQLUWXFGQ_1535207444933": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, lacking visual description."
+    },
+    "AFHNURUAFARKEMY4H3LI2ROS74WQ_1532908478606": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFOU6Y6VFETN23LL2RBNLAT5XHVA_1524055144661": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFGNW74U5XW533222WM4ANGRTR4Q_1525148717302": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's appearance or visual details."
+    },
+    "AFWIKREPUT2QRQWA3TVSJYM4TYKQ_1527715629541": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AE6L6UHMHNV4MLG7GAE5H4NP6DVQ_1517553543949": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AHEPB4Q24453XAWQQTMAMKXUX64Q_1537737433625": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGAE2X2NEPTEMTP5HJ43JUFQUTVA_1535515877159": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AG3UUPDJM2773KXG3XIGEQQPYETA_1554240084052": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AETB2Q3RLL2UUOF6IE6YFRUJJ65Q_1566505795923": {
+      "passes_gate": false,
+      "reason": "Review does not describe the pack's visual appearance or features."
+    },
+    "AGMNPQHZDVHZ7HPDMVMJKPJL3U6Q_1526753725336": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AEXSQYH7YJPMOI3OW6DJMIHJEUEA_1523466350966": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AERMPJQNKDYOT2PG5Q6YYSHAA7VA_1525091185483": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFLRWRZ4LHMHM6KCSW23EZ5OU5NQ_1526927191011": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and organization, lacking visual description of the pack."
+    },
+    "AHE7EN2PPR3WL3PJKLD2H4YGOVLQ_1591202634145": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AEFP5JSABXGBNXKG3PYWJKKPDWIA_1521957488781": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the bag's appearance."
+    },
+    "AHBVO27X77QKPVIWQ6ZQUWMZMFFQ_1538141355462": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFZMJFXVYL5OAAJP2OP7DW63T2PA_1614740963156": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHKA3B5DG3CUFNC4SM67C3C7KJTA_1533696464874": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the bag."
+    },
+    "AELXX6ZWZTKEGZLQLIUBVR4ERGSQ_1533585762364": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AFABMW73TVOXWA4FJYOBMUI6KPTA_1537721915135": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AF4IK3NDBAU4ANDD23ITRWNZ2D6A_1576185496389": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AH2NVEPJYASXCUA22ERQ7UQDL3BA_1521987865232": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the backpack's appearance."
+    },
+    "AHYVRBWKOOXJUKUYIOIA2UKGH6UA_1533836743633": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AERHN2VFVAZ7CJB47R5HU5LGAJZA_1567970030643": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality without visual description."
+    },
+    "AFURPKXLHSAUKVEOVWTLPPG4ZE7A_1516329719772": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AFQO5FXNVEWOSM35UUPTBWFX6KGQ_1561085497641": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, no visual description provided."
+    },
+    "AHLYUKZB4GW2SDMBKHXZD7NEIJAQ_1557953289873": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEVXM6MY4UTL4XCKPVRWEAGRGK5A_1523384330910": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEPTXNSWHVO5LANXZD54NEUIOEYQ_1534359929289": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AF6YZDMU3EV4PFZQYYS6JCD6YKYQ_1533612233352": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AF5REURGB2GVUKNI74G75M45ASOQ_1551754342648": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AHV45ZBXUYJ4SILOGS2W6Y76S3BA_1522811924594": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and adjustments, lacking visual description of the pack."
+    },
+    "AEONL2RUHEKKVCU44SIYDWJYF2XQ_1520260743468": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AE5NW36WCHUR4HWLPGYRFQ7Z3F2Q_1524172835804": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the bag's appearance."
+    },
+    "AGHX5GRCSLK4HZW7YF65AUSG4FNQ_1607293272952": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AF7IW3BGGQ4M2BGJKHRE4CROGHXQ_1546910878529": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpacks."
+    },
+    "AGISRHGU5GPOXLTITRSMEEFVWYWA_1565687839788": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AHSUZXLTUQ3VB2APPAPRCHWCCXGQ_1657571699252": {
+      "passes_gate": true,
+      "reason": "The review mentions the design and includes a visual reference to a picture."
+    },
+    "AH33L3HU4JQUOLJTGI4IRAGBEK6Q_1547364926812": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHS3Q2A4Y4AJB3S5PRAMVUN2HMOA_1549762906043": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AEB7FRPBAP2QC2JFAXK7S5T6ULLA_1537424552941": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFP5HADFGBIHOECECGDAUJQZXRKQ_1570653305374": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHYQ52XT6O7L2KABNH2WBHKLVVNQ_1530501290482": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AHFQ6SNJLV6LF4SWNO5UVPPENVCQ_1532590720367": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AF5LSNUOW4MGABIWQTMK44MM6TSQ_1531327441123": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality, not visual aspects of the product."
+    },
+    "AFGAQPRXWIZIVXVDZD5S6SVOY2EA_1576109458510": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGXGXKNQUZVYT3LKIUUUF3SDZH5A_1572538384386": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AFZSOQYFIE6AZF6PG2MAAX5MHMKA_1567307867806": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and value, not visual description."
+    },
+    "AHMNQ3QDMJ4HO2B27GV6EPEGMQRA_1562128988511": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AH6ZHLCYJNFCR3FMDKKFXZLTSOOA_1571691330397": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and weight, not visual appearance."
+    },
+    "AFTT7OTXYULLNCGVMMNWOYE6CZPQ_1564191122346": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFY3OOUSFIHAYAUSP7V3DLSFQKWA_1579458389588": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AFKPTSPPNXQ6QB5H3AMWIW2ZPJEA_1592172556755": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGSGZNMTYEFVRBYUKIBKMIWBGPJQ_1563103444116": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AH3644HKZZETL3XOD5TGBKSPDVBA_1538581557493": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHJS3AFIDNFKAGNMIGMZQCAFZVIA_1535830251040": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AEZ737SB76RZBP2YYLAS3SPZQOMA_1581524801200": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and construction, lacking visual description."
+    },
+    "AGBRE6SBUGNHRZVAJ6MZPDNQLHBA_1674808442715": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGN762NILUXI2XVRU34AFFKVPPIA_1572191501513": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and issues, lacking visual descriptions of the pack."
+    },
+    "AHJ2EB4KNI7VQY3PEOUAX7W3AHPQ_1541734603597": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEIENQ3VRDNXIYRZXPH4VKFSKFJA_1564306955398": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AH7XQMJOORO4GEUJK6P2TDVYAUVQ_1535235636542": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AEU35ROYPH7BW25IVL6O34LJK3HA_1515486579243": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AFUFH6CNBJBWEC4YRGUXGSQVCWHA_1538771359044": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFQW27NLYHKGNGOHASPGECN76PKA_1534540390566": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and quality, lacking visual description of the backpack."
+    },
+    "AH3JPBRPN2E6R5ZZAJW7SCA3YBFA_1524341436417": {
+      "passes_gate": false,
+      "reason": "Review discusses functionality, not the visual appearance of the product."
+    },
+    "AGAGLJIZHEVYKAOU2DZTDAIPCC4A_1560383251409": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHOTJOBTKR7F4V67UKKY3RZO76QA_1524704796007": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AE46UATW5SPLZKX6DCMWYGIAESUQ_1588480801888": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AGML5ZUG7OLSRGVDAMKMRAJ4UAOQ_1582812031827": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AELAKMN55SMVBTVY3WPFBG537GCQ_1555371688554": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFRVNL6W2S2FFTFOSECECJUSHDTQ_1537854156363": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AGKIWK53KJZMQ3R2ZGM3CJ3RBGEQ_1554618280948": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEMRH672NUJESBHQ4B2RRCZVNZXQ_1519513541506": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AGMD7Q4ARJUM3SQ5OWA75UPYVAMQ_1559930252495": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFJ3XRSKBEPWWZHZEPYP74DJ6ZJA_1533655359545": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AFEGUMNDY6LAWNHPZBBGG54EZ73A_1569483122801": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not on visual aspects of the product."
+    },
+    "AH4EDOA2FIIRDPJVWCMF24AUP7ZA_1539013337797": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, no visual description provided."
+    },
+    "AF4UUTVR7CPDSHHFJGMT6NKQQYPA_1554570669773": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AEJUIAXLSUU7PB35T2N7VXKNSSNA_1527788218869": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEIHTHCEUI4AA3WAGVHQ467CKA5Q_1548904196566": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AH4J3LLROXS5UTW5K2TTIF6GCD5A_1549304756655": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGHSMZSWSQGYCSWQRZOWH54X4K2Q_1528313521876": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AFO6C5ZHNNRYGOSKXRIH7QPWCEDQ_1527872342083": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFKETB5AYAGFVFOLKU7MSOVZMVUA_1556814440041": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AEIXZ4UJLW4QLO7JGXB747IFGYBQ_1544839659773": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFAZCDFNGTVG5QT7GZ7PO7TDAMQA_1523037857672": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEZKZEATNG75DOVMGGE4US4DAK3Q_1548463226013": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AEB6PBM2BUWEKM2LXLXR6RBTDV6Q_1588607535441": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFB6WYYAZ3UGHCGK5FGU5GT7OB5Q_1600199551956": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AG5ALPU43TQODT3L6MWWY5B3KGNA_1534920790142": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFGFQ3HD2K7A3KPKAKSOXKAP7V6Q_1532537438721": {
+      "passes_gate": true,
+      "reason": "The review mentions quality materials and well-padded straps, indicating visual details."
+    },
+    "AF43NNPIKK2Y4GYVZ3RRQHQXK2ZQ_1608321571243": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGVCSX7D3QP2LE6WRQ4DVWLLLBNQ_1534548607316": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AF3QOT76IUA4OYASFUUT6O7SI2JA_1522376058235": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and design flaws, no visual description provided."
+    },
+    "AEGONJACZIPNWX2CQYDNO3G7ROCA_1534619589062": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description."
+    },
+    "AHXOWFSQHH4PNFA7DUG66V7Q7BFA_1520974573519": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AF7RFOVQ6K5VBN4X4Q43LZWNHR4A_1519439652156": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHSSKP2BYSVIMDVO5SXKEE6IWRDQ_1515175151369": {
+      "passes_gate": true,
+      "reason": "The review describes the pack's size, pockets, and materials in detail."
+    },
+    "AGONLB43NDGDMZERLX2G6NDEA4OQ_1549222438099": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AFNA45TTCEIRF5NMQJI6B34AGC7A_1554224599882": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the bags."
+    },
+    "AEFXLCJJOMPBQ3NXOS4AUOAHOFHA_1529978824732": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not visual aspects of the backpack."
+    },
+    "AE4774RUDGM5GTVVMIJZWD5CIH7A_1522795222077": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEGLYFSPSA7D44WGMLKFTYFLOKVA_1556741664905": {
+      "passes_gate": false,
+      "reason": "The review does not describe the bag's visual appearance."
+    },
+    "AGPPXT63LH3BEGRGRAXZXHGWTDZQ_1536692887327": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and value, lacking visual description of the product."
+    },
+    "AET4OZLEU2VKL725KBCP3HH4BYOA_1529466940343": {
+      "passes_gate": true,
+      "reason": "The review mentions the product looks pretty, indicating visual appeal."
+    },
+    "AFTF55DHNWJNILAPANVCDYKTRTQA_1524672206044": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the bag."
+    },
+    "AHJHAMFL6A4BVNDWY4WFNXOEEOSQ_1523880381627": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and personal experience, lacking visual description."
+    },
+    "AG23T7PEUXJNG7LZUKM5W4WQLLYQ_1534180631232": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, no visual description provided."
+    },
+    "AEDAVZKC6FPH2E3RBJ6AY4DJOWYQ_1565828623273": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGGKJ435ETGBXCUFTTJPZPNMPWDQ_1552418804584": {
+      "passes_gate": false,
+      "reason": "Review focuses on size and functionality, lacking visual description."
+    },
+    "AGBOQXCZONLTIIEZE2PPVOFHPBCQ_1521854838192": {
+      "passes_gate": false,
+      "reason": "Review focuses on comfort and quality, lacking visual description of the bag."
+    },
+    "AGNAZNG2R6D36MMSXWDECTA3PBFA_1550612423959": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AGHUNTWYU6KJQT37PJTKIL6DRDIQ_1559258919828": {
+      "passes_gate": true,
+      "reason": "The review mentions liking how the pack looks and its storage capabilities."
+    },
+    "AHO26N77R3GSGQDOYQYC6LTKQU7Q_1526141837495": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, no visual description provided."
+    },
+    "AG3WD6IEAR752VIWCRUILPJ6T4BQ_1571189453317": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AHGKKZP5HIRL7DRL7FJGTLDKNKMA_1546024689962": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFLTDKMTQPHIFEFBA5RMJ35FWAIQ_1581749105715": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGHXFUOYXKIWPLFGRAEA63YNLM6Q_1549845228324": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHVZRQ7RNRP5CFPWHLB3KAVWIEYA_1535037694589": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and size, lacking visual description."
+    },
+    "AHMFOEZKKJ3EIZ4UPUVMAAZ2CD4A_1537296655840": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual details about the bag's appearance."
+    },
+    "AFI6QXOK5T7GIIAIW6JJAXM2OFXQ_1529520760655": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AFDJFUQU56GIB2G7W7UK7CZ2OGXA_1574722125759": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGYYT6MRPICFAU5XXG5GLG6JATFA_1684889225572": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFQRTCZT3C2GNXMZOKVBJQR7PXDQ_1521874421475": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFMVJBVIH3P6GDH7GT22XG6UAX3Q_1539247715520": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AERLG5ZZXHAFEFF7NH3DVMJJRMDA_1546104209862": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEBJD5PQHDTSXY52AOR5XDGFCGBQ_1533626735363": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and design flaws, no visual description provided."
+    },
+    "AGKX3QLKNNU5OFZ7EJSAEZMWMSUA_1540756007425": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGZBOX7FHGQI54UXL6PFFLGZCCQQ_1583271848238": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AF7XFLSFRGVXQFKON3CYB5ZTCY5A_1575515961389": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGCSOOEFYX5Q5GRZ32VZAVX2JG6Q_1523232228779": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHE3KC2E6LY5XM74S3BBFCK5MTRQ_1577292524104": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHOYR7RV6QD2VHPLQWWEHREQ3DHQ_1524613139970": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFGUORQMWZF7IHVK2JMZ2EZN6S5A_1521489992536": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AE53PPK74WRMIJNA3AKQ7TQYMIHA_1535052761336": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual descriptions of the pack."
+    },
+    "AHZITGDHT6UDRNVT7EGJI6MW2QIQ_1537870137141": {
+      "passes_gate": false,
+      "reason": "Review lacks any visual description of the backpack."
+    },
+    "AFMLDZ3ZE7NAQKR5ZXBHZSKBKKKQ_1555783546005": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description."
+    },
+    "AFDC6NHE6S3SCNVPQBFDY6CUWLQA_1516235296950": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AGYXFOLB7LHZXDMJ3FPZFWCDMKNA_1576626212391": {
+      "passes_gate": false,
+      "reason": "The review does not describe the backpack's visual appearance."
+    },
+    "AFDCZEG6EO3YFJ4O3CU4JJ2RBOSA_1539232704309": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEZCVQ5WSO6AV6W2JTGZN3MINW4A_1565820578211": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance."
+    },
+    "AH4KJMNSSBUKVQMTEY4OASLEHXIQ_1546445926746": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the backpack's appearance."
+    },
+    "AF5HSRIJLRPWWBDH4TGVRFUFOPDQ_1527691972596": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGBBRBYDSDLCBJA3E7IBMLQDL33A_1568682466377": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHROXFOBSAJ72ZBSGYWKA6CXVTUA_1538155093004": {
+      "passes_gate": false,
+      "reason": "Review lacks any visual description of the bag."
+    },
+    "AEPROVA7EXSFHB3X7AX3T7XKKSDA_1535556317998": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AFR2DXPGES2TEQQHSKNU4OBKOZ3A_1596488038203": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AGWOQJ2ATADZWYUJGHN7VPZ3CPKA_1583255593464": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the backpack."
+    },
+    "AHVV374XJFSGZL3MXE42Y566RAFQ_1567215418966": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AGVCP4LWKKEQXXPJH2BFGAO7L5EQ_1555513469634": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and issues, no visual description provided."
+    },
+    "AGHW6TGODMPD7Q3KWI5HLY5XBSIQ_1578789478311": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFELE47YR5WKTG6J34FWVQJ22IQQ_1588547460428": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AEIBHIIN7LIN3CRFRB42JFGB2FMA_1541119440280": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AEO4XFEDVLEBAXBTW5O33ZDEVS3Q_1588290295070": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFID45LD2K4QYXPXQ6FL665U5K7A_1521465773358": {
+      "passes_gate": true,
+      "reason": "Describes size, pockets, and quality of the product visually."
+    },
+    "AGCXH3C7VCEIOVMALCV2M2GICRLA_1525104910238": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AH5TVOCQCTNHOMDBR5NVIAZZE4JQ_1540302266275": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AEPGEILU7ETBNBGCYH3KWE2O2ANQ_1606376070303": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and fit, not visual appearance."
+    },
+    "AGZRZ3OL77D7VCZWYRJKCFVYJAWQ_1520470130581": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AFVVZGYRINWBPELXLRX7FQUWH23Q_1531250800732": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality, no visual description provided."
+    },
+    "AG47SNLICMZBV4PCV6UJ6B4JWFFA_1590022529907": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AH2PS7WZLNJNV7Q2HUORFFTGKKIQ_1547901009223": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AEZREGMTNTEX53SUZBYJKYDDMGJQ_1520387712723": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability without visual descriptions."
+    },
+    "AFAEKUBGQTNM5TF7HE24BETKUTZQ_1547871287953": {
+      "passes_gate": true,
+      "reason": "The review describes the bag's size, material, and spaciousness."
+    },
+    "AG6FSMHH25PSW5XARYFMHLXUY2FQ_1524702447481": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGUDXY74G4S6M4GEOEKA5J3GCVCQ_1576700111084": {
+      "passes_gate": false,
+      "reason": "Review discusses durability but lacks visual description of the product."
+    },
+    "AFUEELRL2ERYXMRA7VQDK2VDIDEQ_1537571065519": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or details."
+    },
+    "AF3QSOOBSWUJV4M7C6ZQILYRNIPQ_1534359934117": {
+      "passes_gate": false,
+      "reason": "The review does not describe the bag's visual appearance or features."
+    },
+    "AGPTWXW2BF6IHCPUI5WBXH3KDV3A_1563801041189": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the bag."
+    },
+    "AE3GARWBZQ2PH6LPYAPIJNXGEJPA_1577509849110": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AF3AI4D54KUI4WJCX2AS6ZR5LFMQ_1536639649178": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AE452GUFRGQ4A2EZG3ZJFTA2HYTA_1571723893352": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AH27TLN5ZTQ3HAMW4S2OYJC2GHFA_1550187416385": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AEBTVFAO67GC35AEJ4DEKCO7LTYQ_1550209405337": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AENUQO45GHEUPOD6DZGKLLAVNAVQ_1630162698307": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality and functionality, not visual appearance."
+    },
+    "AG3O7SNTZNW22SVJYKZMHA4AGTTQ_1556662919738": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFUFMJF5RW4BAH4E3O6OOT4HMHOA_1622223625593": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AGNSNICVB4GMM2N4QG3LGBATUYAQ_1560364896935": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and size, lacking visual description."
+    },
+    "AGBHCFZHQRRUW3KYMZ2NDNZ52R7A_1554879567706": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGD6WP6WPI222QWVNHJDV33SVR4A_1564345905384": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality, no visual description provided."
+    },
+    "AHGEWTNJDJLLAPOAVBVYLUPMMQEQ_1527729880536": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AES7254GKLYO46DLT4AR2H4R7RCQ_1525089549407": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AE4U52PNSCAYVSXMFVZWRTLOQLRQ_1548862556913": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AFDFRXPIYUT5L6FK4ACJJFOBS6YA_1543377347876": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AG2A2B7WWLDEXCJV3O4D2UZQG2IA_1565492831604": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGQQMJLJS3EYWFYLCSYQ6D2JQU5A_1557712436081": {
+      "passes_gate": false,
+      "reason": "Review focuses on comfort and functionality, lacking visual description."
+    },
+    "AFIT5DA5HCAD333GTZAI3HSSVKIA_1529858061395": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AFBB6CYMQNPY3RGCIJWKMRUCCIWA_1532510888425": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHIKOYDJYEFA5FKFTGZXJM222FIQ_1594847210065": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, not visual appearance."
+    },
+    "AEWKBUGGQPF4OO43TOROIFMAYE7Q_1674087020677": {
+      "passes_gate": false,
+      "reason": "Review does not provide specific visual details about the product."
+    },
+    "AEZBM26JZSHN2KJMHWDGKNR2XJIA_1534248742117": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFN4TXOGF73KTMWMXTZZQ5L3E5VA_1552949333966": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGDXISKLXJXUQZ44YMOHAFHHEYUQ_1524330240298": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEZII4AUV2A4DZPVJBX7OYREIOSA_1564595368547": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AESMAQOQG6QHDPDVPOQDMQEZQKZA_1526359125379": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AGNDID74DT7ELHCK3FXYEUHLZFMQ_1675392451670": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AER3DDGZS5ZAIYYCXYFYLFTNG37Q_1546834536179": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual descriptions."
+    },
+    "AHZI7EVVXATEP5UBXPLK57HKIWDQ_1631390703936": {
+      "passes_gate": false,
+      "reason": "Review discusses functionality, not the product's visual appearance."
+    },
+    "AEGEIIIHICRFDK4RBQUUTBRKRPHQ_1541990011070": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEQETUB6RY5X6ORBWXEOZHNGKDAQ_1535321841602": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AE3FJV3IWYM6VLCA2UKZUOVQ7GXA_1536859726768": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGCUK2TU5WYS7PIFU7RMAK5L2QJQ_1555683367355": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHNACGTHOEXPNOFINSMZ2DR7M6RA_1628568328759": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFFPU3RRPKLZIEU6LIEPTJWKZAWQ_1523842065456": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and features, lacking visual descriptions."
+    },
+    "AEKAOJAH2BJXR7CSEWI4EMJMY5TA_1576713130050": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHBDXZYHJ2PYQMXIE6X4LWKIIMOQ_1554752414723": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AEXAPJ4SWNP3OHTCUGRYYBJTACWA_1601393481060": {
+      "passes_gate": false,
+      "reason": "Review lacks any description of the backpack's visual appearance."
+    },
+    "AGNOFEBU4LWWMLNFU3KNOCV2SZUQ_1552237363837": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFKP5TCS7YF2CE53ESVMVIQ6KEIQ_1528309592856": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHDYZZ53Z37F4LX44FCTO4XOCWUQ_1572055691528": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and function, no visual description provided."
+    },
+    "AGL3CD4XVRYV7QZP2GRTA652NLCQ_1561589333436": {
+      "passes_gate": false,
+      "reason": "Review focuses on size comparison, lacking visual description of the backpack."
+    },
+    "AHT7KXVAEJHB3TE7CMY4BZB7ZKWQ_1527609402257": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and seller contact, no visual description provided."
+    },
+    "AFMKE5UDEEUXMHV7XDFX6PTFMYQA_1576499665611": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the backpack."
+    },
+    "AFKSJSJIVJDKUR7QRPB3GTAWC2YA_1552518407337": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the backpack."
+    },
+    "AFO565ZP5GZDO3A76G2DLMUSDO6A_1520753311399": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AH4DCSIFHCLBZN5GRWCPVJIKBICA_1575559305053": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AFXIHGCQIG3XCNMDCUF3HL5VXYNA_1561046200663": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFOWG6ALFHRQZJ2WHEAUOMZWRYNA_1569815789161": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AGL7IAG75CVXKVLQO2E353IHWUTA_1538094277212": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AFRVL5KCZ2AFUJX46TTMJFRV2WGA_1621448940476": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AGRXKBN62QQNRNZNI5IOW2PUPP5A_1523145615511": {
+      "passes_gate": false,
+      "reason": "Review discusses size but lacks specific visual details about the bag."
+    },
+    "AHUTKVFPEEECH3S3DG3TGIRSOTYA_1539922931863": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the bags."
+    },
+    "AHE6CEU54OO5BOSHOX2Z2AZTXODA_1546478508006": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHHAIOPQWPEZ4UOIB25XPOP7GHOA_1526976937342": {
+      "passes_gate": true,
+      "reason": "Review mentions size and compares it to photos, indicating visual content."
+    },
+    "AG376VSQGKDMEO266GVDIIW4P76Q_1538946656660": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFIDQSQQH53XYNZXUDC2K7CRGTWA_1576289724711": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AH72SJ32N7QYZZM5TJFMULKJWCZA_1561084675938": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AGZM4ZXILOHNRPN7OLMZANQ6UGRA_1553223812823": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEEOKJCLEGDKNQOOJEN7IHKMHBTQ_1577137288659": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AEHDPVVS5XWDWSL5DKGCNQOZLQ7A_1604467696795": {
+      "passes_gate": false,
+      "reason": "Review focuses on material quality, not visual appearance."
+    },
+    "AGSTUTIG5KRNWBU7AOCAZGE7WCRQ_1536495564902": {
+      "passes_gate": false,
+      "reason": "Review focuses on size and fit, no visual description provided."
+    },
+    "AF4GHJLVZQ3TFEKVFNUINTHAEO3A_1530059821050": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AG3AXN4FJYL24BAP65W4NXVCSJFA_1609280735612": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEDKGOHOQTCXU5D32LSEJBC4DB7A_1606346375586": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and discomfort, no visual description provided."
+    },
+    "AHXWCRPPM22JGPSGFWL2L6PSCUUQ_1539885353508": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFPNMSYV2HEIFQNV3Z3MQYFR6NBA_1559559151375": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGVZ7IGGWC5WTOLP2RHMVPY2W5SA_1529621726024": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHAJRUYSEQCA4NMZSMR7MY3MAOYQ_1583762006783": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description of the backpack."
+    },
+    "AEQLMF7MYHKKGIATSDEOMBNVI3WA_1530566151664": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGG3XKNQ7CLCCGWPY6LEMY42JEVA_1543252947791": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AE3VUOC7ATLUMKA7O6AYNO6H25XA_1609137759206": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's appearance or visual details."
+    },
+    "AF23T7HLF2SEMKPGIKPY55GW362Q_1537073664392": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or details."
+    },
+    "AH4KTAYDHHPDZSTCPGWDCND7D5RQ_1576529104619": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AH26YDLTZT3SHDX4WRPDTEAFX66A_1535018482928": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AELLX42DRMCNNR7ENL6QVJ7CHWBQ_1547964764758": {
+      "passes_gate": false,
+      "reason": "The review does not describe the backpack's visual appearance."
+    },
+    "AH7KVIM7A7UTFNESJPORAOPN6HPA_1545914671441": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's appearance or visual details."
+    },
+    "AHNLLLRFUMGMLDK2GREZBIDUU3EQ_1521937228792": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHXGAGDFELZZIAXZ6JD3KXGPDUBA_1536605842715": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AGITB2LNL4NW332CZQFCF3UJB3YQ_1555020550323": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AEPLQBIPLSZFBP3RFHD5UT5GCR5Q_1578140183306": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHS37FV67F4QW2QJEYLHZC2TY6FQ_1578923996151": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AG7GKDU3QARY2EMIXLHPNPWF6RBA_1527011129599": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHCBY7AT2X3EAF3RIKMG6T4XSPWQ_1548355306278": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHQAI5LZ5LE7UVF2KVOP62LHOWOQ_1622484059741": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEYAAH2SM2LJZB7FWYQRL3OI2RHA_1556500698078": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AFOKCQOSTAC7QDT2QVPKXX4NFWBQ_1591831140795": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and quality, lacking visual description."
+    },
+    "AHW4NCWH7VMXH2XH6WOX2V2H4J6A_1552603859280": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's appearance or visual details."
+    },
+    "AETS6JSPGTC5XHWSYG5ST3ECVT4A_1529194049782": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AG2D6MIEWR3BKOXC335HRYDEPTAQ_1563149869266": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and personal experience, no visual description provided."
+    },
+    "AFYT6TX34SFAEWHFKUSRJBVUYUAA_1518200595203": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFZXPPI3QGMKA2CGLH5NUEIU4MAQ_1561343481176": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AH2AEET5A3XSUUHO3YKYTDVMMMZA_1567510362950": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not visual appearance of the product."
+    },
+    "AHHHTEZ5EAJFJXCITKFMRNGPPISA_1549051553454": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHHQQJAMH6VMG7TORZLH6K734E6A_1550081276628": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGZDE5CVZIUXNTPRLA5PXIRKIVWA_1537323016451": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGZKAK47PZDR3LXTYRL47ONKALWQ_1563198569968": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the pack."
+    },
+    "AGZU73QHIRJBRCUIFOSQFJ3ON3QQ_1542642310617": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHOTRZKAL6RZ76VF7EEXO5BLLLZA_1574570193927": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AHCPLSQU7BR6ZAU6AGD5ZBFABDQA_1610825403968": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or features."
+    },
+    "AG3WBLH47SEEW6UXJSMNFPFJ5E3A_1567858239993": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AEQPS3C4JESOF3MHPTLUQLGEPYHA_1555300206959": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEBZ7RHHHVST45TO5ZFFCWU6DQKQ_1554573471586": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AHRIMV2ONF5VZ46LBUDQ3TMHIWSA_1527004741211": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AENJ2YKEO4U7VNZI64F73K4RR2UQ_1564347709107": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality and functionality, lacking visual description."
+    },
+    "AH53RXOAIW3PTX33GWLQGDVIVVZQ_1524352738553": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFZ43TOFSHWMMH565UVIRXNFMMLQ_1575488189589": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description of the product."
+    },
+    "AGL3L77T4TWCUE5EC72MVYJBAYGA_1576200616646": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AEAZWUBJSBXZOZDXHHWWM462D74A_1539470052216": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AE7CI5GVV6X6423WBST2W2VTEOGA_1552941246206": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AHBASFIMQG35PVZ4L6EHAON3GZFQ_1539365219709": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and build quality, no visual description provided."
+    },
+    "AEIXFA4XRVIAFPEPINJO542JD2AA_1567543824396": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFECYWZDC3GJN22DGA6KZLJ3P27Q_1582055308978": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHVHGHYGXTRLRGVVMQL7A2DN3PTQ_1562781559936": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description."
+    },
+    "AFX2NJFQLL5GZ7N5UPNAI5OWGUAQ_1565751081108": {
+      "passes_gate": true,
+      "reason": "The review mentions the bag looks impressive and has minimal purpose."
+    },
+    "AG3S6JQYLZ4FGE4F5OPK7JHNADQQ_1536246033874": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AFDTQEI77LMBMXE3HTZQALSR6XCA_1578284378155": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AEVGMSWH6T7GS3E366R37L3RNQYQ_1520390250198": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHTQE6MGBGNW7FASNFEXJVFCMBRQ_1547660095900": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AHZBUSGKYGQPSFC76STJSXIMXKDQ_1520886257566": {
+      "passes_gate": true,
+      "reason": "The review mentions the backpack's color and thoughtful design details."
+    },
+    "AHYH5OMU4KGZYKV34X7F2DHTB33A_1518241614689": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AG4TU5RXPIBCFTL5F4MNV4IXCXLA_1537797753596": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and comfort, lacking visual description."
+    },
+    "AE5PPTBKFPL7IEYP7Z7RDNMQ2JLA_1571160566407": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and discomfort, no visual description provided."
+    },
+    "AF32UG34YHQ2L5ZJN4FTEXWQF24Q_1527726344633": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AF5D3E4BA5RGIXE2CUR7IZZDQUTA_1549762998744": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AG337KBB4BAS7RHVMJGGWAAMRZUQ_1635182097944": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AEGCIU26ZWCHG6UB25H7QZNKMQBA_1526592237614": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AH3JQO74GUHLSJAXYR4XLMXNK3DQ_1538612361178": {
+      "passes_gate": false,
+      "reason": "The review does not describe the backpack's appearance or visual details."
+    },
+    "AGLONUK3IXCKIAPWPVGXWPJ23XDQ_1538847680954": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEEETKT373TUWS5NVECCITB5HM4Q_1558193179445": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AHAOF7LO66ZS2S27NIVEJ7IVFNLA_1545682423470": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AHIVYQFIYB76DG4A6RRKIC5CLSTQ_1551708936444": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AEQL5QHCM7ENFZCTYJMCVYOUXIAA_1519782585935": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AESBFJQ2MNGZ2N5E43T6PJ7YY47A_1525460727601": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AGMRXJEW4LPB3EDX4UAEJO6D5YWQ_1556635860804": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AF3J5GBKEZU2XBGVC456YNOICO5A_1580239898624": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AEVA2WG3XZST526R3SXH24NPCRPA_1559413953775": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFJEIEURWLE23VO2Z33UKBCJMUIQ_1583546595472": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHGH6GN62XDY3EWZ7JGVFWDAVSQA_1574790281531": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AECTCK2YAGICZA2T3UKSAZY3Q3WA_1521557355217": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGCTAPV432UCLTIXKVFOL4P5QFOA_1524419112144": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AHPLZNLXKKJPK5KAKWLCPBCM3SGQ_1549571573950": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and storage, lacking visual description."
+    },
+    "AG7UTL6CMRSI7OBOVRJ2AER5LXBA_1602442312936": {
+      "passes_gate": false,
+      "reason": "Review focuses on strap functionality, not visual appearance of the product."
+    },
+    "AE4IKLVL3VDCABSP2NV64QWRDZQA_1545074208147": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the product."
+    },
+    "AH7LLERKRTRPKNI3K3RNSV7HVREQ_1529349218326": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AH6KEWTD6EHNCYRUWB4AJBY6ON7A_1540505189335": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the backpack."
+    },
+    "AGMDB4HVX7LBQI2WBUEEJIN77K3Q_1560599012942": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AH3JNGYDYZBC75B6BZJADUUUGRPA_1523721559712": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AENDK66SL25H4E3NQL2NXCF56NTQ_1540835563042": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and issues, no visual description provided."
+    },
+    "AFSH3EDDZQGJY3JO4UL2YGSNOBSA_1543532460365": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and functionality without visual description."
+    },
+    "AH7GHQKMXM3IC2TK4VHNHWLH45OA_1526581233406": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AF3B5RYDGDLYCYGWYYQGOVBJKA7A_1571185922697": {
+      "passes_gate": false,
+      "reason": "The review discusses durability without any visual description of the product."
+    },
+    "AG7N7WCQ7RDA2DS5L7GTOLHVFQJA_1528961547246": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AHG3GHXUDGOWK7AGZML4WYWMUATQ_1567352633693": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AGQRVNGIYAXGKWIJJGDD5AGD7LAQ_1522787826824": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGJ3DZZNTE3PDGEFMV7XFVRK3UKA_1557056111831": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the product."
+    },
+    "AFRIATHROVFZXDFQAX6WOJNRMZAA_1553226273048": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality issues, not visual description of the product."
+    },
+    "AESYMHM3Z4OINOVQNOAXEH6INRNQ_1528893231382": {
+      "passes_gate": false,
+      "reason": "Review does not describe any visual aspects of the product."
+    },
+    "AHNMNMGQZUGQBQTFEUBDK3Q6BDLA_1533639014169": {
+      "passes_gate": false,
+      "reason": "Review does not describe the bag's visual appearance or features."
+    },
+    "AGJGYZM57KZBJZNKW5QMJH2VQLVA_1605707146264": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AHBTEMX5IQXMV3DYMXVQHT3CXNFQ_1521308490273": {
+      "passes_gate": false,
+      "reason": "Review focuses on durability and travel experience, no visual description provided."
+    },
+    "AFLCBCB4GWRAZ3JKTP4I5L77OBOQ_1545798189771": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGH4ELE4WBI63AZCAZ2K4CWQOE7Q_1560048064874": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AGKDRLUQ6CMBYVYBW4STSDYZW4CQ_1525061882644": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AFJ74HRCASBJXEACBYEQLT4Q5AOA_1596404574460": {
+      "passes_gate": false,
+      "reason": "Review lacks specific visual descriptions of the product's appearance."
+    },
+    "AH6JUUQZIZTW3DWDUCA75FB3KKOA_1549119572175": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AFUI5TKF6KEMLUXXTCKU5ZST4SFQ_1549415503446": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AG445VDU5D2M44RQPLFXVXZSV7RA_1600980321302": {
+      "passes_gate": false,
+      "reason": "The review does not describe any visual aspects of the product."
+    },
+    "AHFID5RULZTNXB73RLFIFU642T6A_1615780219915": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AEM6VSIKRYMBLJQ6PWRLLF2KUSEQ_1552896866471": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AEPCPH62LU2NWW7YGJ3ZHFGVEGWA_1575661267182": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the bag."
+    },
+    "AENSWXTNHDCYPYEQRDHTAW2NLQJA_1592766488257": {
+      "passes_gate": false,
+      "reason": "Review does not describe the visual aspects of the bag."
+    },
+    "AHEZMIJYDX2YTKCSNTV6M6OVDTYQ_1524681179267": {
+      "passes_gate": false,
+      "reason": "Review focuses on quality and value, lacking visual description of the product."
+    },
+    "AFP6IL42SGVBNZEOTAGQKWT3QINA_1615246608943": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description."
+    },
+    "AGAXX52U7IUZG4KYNEQN2K67LCPQ_1528335217474": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance."
+    },
+    "AGHJ5VGOJ2QC6Z6NAAHEG5KFJX2A_1541678995216": {
+      "passes_gate": false,
+      "reason": "Review does not provide any visual description of the bag."
+    },
+    "AHIT37D2KBQHJ2CCT7OKL4HIIW6A_1591727654417": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AEPIQT6LMSNRF5EPMR3NK6GZFJRA_1580594288832": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's appearance or visual details."
+    },
+    "AH2NV6GT3J6QWJ6B4WYEYTSJRXWQ_1605268912260": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality, not visual aspects of the product."
+    },
+    "AFMJME5OU2Z6WQSIOOZZMUTL7HKA_1531035704922": {
+      "passes_gate": false,
+      "reason": "Review does not describe the backpack's visual appearance or features."
+    },
+    "AGINLVLEEFCUBOUNKDKZ23YSEUFA_1546834568772": {
+      "passes_gate": true,
+      "reason": "Describes the pack's appearance and material quality."
+    },
+    "AHE6TFY554VA4OSSF72B4CTIC6AA_1546310081146": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and price, lacking visual description."
+    },
+    "AGNQZB5KHIU43ID5VPBFRKAU54BQ_1545074531731": {
+      "passes_gate": false,
+      "reason": "The review does not provide any visual description of the product."
+    },
+    "AELTC7JBDNYMQCIDMDIV7WQ3X6YQ_1682111424445": {
+      "passes_gate": false,
+      "reason": "Review focuses on functionality and durability, lacking visual description."
+    },
+    "AFOUL7VSIPONDNVQVKFXZTKSXP3Q_1557076568445": {
+      "passes_gate": false,
+      "reason": "The review does not describe the product's visual appearance."
+    },
+    "AHZJOMQ6CIAPLOW5HAWMDLP7BAHA_1683588988776": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    },
+    "AF2XALZVMWTZ5O62675GASZDAYVA_1685623604705": {
+      "passes_gate": false,
+      "reason": "Review does not describe the product's visual appearance or details."
+    }
+  }
+}
