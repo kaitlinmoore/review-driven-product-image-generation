@@ -1,0 +1,11 @@
+=== TEST PROMPT v1===
+## Resulting prompt from gpt-4o based on metadata + first 30 reviews. Token budget was 800.
+## Structured system prompt plus product-specific user prompt with the metadata and reviews.
+## Structured prompt is hashed and versioned top maintain reproducibility.
+## Intended to be starting value for self.prompt in notebook.
+
+The Wegiel Handmade European Ambassador Chess Set is a visually striking piece, exuding a classic and artisanal charm. The board, crafted from beech and birch wood, measures a substantial 21.65 inches square, offering a generous playing surface. Its surface is adorned with a rich, warm finish that highlights the natural grain of the wood, giving it a timeless appeal. The board's edges are bordered with intricate hand-burned decorative flourishes, adding a touch of elegance and sophistication. Algebraic coordinates are inlaid along the borders, providing both functionality and a refined aesthetic.
+
+The chess pieces, carved from hornbeam and sycamore wood, are equally impressive. Each piece is meticulously detailed, showcasing the craftsmanship that went into their creation. The king stands at a commanding 4.5 inches tall, with the queen slightly shorter at 3.66 inches, both featuring distinctive crowns that add to their regal appearance. The pieces are finished with a smooth, matte surface that retains the natural look of the wood, while the felt bottoms ensure they glide smoothly across the board.
+
+Inside the board, a compartment lined with a thin green plastic insert provides storage for the pieces. While the insert is somewhat flimsy, it serves its purpose of keeping the pieces organized. The board folds neatly in half, secured by two brass clasps, making it easy to store or display. Overall, the set's large size and detailed craftsmanship make it a standout piece, perfect for both play and display.

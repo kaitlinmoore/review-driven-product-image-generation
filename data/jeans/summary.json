@@ -1,0 +1,43 @@
+{
+  "product": {
+    "slug": "jeans",
+    "display_name": "WallFlower Women's Legendary Bootcut Jeans",
+    "parent_asin": "B0964KXQNG",
+    "category": "Clothing_Shoes_and_Jewelry",
+    "variant_note": "Canonical variant: medium-wash bootcut as shown in hero image"
+  },
+  "metadata": {
+    "title": "WallFlower Women's Legendary Bootcut Mid-Rise Insta Stretch Juniors Jeans (Standard and Plus)",
+    "store": "WallFlower",
+    "price": null,
+    "main_category": "AMAZON FASHION",
+    "average_rating": 4.3,
+    "rating_number": 10581,
+    "description_length": 323,
+    "features_count": 9,
+    "image_count": 3
+  },
+  "reviews": {
+    "total_rows_scanned": 66033346,
+    "matched_reviews": 2363,
+    "reviews_with_text": 2362,
+    "verified_purchase_count": 2300,
+    "rating_distribution": {
+      "1": 192,
+      "2": 144,
+      "3": 242,
+      "4": 384,
+      "5": 1401
+    },
+    "avg_rating": 4.124841303427846,
+    "total_helpful_votes": 1773,
+    "min_timestamp": 1381081258000,
+    "max_timestamp": 1692893579436,
+    "stream_elapsed_seconds": 597.6
+  },
+  "images": {
+    "downloaded": 3,
+    "failed": 0,
+    "errors": []
+  }
+}

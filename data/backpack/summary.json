@@ -1,0 +1,43 @@
+{
+  "product": {
+    "slug": "backpack",
+    "display_name": "Amazon Basics Internal Frame Hiking Backpack with Rainfly",
+    "parent_asin": "B077P17P2N",
+    "category": "Sports_and_Outdoors",
+    "variant_note": "Canonical variant: TBD post-pull — Amazon Basics hiking backpacks commonly have size variants (55L/65L/75L); inspect metadata.json to confirm"
+  },
+  "metadata": {
+    "title": "Amazon Basics Internal Frame Hiking Backpack with Rainfly",
+    "store": "Amazon Basics",
+    "price": 76.28,
+    "main_category": null,
+    "average_rating": 4.5,
+    "rating_number": 9599,
+    "description_length": 110,
+    "features_count": 5,
+    "image_count": 10
+  },
+  "reviews": {
+    "total_rows_scanned": 19595170,
+    "matched_reviews": 813,
+    "reviews_with_text": 813,
+    "verified_purchase_count": 745,
+    "rating_distribution": {
+      "1": 60,
+      "2": 55,
+      "3": 68,
+      "4": 137,
+      "5": 493
+    },
+    "avg_rating": 4.166051660516605,
+    "total_helpful_votes": 2788,
+    "min_timestamp": 1505063783831,
+    "max_timestamp": 1685623604705,
+    "stream_elapsed_seconds": 346.1
+  },
+  "images": {
+    "downloaded": 10,
+    "failed": 0,
+    "errors": []
+  }
+}

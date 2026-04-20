@@ -1,0 +1,28 @@
+{
+  "product_type": "hiking backpack",
+  "primary_colors": [
+    "black",
+    "gold"
+  ],
+  "materials": [
+    "polyester"
+  ],
+  "finish": "coated",
+  "texture": "unspecified",
+  "size_descriptor": "large",
+  "measurements": "26 inches in length",
+  "shape_and_form": "The backpack has a streamlined silhouette with a substantial presence and multi-directional compression straps.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "rain cover",
+    "compression straps",
+    "sleeping-bag compartment",
+    "side pockets",
+    "top flap",
+    "shoulder straps",
+    "back panel"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "The backpack's aesthetic is utilitarian yet stylish, with a focus on functionality and durability."
+}

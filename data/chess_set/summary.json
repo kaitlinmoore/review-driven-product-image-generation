@@ -1,0 +1,43 @@
+{
+  "product": {
+    "slug": "chess_set",
+    "display_name": "Wegiel Handmade European Ambassador Chess Set",
+    "parent_asin": "B0009WSPRO",
+    "category": "Toys_and_Games",
+    "variant_note": "Canonical variant: natural wood (3 wood-stain variants exist; pick based on review prominence later)"
+  },
+  "metadata": {
+    "title": "Wegiel Handmade European Ambassador Chess Set - Wooden 21 Inch Beech & Birch Board With Felt Base - Carved Hornbeam & Sycamore Wood Chess Pieces - Compartment Inside The Board To Store Each Piece",
+    "store": "Wegiel",
+    "price": 67.98,
+    "main_category": "Toys & Games",
+    "average_rating": 4.7,
+    "rating_number": 6824,
+    "description_length": 224,
+    "features_count": 5,
+    "image_count": 5
+  },
+  "reviews": {
+    "total_rows_scanned": 16260406,
+    "matched_reviews": 1535,
+    "reviews_with_text": 1534,
+    "verified_purchase_count": 1486,
+    "rating_distribution": {
+      "1": 44,
+      "2": 31,
+      "3": 66,
+      "4": 193,
+      "5": 1201
+    },
+    "avg_rating": 4.613029315960912,
+    "total_helpful_votes": 2044,
+    "min_timestamp": 1254212854000,
+    "max_timestamp": 1676907224718,
+    "stream_elapsed_seconds": 236.5
+  },
+  "images": {
+    "downloaded": 5,
+    "failed": 0,
+    "errors": []
+  }
+}

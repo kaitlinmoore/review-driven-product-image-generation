@@ -1,0 +1,43 @@
+{
+  "product": {
+    "slug": "water_bottle",
+    "display_name": "HYDRO CELL Fuchsia 24oz Sports Water Bottle",
+    "parent_asin": "B09GBG54BY",
+    "category": "Home_and_Kitchen",
+    "variant_note": "Canonical variant: Fuchsia 24oz (center of composite hero image)"
+  },
+  "metadata": {
+    "title": "HYDRO CELL Stainless Steel Insulated Water Bottle with Straw - For Cold & Hot Drinks - Metal Vacuum Flask with Screw Cap and Modern Leakproof Sport Thermos for Kids & Adults (Fuchsia 24oz)",
+    "store": "HYDRO CELL",
+    "price": 19.99,
+    "main_category": "Amazon Home",
+    "average_rating": 4.8,
+    "rating_number": 55702,
+    "description_length": 0,
+    "features_count": 5,
+    "image_count": 9
+  },
+  "reviews": {
+    "total_rows_scanned": 67409944,
+    "matched_reviews": 9313,
+    "reviews_with_text": 9300,
+    "verified_purchase_count": 8837,
+    "rating_distribution": {
+      "1": 427,
+      "2": 306,
+      "3": 381,
+      "4": 639,
+      "5": 7560
+    },
+    "avg_rating": 4.567593686245034,
+    "total_helpful_votes": 3945,
+    "min_timestamp": 1491453088000,
+    "max_timestamp": 1693537684065,
+    "stream_elapsed_seconds": 616.7
+  },
+  "images": {
+    "downloaded": 9,
+    "failed": 0,
+    "errors": []
+  }
+}

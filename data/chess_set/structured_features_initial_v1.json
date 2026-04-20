@@ -1,0 +1,31 @@
+{
+  "product_type": "chess set",
+  "primary_colors": [
+    "brown",
+    "green"
+  ],
+  "materials": [
+    "beech wood",
+    "birch wood",
+    "hornbeam wood",
+    "sycamore wood",
+    "plastic"
+  ],
+  "finish": "matte",
+  "texture": "smooth",
+  "size_descriptor": "large",
+  "measurements": "21.65 inches square",
+  "shape_and_form": "The chess set features a large, square board with intricately carved pieces and a foldable design.",
+  "decorative_elements": [
+    "hand-burned decorative flourishes",
+    "algebraic coordinates"
+  ],
+  "visible_parts": [
+    "board",
+    "pieces",
+    "clasps"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "The chess set exudes a classic and artisanal charm with its detailed craftsmanship and elegant design."
+}

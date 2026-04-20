@@ -1,0 +1,43 @@
+{
+  "product": {
+    "slug": "headphones",
+    "display_name": "Beats Studio3 Wireless Noise Cancelling Over-Ear Headphones (Blue)",
+    "parent_asin": "B07Q39HCK1",
+    "category": "Electronics",
+    "variant_note": "Canonical variant: Blue (Previous Model); Beats Studio3 listings typically carry many color variants — inspect metadata.json post-pull to confirm hero image composition"
+  },
+  "metadata": {
+    "title": "Beats Studio3 Wireless Noise Cancelling Over-Ear Headphones - Apple W1 Headphone Chip, Class 1 Bluetooth, Active Noise Cancelling, 22 Hours of Listening Time - Blue (Previous Model)",
+    "store": "Beats",
+    "price": 258.99,
+    "main_category": "Apple Products",
+    "average_rating": 4.7,
+    "rating_number": 6263,
+    "description_length": 0,
+    "features_count": 5,
+    "image_count": 6
+  },
+  "reviews": {
+    "total_rows_scanned": 43886944,
+    "matched_reviews": 1628,
+    "reviews_with_text": 1628,
+    "verified_purchase_count": 1407,
+    "rating_distribution": {
+      "1": 217,
+      "2": 96,
+      "3": 130,
+      "4": 159,
+      "5": 1026
+    },
+    "avg_rating": 4.032555282555283,
+    "total_helpful_votes": 3877,
+    "min_timestamp": 1507076360207,
+    "max_timestamp": 1686857260102,
+    "stream_elapsed_seconds": 761.6
+  },
+  "images": {
+    "downloaded": 6,
+    "failed": 0,
+    "errors": []
+  }
+}

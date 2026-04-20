@@ -1,0 +1,15 @@
+{
+  "slug": "jeans",
+  "model": "gpt-4o",
+  "temperature": 0,
+  "max_tokens": 800,
+  "prompt_version": "v1",
+  "prompt_sha256": "8c5870a9e1a60b1fea0ebeade66a82d57514ebb8e27033349e9d43a203eeda4b",
+  "input_tokens": 6478,
+  "output_tokens": 303,
+  "cost_usd": 0.01923,
+  "elapsed_seconds": 4.09,
+  "description_chars": 1585,
+  "description_words": 249,
+  "timestamp_utc": "2026-04-18T10:29:08Z"
+}

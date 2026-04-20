@@ -1,0 +1,34 @@
+{
+  "product_type": "espresso machine",
+  "primary_colors": [
+    "silver"
+  ],
+  "materials": [
+    "brushed stainless steel",
+    "plastic"
+  ],
+  "finish": "brushed",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": null,
+  "shape_and_form": "Compact and robust with clean lines and a minimalist design.",
+  "decorative_elements": [
+    "pressure gauge",
+    "polished metal bezel",
+    "transparent bean hopper"
+  ],
+  "visible_parts": [
+    "pressure gauge",
+    "control panel",
+    "buttons",
+    "knobs",
+    "integrated grinder",
+    "bean hopper",
+    "portafilter",
+    "steam wand",
+    "milk jug"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "Breville Barista Express text logo on the front.",
+  "overall_aesthetic": "Sleek and modern with a professional, high-end café equipment vibe."
+}

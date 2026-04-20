@@ -1,0 +1,15 @@
+{
+  "slug": "chess_set",
+  "model": "gpt-4o",
+  "temperature": 0,
+  "max_tokens": 800,
+  "prompt_version": "v1",
+  "prompt_sha256": "8c5870a9e1a60b1fea0ebeade66a82d57514ebb8e27033349e9d43a203eeda4b",
+  "input_tokens": 7333,
+  "output_tokens": 300,
+  "cost_usd": 0.02133,
+  "elapsed_seconds": 5.46,
+  "description_chars": 1526,
+  "description_words": 239,
+  "timestamp_utc": "2026-04-18T10:28:55Z"
+}
