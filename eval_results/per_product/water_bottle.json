@@ -1,0 +1,672 @@
+{
+  "slug": "water_bottle",
+  "n_ground_truth_images": 4,
+  "configs": {
+    "flux_v1_title_clip": {
+      "in_loop_best_q": 0.27745726704597473,
+      "in_loop_best_idx": 2,
+      "iters_taken_per_image": [
+        10,
+        4,
+        4
+      ],
+      "qualities": [
+        0.2749318480491638,
+        0.24864262342453003,
+        0.27745726704597473
+      ],
+      "descriptivenesses": [
+        55.0,
+        55.0,
+        55.0
+      ],
+      "agent_run_present": true,
+      "clip_img_vs_gt_mean": 0.7542900592088699,
+      "clip_img_vs_gt_max": 0.7720757722854614,
+      "dinov2_vs_gt_mean": 0.4127735570073128,
+      "dinov2_vs_gt_max": 0.49891215562820435,
+      "siglip_vs_gt_mean": 0.6602869480848312,
+      "siglip_vs_gt_max": 0.7970156073570251,
+      "clip_per_image": [
+        0.7350661754608154,
+        0.7517379522323608,
+        0.7720757722854614,
+        0.758280336856842
+      ],
+      "dinov2_per_image": [
+        0.30448195338249207,
+        0.49891215562820435,
+        0.34912633895874023,
+        0.49857378005981445
+      ],
+      "siglip_per_image": [
+        0.527095377445221,
+        0.6666926741600037,
+        0.7970156073570251,
+        0.6503441333770752
+      ],
+      "gen_image_present": true,
+      "gen_features_vs_initial": 0.36338757396449706,
+      "gen_features_vs_ground_truth": 0.5787545787545787,
+      "gen_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.2,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 0.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.0,
+        "overall_aesthetic": 0.46153846153846156
+      },
+      "gen_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 0.0,
+        "visible_parts": 1.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 1.0,
+        "brand_visibility": 0.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.35714285714285715,
+        "brand_description": 0.0,
+        "overall_aesthetic": 0.6666666666666666
+      },
+      "gen_features_present": true,
+      "conv_features_vs_initial": 0.4109848484848485,
+      "conv_features_vs_ground_truth": 0.4512229851596367,
+      "conv_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.36363636363636365,
+        "overall_aesthetic": 0.4166666666666667
+      },
+      "conv_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.0,
+        "finish": 1.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.11764705882352941,
+        "brand_description": 0.36363636363636365,
+        "overall_aesthetic": 0.38461538461538464
+      },
+      "conv_features_present": true
+    },
+    "flux_v2_initial_prompt_clip": {
+      "in_loop_best_q": 0.280040442943573,
+      "in_loop_best_idx": 0,
+      "iters_taken_per_image": [
+        10,
+        4,
+        4
+      ],
+      "qualities": [
+        0.280040442943573,
+        0.22659654915332794,
+        0.27099907398223877
+      ],
+      "descriptivenesses": [
+        55.0,
+        55.0,
+        55.0
+      ],
+      "agent_run_present": true,
+      "clip_img_vs_gt_mean": 0.6892595589160919,
+      "clip_img_vs_gt_max": 0.7704653739929199,
+      "dinov2_vs_gt_mean": 0.4197253882884979,
+      "dinov2_vs_gt_max": 0.638355016708374,
+      "siglip_vs_gt_mean": 0.6128186583518982,
+      "siglip_vs_gt_max": 0.667134165763855,
+      "clip_per_image": [
+        0.7178419232368469,
+        0.6536740064620972,
+        0.6150569319725037,
+        0.7704653739929199
+      ],
+      "dinov2_per_image": [
+        0.4768679738044739,
+        0.36721086502075195,
+        0.19646769762039185,
+        0.638355016708374
+      ],
+      "siglip_per_image": [
+        0.6109632253646851,
+        0.5636478662490845,
+        0.6095293760299683,
+        0.667134165763855
+      ],
+      "gen_image_present": true,
+      "gen_features_vs_initial": 0.524388111888112,
+      "gen_features_vs_ground_truth": 0.6364468864468864,
+      "gen_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 1.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.8,
+        "overall_aesthetic": 0.45454545454545453
+      },
+      "gen_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.5,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.35714285714285715,
+        "brand_description": 1.0,
+        "overall_aesthetic": 0.4166666666666667
+      },
+      "gen_features_present": true,
+      "conv_features_vs_initial": 0.3421703296703297,
+      "conv_features_vs_ground_truth": 0.4867850098619329,
+      "conv_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.2857142857142857
+      },
+      "conv_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.26666666666666666,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.46153846153846156
+      },
+      "conv_features_present": true
+    },
+    "flux_v3_initial_prompt_features": {
+      "in_loop_best_q": 0.524388111888112,
+      "in_loop_best_idx": 0,
+      "iters_taken_per_image": [
+        10,
+        1,
+        0
+      ],
+      "qualities": [
+        0.524388111888112,
+        0.4321581196581196,
+        0.4321581196581196
+      ],
+      "descriptivenesses": [
+        55.0,
+        65.0,
+        65.0
+      ],
+      "agent_run_present": true,
+      "clip_img_vs_gt_mean": 0.6892595589160919,
+      "clip_img_vs_gt_max": 0.7704653739929199,
+      "dinov2_vs_gt_mean": 0.4197253882884979,
+      "dinov2_vs_gt_max": 0.638355016708374,
+      "siglip_vs_gt_mean": 0.6128186583518982,
+      "siglip_vs_gt_max": 0.667134165763855,
+      "clip_per_image": [
+        0.7178419232368469,
+        0.6536740064620972,
+        0.6150569319725037,
+        0.7704653739929199
+      ],
+      "dinov2_per_image": [
+        0.4768679738044739,
+        0.36721086502075195,
+        0.19646769762039185,
+        0.638355016708374
+      ],
+      "siglip_per_image": [
+        0.6109632253646851,
+        0.5636478662490845,
+        0.6095293760299683,
+        0.667134165763855
+      ],
+      "gen_image_present": true,
+      "gen_features_vs_initial": 0.524388111888112,
+      "gen_features_vs_ground_truth": 0.6364468864468864,
+      "gen_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 1.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.8,
+        "overall_aesthetic": 0.45454545454545453
+      },
+      "gen_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.5,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.35714285714285715,
+        "brand_description": 1.0,
+        "overall_aesthetic": 0.4166666666666667
+      },
+      "gen_features_present": true,
+      "conv_features_vs_initial": 0.3421703296703297,
+      "conv_features_vs_ground_truth": 0.4867850098619329,
+      "conv_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.2857142857142857
+      },
+      "conv_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.26666666666666666,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.46153846153846156
+      },
+      "conv_features_present": true
+    },
+    "gpt_v1_title_clip": {
+      "in_loop_best_q": 0.3062559962272644,
+      "in_loop_best_idx": 0,
+      "iters_taken_per_image": [
+        10,
+        3,
+        3
+      ],
+      "qualities": [
+        0.3062559962272644,
+        0.28647273778915405,
+        0.2586493194103241
+      ],
+      "descriptivenesses": [
+        55.0,
+        65.0,
+        55.0
+      ],
+      "agent_run_present": true,
+      "clip_img_vs_gt_mean": 0.7413927465677261,
+      "clip_img_vs_gt_max": 0.8947547674179077,
+      "dinov2_vs_gt_mean": 0.43573373928666115,
+      "dinov2_vs_gt_max": 0.6655587553977966,
+      "siglip_vs_gt_mean": 0.7425925433635712,
+      "siglip_vs_gt_max": 0.8498708009719849,
+      "clip_per_image": [
+        0.8407114744186401,
+        0.6257886290550232,
+        0.6043161153793335,
+        0.8947547674179077
+      ],
+      "dinov2_per_image": [
+        0.4508647322654724,
+        0.43137967586517334,
+        0.1951317936182022,
+        0.6655587553977966
+      ],
+      "siglip_per_image": [
+        0.7177572250366211,
+        0.70259690284729,
+        0.7001452445983887,
+        0.8498708009719849
+      ],
+      "gen_image_present": true,
+      "gen_features_vs_initial": 0.4877136752136752,
+      "gen_features_vs_ground_truth": 0.7864468864468864,
+      "gen_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.2,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.8,
+        "overall_aesthetic": 0.7777777777777778
+      },
+      "gen_per_field_vs_ground_truth": {
+        "primary_colors": 0.16666666666666666,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 1.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 1.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.35714285714285715,
+        "brand_description": 1.0,
+        "overall_aesthetic": 0.7
+      },
+      "gen_features_present": true,
+      "conv_features_vs_initial": 0.3421703296703297,
+      "conv_features_vs_ground_truth": 0.4867850098619329,
+      "conv_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.2857142857142857
+      },
+      "conv_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.26666666666666666,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.46153846153846156
+      },
+      "conv_features_present": true
+    },
+    "gpt_v2_initial_prompt_clip": {
+      "in_loop_best_q": 0.311678022146225,
+      "in_loop_best_idx": 0,
+      "iters_taken_per_image": [
+        10,
+        3,
+        3
+      ],
+      "qualities": [
+        0.311678022146225,
+        0.28770652413368225,
+        0.22049739956855774
+      ],
+      "descriptivenesses": [
+        55.0,
+        65.0,
+        55.0
+      ],
+      "agent_run_present": true,
+      "clip_img_vs_gt_mean": 0.7413927465677261,
+      "clip_img_vs_gt_max": 0.8947547674179077,
+      "dinov2_vs_gt_mean": 0.43573373928666115,
+      "dinov2_vs_gt_max": 0.6655587553977966,
+      "siglip_vs_gt_mean": 0.7425925433635712,
+      "siglip_vs_gt_max": 0.8498708009719849,
+      "clip_per_image": [
+        0.8407114744186401,
+        0.6257886290550232,
+        0.6043161153793335,
+        0.8947547674179077
+      ],
+      "dinov2_per_image": [
+        0.4508647322654724,
+        0.43137967586517334,
+        0.1951317936182022,
+        0.6655587553977966
+      ],
+      "siglip_per_image": [
+        0.7177572250366211,
+        0.70259690284729,
+        0.7001452445983887,
+        0.8498708009719849
+      ],
+      "gen_image_present": true,
+      "gen_features_vs_initial": 0.4877136752136752,
+      "gen_features_vs_ground_truth": 0.7864468864468864,
+      "gen_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.2,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.8,
+        "overall_aesthetic": 0.7777777777777778
+      },
+      "gen_per_field_vs_ground_truth": {
+        "primary_colors": 0.16666666666666666,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 1.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 1.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.35714285714285715,
+        "brand_description": 1.0,
+        "overall_aesthetic": 0.7
+      },
+      "gen_features_present": true,
+      "conv_features_vs_initial": 0.3421703296703297,
+      "conv_features_vs_ground_truth": 0.4867850098619329,
+      "conv_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.2857142857142857
+      },
+      "conv_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.26666666666666666,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.46153846153846156
+      },
+      "conv_features_present": true
+    },
+    "gpt_v3_initial_prompt_features": {
+      "in_loop_best_q": 0.4877136752136752,
+      "in_loop_best_idx": 0,
+      "iters_taken_per_image": [
+        10,
+        2,
+        2
+      ],
+      "qualities": [
+        0.4877136752136752,
+        0.3951231774761187,
+        0.4111111111111111
+      ],
+      "descriptivenesses": [
+        55.0,
+        55.0,
+        55.0
+      ],
+      "agent_run_present": true,
+      "clip_img_vs_gt_mean": 0.7413927465677261,
+      "clip_img_vs_gt_max": 0.8947547674179077,
+      "dinov2_vs_gt_mean": 0.43573373928666115,
+      "dinov2_vs_gt_max": 0.6655587553977966,
+      "siglip_vs_gt_mean": 0.7425925433635712,
+      "siglip_vs_gt_max": 0.8498708009719849,
+      "clip_per_image": [
+        0.8407114744186401,
+        0.6257886290550232,
+        0.6043161153793335,
+        0.8947547674179077
+      ],
+      "dinov2_per_image": [
+        0.4508647322654724,
+        0.43137967586517334,
+        0.1951317936182022,
+        0.6655587553977966
+      ],
+      "siglip_per_image": [
+        0.7177572250366211,
+        0.70259690284729,
+        0.7001452445983887,
+        0.8498708009719849
+      ],
+      "gen_image_present": true,
+      "gen_features_vs_initial": 0.4877136752136752,
+      "gen_features_vs_ground_truth": 0.7864468864468864,
+      "gen_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.2,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.8,
+        "overall_aesthetic": 0.7777777777777778
+      },
+      "gen_per_field_vs_ground_truth": {
+        "primary_colors": 0.16666666666666666,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 1.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 1.0,
+        "brand_visibility": 1.0,
+        "measurements": 1.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.35714285714285715,
+        "brand_description": 1.0,
+        "overall_aesthetic": 0.7
+      },
+      "gen_features_present": true,
+      "conv_features_vs_initial": 0.3421703296703297,
+      "conv_features_vs_ground_truth": 0.4867850098619329,
+      "conv_per_field_vs_initial": {
+        "primary_colors": 0.0,
+        "materials": 0.5,
+        "decorative_elements": 1.0,
+        "visible_parts": 0.0,
+        "finish": 0.0,
+        "texture": 0.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.0625,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.2857142857142857
+      },
+      "conv_per_field_vs_ground_truth": {
+        "primary_colors": 0.0,
+        "materials": 1.0,
+        "decorative_elements": 0.0,
+        "visible_parts": 0.0,
+        "finish": 1.0,
+        "texture": 1.0,
+        "size_descriptor": 0.0,
+        "brand_visibility": 1.0,
+        "measurements": 0.0,
+        "product_type": 1.0,
+        "shape_and_form": 0.26666666666666666,
+        "brand_description": 0.6,
+        "overall_aesthetic": 0.46153846153846156
+      },
+      "conv_features_present": true
+    }
+  }
+}

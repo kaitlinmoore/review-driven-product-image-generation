@@ -283,14 +283,29 @@ def feature_agreement(features_a: dict, features_b: dict) -> float:
     - Free-text fields use token-set Jaccard.
 
     Returns a float in [0, 1]. Higher = closer agreement.'''
-    scores = []
+    return per_field_agreement(features_a, features_b)['overall']
+
+
+def per_field_agreement(features_a: dict, features_b: dict) -> dict:
+    '''Same scoring as `feature_agreement` but returns the per-field breakdown
+    alongside the overall score. Useful for failure-mode analysis in the
+    writeup ("which fields did the pipeline reliably get right; which did it
+    miss") without recomputing.
+
+    Returns:
+        {
+            'overall': float in [0, 1],
+            'per_field': {field_name: float in [0, 1] for each of 13 fields},
+        }'''
+    per_field: dict[str, float] = {}
     for field in _SET_FIELDS:
-        scores.append(_set_jaccard(features_a.get(field), features_b.get(field)))
+        per_field[field] = _set_jaccard(features_a.get(field), features_b.get(field))
     for field in _EXACT_FIELDS:
-        scores.append(_exact_match(features_a.get(field), features_b.get(field)))
+        per_field[field] = _exact_match(features_a.get(field), features_b.get(field))
     for field in _TOKEN_FIELDS:
-        scores.append(_token_jaccard(features_a.get(field), features_b.get(field)))
-    return sum(scores) / len(scores) if scores else 0.0
+        per_field[field] = _token_jaccard(features_a.get(field), features_b.get(field))
+    overall = sum(per_field.values()) / len(per_field) if per_field else 0.0
+    return {'overall': overall, 'per_field': per_field}
 
 
 def eval_structured_features(image_input, reference_features: dict,
