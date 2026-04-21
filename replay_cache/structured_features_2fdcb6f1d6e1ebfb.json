@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "washed",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Casual and versatile with a classic denim look.",
+    "primary_colors": [
+      "blue"
+    ],
+    "product_type": "jeans",
+    "shape_and_form": "These jeans have a classic bootcut shape with a fitted waist and flared legs.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pockets",
+      "button",
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 101
+  }
+}

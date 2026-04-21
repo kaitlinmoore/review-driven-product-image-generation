@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [
+      "distressed patch"
+    ],
+    "finish": "washed",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Casual and stylish with a vintage flair.",
+    "primary_colors": [
+      "blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "These jeans have a fitted waist and thighs with a flared leg opening.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pockets",
+      "belt loops",
+      "buttons"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 103
+  }
+}

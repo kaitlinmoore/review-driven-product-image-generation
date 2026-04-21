@@ -1,0 +1,25 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "elastane"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A timeless yet modern bell-bottom style with a flexible fit.",
+    "primary_colors": [],
+    "product_type": "bell-bottom jeans",
+    "shape_and_form": "A bell-bottom design with a snug fit near the waist and flaring out from the mid-thigh downward.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 915,
+    "output_tokens": 109
+  }
+}

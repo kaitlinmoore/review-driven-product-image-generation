@@ -1,0 +1,35 @@
+{
+  "slug": "water_bottle",
+  "image_model_num": 2,
+  "model_tag": "gpt",
+  "config_name": "v1_title_clip",
+  "quality_signal": "clip_text",
+  "reference": "title",
+  "reference_summary": "title: HYDRO CELL Stainless Steel Insulated Water Bottle with Straw - For Cold & Hot Drinks - Metal Vacuum ",
+  "image_count": 3,
+  "descriptiveness_threshold": 70.0,
+  "iter_start": 10,
+  "iter_min": 1,
+  "iter_max": 30,
+  "quality_target": 0.5,
+  "iters_taken_per_image": [
+    10,
+    3,
+    3
+  ],
+  "descriptivenesses": [
+    55.0,
+    65.0,
+    55.0
+  ],
+  "qualities": [
+    0.3062559962272644,
+    0.28647273778915405,
+    0.2586493194103241
+  ],
+  "best_idx": 0,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260420_233106",
+  "elapsed_seconds": 215.65,
+  "timestamp_utc": "2026-04-21T03:34:42Z"
+}

@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "HYDRO CELL text logo on the bottle.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": "40 oz",
+    "overall_aesthetic": "A sleek and colorful water bottle with a sophisticated matte finish.",
+    "primary_colors": [
+      "fuscia",
+      "mandarin",
+      "army green",
+      "matte black",
+      "lavender",
+      "white",
+      "hot pink"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "A cylindrical bottle with a sleek and robust form.",
+    "size_descriptor": "large",
+    "texture": "smooth",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 933,
+    "output_tokens": 118
+  }
+}

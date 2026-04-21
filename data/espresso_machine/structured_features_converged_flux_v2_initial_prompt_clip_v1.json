@@ -1,0 +1,20 @@
+{
+  "product_type": "espresso machine",
+  "primary_colors": [
+    "black",
+    "silver"
+  ],
+  "materials": [
+    "stainless steel"
+  ],
+  "finish": "glossy",
+  "texture": "smooth",
+  "size_descriptor": "unspecified",
+  "measurements": null,
+  "shape_and_form": "The machine has a sleek, rectangular form with a polished exterior.",
+  "decorative_elements": [],
+  "visible_parts": [],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "The espresso machine has a sophisticated and elegant appearance with a high-gloss finish."
+}

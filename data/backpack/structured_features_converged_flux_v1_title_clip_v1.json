@@ -1,0 +1,32 @@
+{
+  "product_type": "hiking backpack",
+  "primary_colors": [
+    "black",
+    "gold"
+  ],
+  "materials": [
+    "polyester",
+    "plastic",
+    "aluminum"
+  ],
+  "finish": "matte",
+  "texture": "unspecified",
+  "size_descriptor": "large",
+  "measurements": "26 inches, 75 L",
+  "shape_and_form": "The backpack has a sleek, contoured shape with an internal frame and multiple compartments.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "internal frame",
+    "zipper",
+    "side pockets",
+    "top pockets",
+    "back pockets",
+    "compression straps",
+    "shoulder straps",
+    "lumbar pad",
+    "rainfly"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "The backpack has a modern, understated, and rugged aesthetic with a focus on practicality and durability."
+}

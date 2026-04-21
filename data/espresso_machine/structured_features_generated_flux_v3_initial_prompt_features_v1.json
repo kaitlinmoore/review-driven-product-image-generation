@@ -1,0 +1,26 @@
+{
+  "brand_description": "Breville logo on the front panel.",
+  "brand_visibility": "prominent",
+  "decorative_elements": [],
+  "finish": "brushed",
+  "materials": [
+    "stainless steel",
+    "plastic"
+  ],
+  "measurements": null,
+  "overall_aesthetic": "Modern and sleek with a professional appearance.",
+  "primary_colors": [
+    "black",
+    "silver"
+  ],
+  "product_type": "espresso machine",
+  "shape_and_form": "Rectangular with a compact, boxy form.",
+  "size_descriptor": "medium",
+  "texture": "smooth",
+  "visible_parts": [
+    "control panel",
+    "portafilter",
+    "steam wand",
+    "drip tray"
+  ]
+}

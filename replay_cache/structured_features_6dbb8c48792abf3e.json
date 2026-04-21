@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "HYPLOE text logo on the front.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Sleek and modern with vibrant colors.",
+    "primary_colors": [
+      "orange",
+      "red",
+      "purple"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "Cylindrical with a narrow neck and a screw-on lid.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "lid",
+      "body",
+      "carabiner"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1591,
+    "output_tokens": 110
+  }
+}

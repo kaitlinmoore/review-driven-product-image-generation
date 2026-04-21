@@ -1,0 +1,23 @@
+{
+  "product_type": "chess set",
+  "primary_colors": [],
+  "materials": [
+    "beech wood",
+    "birch wood"
+  ],
+  "finish": "warm",
+  "texture": "inviting",
+  "size_descriptor": "oversized",
+  "measurements": "21.65 inches square",
+  "shape_and_form": "The set is square with intricately carved chessmen.",
+  "decorative_elements": [
+    "intricate grain patterns"
+  ],
+  "visible_parts": [
+    "pieces",
+    "board"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "A blend of classic design and contemporary sophistication with intricate carvings."
+}

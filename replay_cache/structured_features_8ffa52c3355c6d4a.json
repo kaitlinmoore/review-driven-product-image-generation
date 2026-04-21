@@ -1,0 +1,34 @@
+{
+  "parsed": {
+    "brand_description": "Breville text logo on the front in silver.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "brushed",
+    "materials": [
+      "stainless steel",
+      "plastic"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A sleek and modern espresso machine with a professional appearance.",
+    "primary_colors": [
+      "black",
+      "silver"
+    ],
+    "product_type": "espresso machine",
+    "shape_and_form": "Rectangular with a compact, boxy form and rounded edges.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "grinder",
+      "portafilter",
+      "steam wand",
+      "control knobs",
+      "pressure gauge",
+      "bean hopper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1590,
+    "output_tokens": 123
+  }
+}

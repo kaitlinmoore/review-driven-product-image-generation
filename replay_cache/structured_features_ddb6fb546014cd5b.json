@@ -1,0 +1,28 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [
+      "unique grain patterns"
+    ],
+    "finish": "warm",
+    "materials": [
+      "hardwood"
+    ],
+    "measurements": "21.65 inches square",
+    "overall_aesthetic": "A fusion of traditional elegance and modern refinement with sophisticated finishes.",
+    "primary_colors": [],
+    "product_type": "chess set",
+    "shape_and_form": "The chess set features a generously sized square board with proportionate chess pieces.",
+    "size_descriptor": "large",
+    "texture": "unspecified",
+    "visible_parts": [
+      "pieces",
+      "board"
+    ]
+  },
+  "usage": {
+    "input_tokens": 906,
+    "output_tokens": 105
+  }
+}

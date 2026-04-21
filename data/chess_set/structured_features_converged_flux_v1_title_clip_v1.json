@@ -1,0 +1,25 @@
+{
+  "product_type": "chess set",
+  "primary_colors": [
+    "brown"
+  ],
+  "materials": [
+    "beech wood",
+    "birch wood"
+  ],
+  "finish": "warm",
+  "texture": "grainy",
+  "size_descriptor": "large",
+  "measurements": "21.65 inches square",
+  "shape_and_form": "The chess set has a square board with oversized chessmen.",
+  "decorative_elements": [
+    "woodgrain patterns"
+  ],
+  "visible_parts": [
+    "pieces",
+    "board"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "An exquisite and authentic chess set with a warm, traditional aesthetic."
+}

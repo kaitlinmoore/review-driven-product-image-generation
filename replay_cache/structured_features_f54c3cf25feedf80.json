@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "synthetic fabric"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A sleek and functional black backpack with a minimalist design.",
+    "primary_colors": [
+      "black"
+    ],
+    "product_type": "backpack",
+    "shape_and_form": "Rectangular with padded back and adjustable straps.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "straps",
+      "buckle",
+      "padding"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 96
+  }
+}

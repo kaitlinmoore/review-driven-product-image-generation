@@ -1,0 +1,35 @@
+{
+  "slug": "chess_set",
+  "image_model_num": 1,
+  "model_tag": "flux",
+  "config_name": "v1_title_clip",
+  "quality_signal": "clip_text",
+  "reference": "title",
+  "reference_summary": "title: Wegiel Handmade European Ambassador Chess Set - Wooden 21 Inch Beech & Birch Board With Felt Base - ",
+  "image_count": 3,
+  "descriptiveness_threshold": 70.0,
+  "iter_start": 10,
+  "iter_min": 1,
+  "iter_max": 30,
+  "quality_target": 0.5,
+  "iters_taken_per_image": [
+    3,
+    1,
+    1
+  ],
+  "descriptivenesses": [
+    75.0,
+    65.0,
+    75.0
+  ],
+  "qualities": [
+    0.32399898767471313,
+    0.2969418466091156,
+    0.2951867878437042
+  ],
+  "best_idx": 0,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260420_224214",
+  "elapsed_seconds": 269.14,
+  "timestamp_utc": "2026-04-21T02:46:43Z"
+}

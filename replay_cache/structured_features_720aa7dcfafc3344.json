@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "HYDRO CELL text logo on the front in white.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": "40 oz",
+    "overall_aesthetic": "Modern and vibrant with a sleek, functional design.",
+    "primary_colors": [
+      "green",
+      "pink",
+      "orange",
+      "black"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "Cylindrical with a screw-on lid and a handle.",
+    "size_descriptor": "large",
+    "texture": "smooth",
+    "visible_parts": [
+      "lid",
+      "handle"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1591,
+    "output_tokens": 112
+  }
+}

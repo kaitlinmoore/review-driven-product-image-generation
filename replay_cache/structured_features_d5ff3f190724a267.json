@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "glossy",
+    "materials": [
+      "stainless steel",
+      "plastic"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Modern and sleek with a professional appearance.",
+    "primary_colors": [
+      "black",
+      "silver"
+    ],
+    "product_type": "espresso machine",
+    "shape_and_form": "Rectangular with a front control panel and a portafilter handle extending outward.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "control panel",
+      "portafilter",
+      "spout",
+      "drip tray",
+      "cup warmer"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1590,
+    "output_tokens": 114
+  }
+}

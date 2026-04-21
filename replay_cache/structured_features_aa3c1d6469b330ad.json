@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "Engraved logo on one of the pieces.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [
+      "engraving"
+    ],
+    "finish": "polished",
+    "materials": [
+      "wood"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A classic and elegant wooden chess set with a polished finish.",
+    "primary_colors": [
+      "brown",
+      "beige"
+    ],
+    "product_type": "chess set",
+    "shape_and_form": "The chess set features traditional Staunton-style pieces with a square board.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pieces",
+      "board"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1590,
+    "output_tokens": 112
+  }
+}

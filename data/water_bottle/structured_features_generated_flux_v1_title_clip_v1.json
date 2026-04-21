@@ -1,0 +1,24 @@
+{
+  "product_type": "water bottle",
+  "primary_colors": [
+    "silver",
+    "black"
+  ],
+  "materials": [
+    "stainless steel",
+    "plastic"
+  ],
+  "finish": "matte",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": null,
+  "shape_and_form": "Cylindrical with a narrow neck and a screw-on lid.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "lid",
+    "handle"
+  ],
+  "brand_visibility": "absent",
+  "brand_description": null,
+  "overall_aesthetic": "A sleek and modern stainless steel water bottle with a minimalist design."
+}

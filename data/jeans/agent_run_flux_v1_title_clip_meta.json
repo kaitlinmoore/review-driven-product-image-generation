@@ -1,0 +1,35 @@
+{
+  "slug": "jeans",
+  "image_model_num": 1,
+  "model_tag": "flux",
+  "config_name": "v1_title_clip",
+  "quality_signal": "clip_text",
+  "reference": "title",
+  "reference_summary": "title: WallFlower Women's Legendary Bootcut Mid-Rise Insta Stretch Juniors Jeans (Standard and Plus)",
+  "image_count": 3,
+  "descriptiveness_threshold": 70.0,
+  "iter_start": 10,
+  "iter_min": 1,
+  "iter_max": 30,
+  "quality_target": 0.5,
+  "iters_taken_per_image": [
+    10,
+    4,
+    4
+  ],
+  "descriptivenesses": [
+    65.0,
+    65.0,
+    60.0
+  ],
+  "qualities": [
+    0.27185994386672974,
+    0.24465642869472504,
+    0.2824607193470001
+  ],
+  "best_idx": 2,
+  "final_prompt_is_best": true,
+  "run_dir": "runs\\run_20260420_225932",
+  "elapsed_seconds": 911.68,
+  "timestamp_utc": "2026-04-21T03:14:44Z"
+}

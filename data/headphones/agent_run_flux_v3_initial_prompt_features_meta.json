@@ -1,0 +1,35 @@
+{
+  "slug": "headphones",
+  "image_model_num": 1,
+  "model_tag": "flux",
+  "config_name": "v3_initial_prompt_features",
+  "quality_signal": "structured_features",
+  "reference": "initial_prompt",
+  "reference_summary": "structured_features_initial_v1.json",
+  "image_count": 3,
+  "descriptiveness_threshold": 70.0,
+  "iter_start": 10,
+  "iter_min": 1,
+  "iter_max": 30,
+  "quality_target": 0.7,
+  "iters_taken_per_image": [
+    5,
+    1,
+    0
+  ],
+  "descriptivenesses": [
+    55.0,
+    68.0,
+    68.0
+  ],
+  "qualities": [
+    0.5505776275007045,
+    0.5640577371346602,
+    0.5640577371346602
+  ],
+  "best_idx": 1,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260420_234323",
+  "elapsed_seconds": 8.95,
+  "timestamp_utc": "2026-04-21T03:43:32Z"
+}

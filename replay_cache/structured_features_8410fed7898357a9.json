@@ -1,0 +1,25 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "elastane"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Contemporary yet classic aesthetic.",
+    "primary_colors": [],
+    "product_type": "bell-bottom jeans",
+    "shape_and_form": "The jeans have a close-fitting waistline and flare out into bell-bottoms.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 911,
+    "output_tokens": 97
+  }
+}

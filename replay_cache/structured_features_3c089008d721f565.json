@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "natural",
+    "materials": [
+      "wood"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic and elegant wooden chess set with a natural finish.",
+    "primary_colors": [
+      "brown",
+      "beige"
+    ],
+    "product_type": "chess set",
+    "shape_and_form": "Square board with carved chess pieces.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pieces",
+      "board"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1590,
+    "output_tokens": 91
+  }
+}

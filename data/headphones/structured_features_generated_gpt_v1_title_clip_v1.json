@@ -1,0 +1,25 @@
+{
+  "product_type": "headphones",
+  "primary_colors": [
+    "orange",
+    "teal"
+  ],
+  "materials": [
+    "plastic",
+    "synthetic leather"
+  ],
+  "finish": "matte",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": null,
+  "shape_and_form": "Rounded ear cups with a padded headband.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "ear cups",
+    "headband",
+    "cushions"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "beats text logo on the headband in orange.",
+  "overall_aesthetic": "Bold and modern with a vibrant color scheme."
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "headphones",
+  "image_model_num": 2,
+  "model_tag": "gpt",
+  "config_name": "v2_initial_prompt_clip",
+  "quality_signal": "clip_text",
+  "reference": "initial_prompt",
+  "reference_summary": "initial_prompt.txt (1628 chars)",
+  "image_count": 3,
+  "descriptiveness_threshold": 70.0,
+  "iter_start": 10,
+  "iter_min": 1,
+  "iter_max": 30,
+  "quality_target": 0.5,
+  "iters_taken_per_image": [
+    5,
+    3,
+    3
+  ],
+  "descriptivenesses": [
+    55.0,
+    75.0,
+    75.0
+  ],
+  "qualities": [
+    0.25095221400260925,
+    0.2607486844062805,
+    0.2978559136390686
+  ],
+  "best_idx": 2,
+  "final_prompt_is_best": true,
+  "run_dir": "runs\\run_20260420_233512",
+  "elapsed_seconds": 233.0,
+  "timestamp_utc": "2026-04-21T03:39:05Z"
+}

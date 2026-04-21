@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "B logo on the ear cups.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "plastic",
+      "foam"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Vibrant and modern with a playful color scheme.",
+    "primary_colors": [
+      "blue",
+      "pink",
+      "purple"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Rounded ear cups with a curved headband.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "ear cups",
+      "headband"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 103
+  }
+}

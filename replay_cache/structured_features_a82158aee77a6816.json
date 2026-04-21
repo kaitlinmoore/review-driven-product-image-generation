@@ -1,0 +1,25 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "unspecified"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Elegant yet contemporary with vivid and daring color palettes.",
+    "primary_colors": [
+      "unspecified"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Streamlined silhouette with a minimalist profile.",
+    "size_descriptor": "unspecified",
+    "texture": "textured",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 910,
+    "output_tokens": 88
+  }
+}

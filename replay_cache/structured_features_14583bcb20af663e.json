@@ -1,0 +1,25 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "brushed",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A stylish and sophisticated addition to any kitchen countertop.",
+    "primary_colors": [
+      "black"
+    ],
+    "product_type": "espresso machine",
+    "shape_and_form": "A sleek, modern design with a compact form.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 909,
+    "output_tokens": 90
+  }
+}

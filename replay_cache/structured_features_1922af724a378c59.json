@@ -1,0 +1,32 @@
+{
+  "parsed": {
+    "brand_description": "Orange 'b' logo on the ear cup.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "plastic",
+      "synthetic leather"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Vibrant and modern with a bold color scheme.",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "orange"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Rounded ear cups with a padded headband.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "ear cups",
+      "headband",
+      "padding"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 110
+  }
+}

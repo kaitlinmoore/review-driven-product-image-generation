@@ -1,0 +1,26 @@
+{
+  "product_type": "headphones",
+  "primary_colors": [
+    "blue",
+    "black",
+    "red"
+  ],
+  "materials": [
+    "plastic",
+    "synthetic leather"
+  ],
+  "finish": "matte",
+  "texture": "smooth",
+  "size_descriptor": "medium",
+  "measurements": null,
+  "shape_and_form": "Over-ear headphones with a circular ear cup design and adjustable headband.",
+  "decorative_elements": [],
+  "visible_parts": [
+    "ear cups",
+    "headband",
+    "cushions"
+  ],
+  "brand_visibility": "prominent",
+  "brand_description": "Red 'b' logo on the ear cup.",
+  "overall_aesthetic": "Modern and sleek with a bold color scheme."
+}

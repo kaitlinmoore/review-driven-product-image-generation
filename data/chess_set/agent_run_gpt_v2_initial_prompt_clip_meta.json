@@ -1,0 +1,35 @@
+{
+  "slug": "chess_set",
+  "image_model_num": 2,
+  "model_tag": "gpt",
+  "config_name": "v2_initial_prompt_clip",
+  "quality_signal": "clip_text",
+  "reference": "initial_prompt",
+  "reference_summary": "initial_prompt.txt (1689 chars)",
+  "image_count": 3,
+  "descriptiveness_threshold": 70.0,
+  "iter_start": 10,
+  "iter_min": 1,
+  "iter_max": 30,
+  "quality_target": 0.5,
+  "iters_taken_per_image": [
+    3,
+    1,
+    1
+  ],
+  "descriptivenesses": [
+    75.0,
+    65.0,
+    75.0
+  ],
+  "qualities": [
+    0.3237946629524231,
+    0.31231608986854553,
+    0.3222208619117737
+  ],
+  "best_idx": 0,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260420_233507",
+  "elapsed_seconds": 1.23,
+  "timestamp_utc": "2026-04-21T03:35:09Z"
+}

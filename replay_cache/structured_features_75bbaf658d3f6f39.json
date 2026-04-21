@@ -1,0 +1,24 @@
+{
+  "parsed": {
+    "brand_description": "Beats Studio3 branding is visually striking.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [],
+    "measurements": null,
+    "overall_aesthetic": "Refined and modern with a bold color scheme.",
+    "primary_colors": [
+      "bold",
+      "vibrant"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Sleek, ergonomically designed silhouette.",
+    "size_descriptor": "unspecified",
+    "texture": "textured",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 916,
+    "output_tokens": 96
+  }
+}

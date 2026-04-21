@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": "HYDRO CELL text logo on the front in white.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [
+      "white flame logo"
+    ],
+    "finish": "matte",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Modern and vibrant with a sleek, colorful design.",
+    "primary_colors": [
+      "green",
+      "pink",
+      "orange",
+      "black"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "Cylindrical with a narrow neck and a screw-on lid with a straw.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "lid",
+      "straw"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1591,
+    "output_tokens": 120
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "brand_description": null,
+  "brand_visibility": "absent",
+  "decorative_elements": [],
+  "finish": "polished",
+  "materials": [
+    "wood"
+  ],
+  "measurements": null,
+  "overall_aesthetic": "A classic and elegant wooden chess set with a polished finish.",
+  "primary_colors": [
+    "brown",
+    "black",
+    "beige"
+  ],
+  "product_type": "chess set",
+  "shape_and_form": "The chess set features a square board with alternating light and dark squares and traditional Staunton-style pieces.",
+  "size_descriptor": "medium",
+  "texture": "smooth",
+  "visible_parts": [
+    "pieces",
+    "board"
+  ]
+}

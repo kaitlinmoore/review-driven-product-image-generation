@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "brushed",
+    "materials": [
+      "stainless steel",
+      "plastic"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A sleek and modern espresso machine with a professional appearance.",
+    "primary_colors": [
+      "black",
+      "silver"
+    ],
+    "product_type": "espresso machine",
+    "shape_and_form": "Rectangular with a protruding portafilter and steam wand.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "portafilter",
+      "steam wand",
+      "control knobs",
+      "water tank",
+      "drip tray"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1590,
+    "output_tokens": 113
+  }
+}
