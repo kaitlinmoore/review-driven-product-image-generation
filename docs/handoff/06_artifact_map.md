@@ -1,7 +1,7 @@
 # Artifact Map
 
 For each report section and rubric component, where to find the
-evidence on disk. Use as a lookup reference while drafting — open
+evidence on disk. Use as a lookup reference while drafting. Open
 this doc next to the writeup and pull file paths directly.
 
 The numerical results referenced throughout (CLIP / DINOv2 / SigLIP
@@ -14,7 +14,7 @@ detail with per-field breakdowns).
 
 What evidence exists, and what to cite for each part of Q1.
 
-### Selection rationale
+### Selection Rationale
 
 | What you need | Where to find it |
 |---|---|
@@ -25,7 +25,7 @@ What evidence exists, and what to cite for each part of Q1.
 | Why backpack despite low review signal | `docs/handoff/05_decisions_log.md` § "Backpack as the limit case" |
 | Why headphones added late | `docs/handoff/05_decisions_log.md` § "Headphones added late" |
 
-### Per-product collected data
+### Per-Product Collected Data
 
 | What you need | Where to find it |
 |---|---|
@@ -35,7 +35,7 @@ What evidence exists, and what to cite for each part of Q1.
 | Quick stats (review counts, rating averages) | `data/{product}/summary.json` |
 | The data-acquisition mechanism | `src/pull_product_data.py` (streams gzipped JSONL over HTTP from McAuley Lab Amazon Reviews 2023) |
 
-### Per-product reference table for Q1 writeup
+### Per-Product Reference Table for Q1 Writeup
 
 ```
 backpack         Sports & Outdoors    Venture Pal 40L Hiking Backpack    parent_asin: B08JD12G4X
@@ -50,7 +50,7 @@ water_bottle     Home & Kitchen       HYDRO CELL Stainless Steel         parent_
 
 The four LLM-driven analysis stages and their outputs.
 
-### Stage outputs
+### Stage Outputs
 
 | Stage | Code | Per-product output |
 |---|---|---|
@@ -60,7 +60,7 @@ The four LLM-driven analysis stages and their outputs.
 | 3. Initial prompt distillation | `src/generate_initial_prompt.py` | `data/{product}/initial_prompt.txt` (+ `_meta.json` provenance) |
 | 4. Structured-feature extraction | `src/extract_structured_features.py` | `data/{product}/structured_features_*_v1.json` (+ `_meta.json` per source) |
 
-### System prompts (the actual prompt-engineering)
+### System Prompts (the actual prompt-engineering)
 
 The system prompts ARE the analysis design. Each is versioned and
 SHA-hashed into cache keys. For the writeup, cite the prompt text
@@ -72,7 +72,7 @@ verbatim from the source files:
 | Initial-prompt distillation | `src/generate_initial_prompt.py` | `INITIAL_PROMPT_SYSTEM_V1` |
 | Structured-feature extraction | `src/extract_structured_features.py` | `EXTRACTION_PROMPT_SYSTEM_V1` |
 
-### Per-source structured-feature comparison data
+### Per-Source Structured-Feature Comparison Data
 
 For each product, the same 13-field schema extracted from five
 different reference inputs:
@@ -89,7 +89,7 @@ For the Q2 analytical narrative, compare these per product to show
 what each input source contributes (e.g., metadata captures specs;
 reviews capture finish/color nuance).
 
-### Filter pass rates by product (Q2 writeup table)
+### Filter Pass Rates by Product (Q2 writeup table)
 
 Pull from `data/filter_caches/*.json` (counted via aggregation).
 Pre-computed reference table in `docs/handoff/03_data_processing.md`
@@ -100,7 +100,7 @@ Pre-computed reference table in `docs/handoff/03_data_processing.md`
 Most of the analytical content lives here. Use the eval CSV for
 numerical comparisons; per-product JSONs for narrative detail.
 
-### Per-(product, model, config) generated artifacts
+### Per-(Product, Model, Config) Generated Artifacts
 
 | What | Where (replace placeholders with actual values) |
 |---|---|
@@ -115,7 +115,7 @@ numerical comparisons; per-product JSONs for narrative detail.
 - `v2_initial_prompt_clip` (CLIP cosine vs initial_prompt.txt content)
 - `v3_initial_prompt_features` (structured-feature agreement vs initial features)
 
-### Numerical comparison evidence (the eval results CSV)
+### Numerical Comparison Evidence (the eval results CSV)
 
 `eval_results/summary.csv` — 36 rows × 15 columns. One row per
 (product, model, config) combination. Columns:
@@ -133,9 +133,9 @@ numerical comparisons; per-product JSONs for narrative detail.
 | `conv_features_vs_initial` | Computed | Per-field agreement between converged prompt's features and initial-prompt features |
 | `conv_features_vs_ground_truth` | Computed | Per-field agreement between converged prompt's features and ground-truth features |
 
-### Narrative detail (per-product JSONs)
+### Narrative Detail (per-product JSONs)
 
-`eval_results/per_product/{slug}.json` — for each product, the same
+`eval_results/per_product/{slug}.json` | for each product, the same
 metrics broken down by:
 - Per-image scores for Family B (which ground-truth view did the
   generated image match best)
@@ -143,10 +143,10 @@ metrics broken down by:
   of the 13 fields the pipeline reliably got right vs missed)
 
 For "the pipeline got 8 of 13 fields right on chess_set under flux
-v3" — pull from
+v3", pull from
 `per_product/chess_set.json` → `configs.flux_v3_initial_prompt_features.gen_per_field_vs_ground_truth`.
 
-### Image-model comparison (FLUX vs gpt-image)
+### Image-Model Comparison (FLUX vs gpt-image)
 
 Use `summary.csv`. For each (product, config), compare flux row vs
 gpt row on `gen_features_vs_ground_truth` (the most interpretable
@@ -154,7 +154,7 @@ metric). Writeup-ready preliminary findings already in
 `docs/handoff/04_evaluation_plan.md` and the eval-output discussion
 in this session's history.
 
-### Quality-signal ablation (v1 → v2 → v3)
+### Quality-Signal Ablation (v1 → v2 → v3)
 
 For each (product, model), compare three rows of `summary.csv`. The
 **v1 → v2** delta isolates the reference text. The **v2 → v3** delta
@@ -162,7 +162,7 @@ isolates the metric. Use Family C against ground_truth as the
 INDEPENDENT verifier so neither config is graded by its own internal
 metric.
 
-### Side-by-side image comparison (for slides)
+### Side-by-Side Image Comparison (for slides)
 
 For each product, the writeup / slide deck should show:
 - Reference photo from `data/{product}/images/main.jpg` (or the most
@@ -187,11 +187,10 @@ Architecture and reproducibility evidence.
 | Reproducibility wrapper | `src/replay.py` `cached_call` |
 | Pipeline diagram | `docs/handoff/pipeline_diagram.png` (also Mermaid source in `02_pipeline_overview.md`) |
 
-### Surrogate-projected adaptive iteration control
+### Surrogate-Projected Adaptive Iteration Control
 
-The novel agentic mechanism. The math is described in Jason's
-whitepaper PDF (separate file). The implementation is in
-`src/agent_loop.py`:
+The novel agentic mechanism. See Jason's PDF writeup for math explanation and rationale.
+The implementation is in `src/agent_loop.py`:
 
 | Implementation piece | Where |
 |---|---|
