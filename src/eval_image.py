@@ -1,25 +1,34 @@
 '''eval_image.py
 -------------
-Image similarity metrics for the generated-vs-ground-truth comparison stage.
+Image similarity metrics for the generated-vs-ground-truth comparison stage,
+and quality-signal evaluators usable inside the agent-loop refinement.
 
-Two comparison modes are supported:
+Three comparison modes are supported:
 
 1. Image-vs-text (via CLIP)
-   - compImage(image, ground_truth_text) -> float
-     Used in the canonical agentLoop flow: compare the generated PIL image to
-     the ground-truth product TITLE string.
+   - compImage(image, reference_text) -> float
+     Used in the agentLoop quality-signal closure for `--quality-signal clip_text`.
+     The reference text is whatever the driver chose: product title (v1),
+     initial_prompt.txt content (v2), etc.
 
 2. Image-vs-image (via CLIP / DINOv2 / SigLIP)
    - clip_image_similarity(img_cand, img_gt) -> float
    - dinov2_similarity(img_cand, img_gt) -> float
    - siglip_similarity(img_cand, img_gt) -> float
 
+3. Image-vs-structured-features (via gpt-4o vision + per-field agreement)
+   - eval_structured_features(image, reference_features) -> float
+     Used in the agentLoop quality-signal closure for `--quality-signal
+     structured_features`. Extracts the 13-field structured feature dict from
+     the candidate image and computes equal-weighted per-field agreement
+     against a reference feature dict (loaded from a previously-extracted
+     structured_features_*_v1.json).
+
 Models are loaded lazily and cached module-wide so the first call to each
 similarity function pays a one-time download/load cost. Subsequent calls are
 cheap.
 '''
 
-import hashlib
 from pathlib import Path
 
 import torch
@@ -28,7 +37,7 @@ from PIL import Image
 from sentence_transformers import SentenceTransformer, util
 from transformers import AutoImageProcessor, AutoModel, AutoProcessor, CLIPModel, CLIPProcessor
 
-from replay import cached_call
+from replay import cached_call, image_hash
 
 
 ## MODEL IDS ##
@@ -49,18 +58,6 @@ _SIGLIP = None           # tuple (processor, model)
 
 def _device() -> str:
     return 'cuda' if torch.cuda.is_available() else 'cpu'
-
-
-def _image_hash(image_or_path) -> str:
-    '''Deterministic 16-char hash of an image's pixel content (after RGB convert).
-    Accepts PIL.Image or file path. Two images with identical pixels hash the
-    same regardless of input form or on-disk encoding (JPEG vs PNG).'''
-    if isinstance(image_or_path, (str, Path)):
-        img = Image.open(image_or_path).convert('RGB')
-    else:
-        img = image_or_path.convert('RGB')
-    size_marker = f'{img.size[0]}x{img.size[1]}'.encode('utf-8')
-    return hashlib.sha256(img.tobytes() + size_marker).hexdigest()[:16]
 
 
 def _get_st_clip() -> SentenceTransformer:
@@ -118,7 +115,7 @@ def compImage(image_input, ground_truth_text: str) -> float:
     inputs = {
         'metric': 'clip_text',
         'model': ST_CLIP_NAME,
-        'image_hash': _image_hash(image_input),
+        'image_hash': image_hash(image_input),
         'text': ground_truth_text,
     }
 
@@ -161,8 +158,8 @@ def clip_image_similarity(img_cand_pil: Image.Image, img_gt_pil: Image.Image) ->
     inputs = {
         'metric': 'clip_image',
         'model': HF_CLIP_NAME,
-        'image_cand_hash': _image_hash(img_cand_pil),
-        'image_gt_hash': _image_hash(img_gt_pil),
+        'image_cand_hash': image_hash(img_cand_pil),
+        'image_gt_hash': image_hash(img_gt_pil),
     }
 
     def _live() -> float:
@@ -181,8 +178,8 @@ def dinov2_similarity(img_cand_pil: Image.Image, img_gt_pil: Image.Image) -> flo
     inputs = {
         'metric': 'dinov2',
         'model': DINOV2_NAME,
-        'image_cand_hash': _image_hash(img_cand_pil),
-        'image_gt_hash': _image_hash(img_gt_pil),
+        'image_cand_hash': image_hash(img_cand_pil),
+        'image_gt_hash': image_hash(img_gt_pil),
     }
 
     def _live() -> float:
@@ -205,8 +202,8 @@ def siglip_similarity(img_cand_pil: Image.Image, img_gt_pil: Image.Image) -> flo
     inputs = {
         'metric': 'siglip',
         'model': SIGLIP_NAME,
-        'image_cand_hash': _image_hash(img_cand_pil),
-        'image_gt_hash': _image_hash(img_gt_pil),
+        'image_cand_hash': image_hash(img_cand_pil),
+        'image_gt_hash': image_hash(img_gt_pil),
     }
 
     def _live() -> float:
@@ -217,3 +214,118 @@ def siglip_similarity(img_cand_pil: Image.Image, img_gt_pil: Image.Image) -> flo
         return _cosine_similarity_from_features(embeddings)
 
     return cached_call('eval_siglip', inputs, _live, format='json')
+
+
+## STRUCTURED-FEATURE COMPARISON ##
+# Used by the agent loop's `--quality-signal structured_features` mode.
+# Per-field agreement against a reference feature dict.
+
+# 13-field schema partitioned by comparison strategy. Equal-weighted across
+# all 13 — every field contributes 1/13 to the final score.
+_SET_FIELDS = ('primary_colors', 'materials', 'decorative_elements', 'visible_parts')
+_EXACT_FIELDS = ('finish', 'texture', 'size_descriptor', 'brand_visibility', 'measurements')
+_TOKEN_FIELDS = ('product_type', 'shape_and_form', 'brand_description', 'overall_aesthetic')
+_ALL_FIELDS = _SET_FIELDS + _EXACT_FIELDS + _TOKEN_FIELDS  # 13 total
+
+
+def _norm_str(x) -> str:
+    '''Lowercase, strip; treat None and empty as the same canonical empty.'''
+    if x is None:
+        return ''
+    return str(x).strip().lower()
+
+
+def _set_jaccard(a, b) -> float:
+    '''Set Jaccard for list-valued fields. Both empty -> 1.0 (agreement on
+    absence). One empty, one not -> 0.0.'''
+    set_a = {_norm_str(x) for x in (a or []) if _norm_str(x)}
+    set_b = {_norm_str(x) for x in (b or []) if _norm_str(x)}
+    if not set_a and not set_b:
+        return 1.0
+    if not set_a or not set_b:
+        return 0.0
+    return len(set_a & set_b) / len(set_a | set_b)
+
+
+def _exact_match(a, b) -> float:
+    '''Case-insensitive exact-match for enum / short-string fields. Both
+    None/empty -> 1.0; any other mismatch -> 0.0.'''
+    na, nb = _norm_str(a), _norm_str(b)
+    if na == nb:
+        return 1.0
+    return 0.0
+
+
+def _token_jaccard(a, b) -> float:
+    '''Token-set Jaccard for free-text fields. Splits on whitespace, lowercased,
+    punctuation-stripped at token boundaries. Both empty -> 1.0; one empty,
+    one not -> 0.0.
+
+    Free-text fields can never reasonably match exactly across rephrasing, but
+    semantically-similar descriptions share content tokens. This rewards
+    overlap without being arbitrary about synonyms.'''
+    na, nb = _norm_str(a), _norm_str(b)
+    tokens_a = {t.strip(",.;:!?\"'()[]{}") for t in na.split() if t.strip(",.;:!?\"'()[]{}")}
+    tokens_b = {t.strip(",.;:!?\"'()[]{}") for t in nb.split() if t.strip(",.;:!?\"'()[]{}")}
+    if not tokens_a and not tokens_b:
+        return 1.0
+    if not tokens_a or not tokens_b:
+        return 0.0
+    return len(tokens_a & tokens_b) / len(tokens_a | tokens_b)
+
+
+def feature_agreement(features_a: dict, features_b: dict) -> float:
+    '''Equal-weighted per-field agreement between two structured-feature dicts.
+
+    Each of the 13 schema fields contributes 1/13 to the score.
+    - Set-valued fields use set Jaccard.
+    - Enum / short-string fields use exact-match (case-insensitive).
+    - Free-text fields use token-set Jaccard.
+
+    Returns a float in [0, 1]. Higher = closer agreement.'''
+    scores = []
+    for field in _SET_FIELDS:
+        scores.append(_set_jaccard(features_a.get(field), features_b.get(field)))
+    for field in _EXACT_FIELDS:
+        scores.append(_exact_match(features_a.get(field), features_b.get(field)))
+    for field in _TOKEN_FIELDS:
+        scores.append(_token_jaccard(features_a.get(field), features_b.get(field)))
+    return sum(scores) / len(scores) if scores else 0.0
+
+
+def eval_structured_features(image_input, reference_features: dict,
+                              slug: str = '_eval_') -> float:
+    '''Quality signal: extract 13-field structured features from a candidate
+    image (via gpt-4o vision) and compute equal-weighted per-field agreement
+    against a reference feature dict.
+
+    Used by the agent loop when --quality-signal=structured_features. The
+    reference_features comes from a pre-extracted source like
+    `data/{slug}/structured_features_initial_v1.json`.
+
+    The vision-extraction call is cached via the existing
+    `structured_features` cache namespace. For the cache to share with the
+    post-hoc `extract_structured_features.py --source generated` flow, the
+    `slug` parameter MUST match the product slug used by that flow (because
+    slug appears both in the cache-key inputs and in the prompt header that
+    gpt-4o sees, so different slugs produce different keys and possibly
+    different outputs).
+
+    image_input: PIL.Image or path.
+    reference_features: dict in the 13-field structured-features schema.
+    slug: product slug (e.g., 'water_bottle'). Defaults to '_eval_' for
+          callers that don't have a slug handy; pass the real slug if you
+          want cache sharing with --source generated.
+    Returns: float in [0, 1].'''
+    # Lazy import to avoid an eval_image <-> extract_structured_features cycle
+    # at module load time. extract_structured_features imports compImage from
+    # this module via the test path, but only at runtime.
+    from extract_structured_features import extract_features_from_pil
+
+    if isinstance(image_input, (str, Path)):
+        img = Image.open(image_input).convert('RGB')
+    else:
+        img = image_input.convert('RGB')
+
+    extracted = extract_features_from_pil(img, slug=slug)
+    return feature_agreement(extracted, reference_features)

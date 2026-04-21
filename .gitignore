@@ -17,6 +17,10 @@ env/
 # === Jupyter ===
 .ipynb_checkpoints/
 *.nbconvert.ipynb
+# Notebooks excluded for now — agent-loop / promptwriter / eval logic has been
+# extracted to src/, so the notebooks are dev-history rather than the runnable
+# path. Re-include if needed for the writeup.
+notebooks/
 
 # === Project data ===
 # Raw review pulls — large and reproducible via pull_product_data.py.

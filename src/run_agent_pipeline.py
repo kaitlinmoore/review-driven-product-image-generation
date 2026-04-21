@@ -32,15 +32,26 @@ both model runs for the same product so both models see identical review
 inputs — isolating "which model renders better" from "which trajectory saw
 which reviews".
 
-Usage and CLI flags:
-    # PowerShell
+Usage and CLI flags (works in both PowerShell and bash):
+    # v1: CLIP cosine vs product title (default — original config)
     python src/run_agent_pipeline.py --config-name v1_title_clip_eval
-    python src/run_agent_pipeline.py --config-name v1_title_clip_eval --only water_bottle
-    python src/run_agent_pipeline.py --config-name v2_image_clip_eval --no-promote  # ablation
-    python src/run_agent_pipeline.py --config-name v1_title_clip_eval --force       # redo
 
-    # bash / zsh
-    python src/run_agent_pipeline.py --config-name v1_title_clip_eval --only water_bottle --model 1
+    # v2: CLIP cosine vs initial_prompt.txt content
+    python src/run_agent_pipeline.py --config-name v2_initial_prompt_clip \
+        --quality-signal clip_text --reference initial_prompt
+
+    # v3: structured-feature agreement vs initial_prompt's pre-extracted features
+    python src/run_agent_pipeline.py --config-name v3_initial_prompt_features \
+        --quality-signal structured_features --reference initial_prompt
+
+    # Run an ablation without overwriting canonical pointers
+    python src/run_agent_pipeline.py --config-name v3_initial_prompt_features \
+        --quality-signal structured_features --reference initial_prompt --no-promote
+
+    # Restrict to one product / model / smaller iteration count for smoke-test
+    python src/run_agent_pipeline.py --config-name v2_initial_prompt_clip \
+        --quality-signal clip_text --reference initial_prompt \
+        --only water_bottle --model 1 --image-count 2
 
 Config-name is required (no default) — every run stamps its hyperparameter /
 signal choices into a named config so two runs with different designs
@@ -71,6 +82,7 @@ import time
 from dotenv import load_dotenv
 
 from agent_loop import agentLoop
+from eval_image import compImage, eval_structured_features
 from prompt_writer import load_mistral
 from reviews_dataloader import make_reviews_dataloader
 
@@ -176,15 +188,64 @@ def artifacts_complete(pdir: str, model_tag: str, config_name: str) -> bool:
 
 
 def read_product_title(pdir: str) -> str:
-    '''Product title from metadata.json. Used as ground_truth_text for
-    evalImage(img, title) -> CLIP image-vs-text cosine. Title-level signal
-    only — no image bytes or features are used as a refinement signal.'''
+    '''Product title from metadata.json. Title-level signal only — no image
+    bytes or features are used as a refinement signal.'''
     with open(os.path.join(pdir, 'metadata.json'), 'r', encoding='utf-8') as f:
         metadata = json.load(f)
     title = (metadata.get('title') or '').strip()
     if not title:
         raise ValueError(f'metadata.json at {pdir} has empty title')
     return title
+
+
+def read_initial_prompt(pdir: str) -> str:
+    '''The free-form visual description from initial_prompt.txt.
+    ~250 words distilled from metadata + filtered reviews by gpt-4o.'''
+    path = os.path.join(pdir, 'initial_prompt.txt')
+    with open(path, 'r', encoding='utf-8') as f:
+        return f.read().strip()
+
+
+def read_initial_features(pdir: str) -> dict:
+    '''Pre-extracted 13-field structured-features dict from
+    structured_features_initial_v1.json. The reference for v3.'''
+    path = os.path.join(pdir, 'structured_features_initial_v1.json')
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+def build_quality_signal_fn(quality_signal: str, reference: str,
+                             pdir: str, slug: str):
+    '''Return (quality_signal_fn, reference_summary).
+
+    quality_signal_fn: Callable[[PIL.Image], float] passed to agentLoop.
+    reference_summary: short string stamped into the meta JSON for traceability
+                       (e.g., the actual title text or path-of-reference).
+    slug: product slug — passed through to eval_structured_features so its
+          gpt-4o vision-extraction cache shares with the post-hoc
+          `extract_structured_features.py --source generated` flow.'''
+    if quality_signal == 'clip_text':
+        if reference == 'title':
+            ref_text = read_product_title(pdir)
+            ref_summary = f'title: {ref_text[:100]}'
+        elif reference == 'initial_prompt':
+            ref_text = read_initial_prompt(pdir)
+            ref_summary = f'initial_prompt.txt ({len(ref_text)} chars)'
+        else:
+            raise ValueError(
+                f'--quality-signal=clip_text does not support --reference={reference!r}')
+        return (lambda img: compImage(img, ref_text)), ref_summary
+
+    if quality_signal == 'structured_features':
+        if reference == 'initial_prompt':
+            ref_features = read_initial_features(pdir)
+            ref_summary = 'structured_features_initial_v1.json'
+        else:
+            raise ValueError(
+                f'--quality-signal=structured_features does not support --reference={reference!r}')
+        return (lambda img: eval_structured_features(img, ref_features, slug=slug)), ref_summary
+
+    raise ValueError(f'unknown --quality-signal: {quality_signal!r}')
 
 
 def run_one(slug: str, pdir: str, image_model_num: int,
@@ -199,8 +260,14 @@ def run_one(slug: str, pdir: str, image_model_num: int,
         print(f'  [{slug}/{tag}/{config}] artifacts already present — skipping (use --force).')
         return {'slug': slug, 'model_tag': tag, 'config_name': config, 'skipped': True}
 
-    title = read_product_title(pdir)
     initial_prompt_path = os.path.join(pdir, 'initial_prompt.txt')
+
+    # Build the per-(product) quality-signal closure based on --quality-signal
+    # and --reference. agentLoop is signal-agnostic; the driver decides which
+    # metric and reference to use. The product slug is threaded through so
+    # in-loop vision-extraction caches share with --source generated.
+    quality_signal_fn, reference_summary = build_quality_signal_fn(
+        args.quality_signal, args.reference, pdir, slug)
 
     t0 = time.time()
     try:
@@ -209,7 +276,7 @@ def run_one(slug: str, pdir: str, image_model_num: int,
             dataloader=dataloader,
             model=model,
             tokenizer=tokenizer,
-            ground_truth_text=title,
+            quality_signal_fn=quality_signal_fn,
             descriptivenessThreshold=args.descriptiveness_threshold,
             iterStart=args.iter_start,
             iterMin=args.iter_min,
@@ -255,6 +322,9 @@ def run_one(slug: str, pdir: str, image_model_num: int,
         'image_model_num': image_model_num,
         'model_tag': tag,
         'config_name': config,
+        'quality_signal': args.quality_signal,
+        'reference': args.reference,
+        'reference_summary': reference_summary,
         'image_count': args.image_count,
         'descriptiveness_threshold': args.descriptiveness_threshold,
         'iter_start': args.iter_start,
@@ -331,9 +401,39 @@ def main():
                         help=f'Starting ratePrompt threshold (0-100). '
                              f'Default {DEFAULT_DESCRIPTIVENESS_THRESHOLD}.')
     parser.add_argument('--quality-target', type=float, default=DEFAULT_QUALITY_TARGET,
-                        help=f'Target CLIP image-vs-text cosine for the retune. '
-                             f'Default {DEFAULT_QUALITY_TARGET}.')
+                        help=f'Target quality-signal value for the retune. '
+                             f'Default {DEFAULT_QUALITY_TARGET}. Note that the '
+                             f'natural range depends on --quality-signal: '
+                             f'CLIP cosines are typically 0.20-0.40; structured-feature '
+                             f'agreement is in [0, 1].')
+    parser.add_argument('--quality-signal', choices=['clip_text', 'structured_features'],
+                        default='clip_text',
+                        help='Quality signal for the agent loop. clip_text: CLIP '
+                             'image-vs-text cosine. structured_features: per-field '
+                             'agreement against a reference 13-field feature dict '
+                             'extracted from --reference. Default: clip_text.')
+    parser.add_argument('--reference', choices=['title', 'initial_prompt'],
+                        default='title',
+                        help='Reference text/features that the quality signal '
+                             'compares against. title: product title from '
+                             'metadata.json (v1). initial_prompt: contents of '
+                             'initial_prompt.txt (v2) or its pre-extracted '
+                             'structured_features_initial_v1.json (v3). '
+                             'Default: title.')
     args = parser.parse_args()
+
+    # Validate (quality_signal, reference) combination early.
+    valid_combos = {
+        ('clip_text', 'title'),
+        ('clip_text', 'initial_prompt'),
+        ('structured_features', 'initial_prompt'),
+    }
+    if (args.quality_signal, args.reference) not in valid_combos:
+        parser.error(
+            f'unsupported (--quality-signal, --reference) combination: '
+            f'({args.quality_signal!r}, {args.reference!r}). '
+            f'Valid combinations: {sorted(valid_combos)}'
+        )
 
     load_dotenv()
 
@@ -348,6 +448,7 @@ def main():
 
     print(f'Config name: {args.config_name!r}  '
           f'(promote={"no" if args.no_promote else "yes"})')
+    print(f'Quality signal: {args.quality_signal}  |  Reference: {args.reference}')
     print(f'Discovered products: {sorted(products)}')
     print(f'Selected: {sorted(selected)}')
     print(f'Models to run: {[MODEL_TAGS[m] for m in models_to_run]}')

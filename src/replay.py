@@ -109,6 +109,28 @@ def path_hash(path: str | Path) -> str:
     return hashlib.sha256(p.read_bytes()).hexdigest()[:16]
 
 
+def image_hash(image_or_path) -> str:
+    '''Deterministic 16-char hash of an image's PIXEL content (after RGB convert).
+    Accepts PIL.Image or file path. Two images with identical pixels hash the
+    same regardless of input form or on-disk encoding (JPEG vs PNG, different
+    PNG compression levels, etc.).
+
+    Use this instead of `path_hash` when an `inputs` dict needs to deduplicate
+    cache entries across different file encodings of the same logical image
+    (e.g., a generated PIL.Image in memory and the same image saved to disk
+    should share a cache entry).
+
+    Lazy import of PIL so replay.py stays usable in environments without
+    Pillow when only path_hash is needed.'''
+    from PIL import Image as _PILImage
+    if isinstance(image_or_path, (str, Path)):
+        img = _PILImage.open(image_or_path).convert('RGB')
+    else:
+        img = image_or_path.convert('RGB')
+    size_marker = f'{img.size[0]}x{img.size[1]}'.encode('utf-8')
+    return hashlib.sha256(img.tobytes() + size_marker).hexdigest()[:16]
+
+
 ## FORMAT DISPATCH ##
 
 def _cache_path(fn_name: str, key: str, format: FormatName) -> Path:

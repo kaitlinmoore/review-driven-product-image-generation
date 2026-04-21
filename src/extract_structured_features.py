@@ -41,7 +41,7 @@ import time
 # Use for local .env-defined OpenAI API key.
 from dotenv import load_dotenv
 
-from replay import cached_call, path_hash
+from replay import cached_call, path_hash, image_hash
 from build_prompt_context import (
     clean_text,
     flatten_description,
@@ -338,6 +338,18 @@ def image_data_url(path: str) -> str:
     return f'data:{mime};base64,{b64}'
 
 
+def _pil_to_data_url(pil_image, fmt: str = 'PNG') -> str:
+    '''Encode a PIL.Image directly to a data URL (no disk roundtrip).
+    Used by extract_features_from_pil for in-loop callers that hold a PIL
+    image in memory.'''
+    import io
+    buf = io.BytesIO()
+    pil_image.convert('RGB').save(buf, format=fmt)
+    b64 = base64.b64encode(buf.getvalue()).decode('ascii')
+    mime = 'image/png' if fmt.upper() == 'PNG' else 'image/jpeg'
+    return f'data:{mime};base64,{b64}'
+
+
 def _build_text_for_source(source: str, artifact_path: str) -> str:
     '''Assemble the LLM-input text for a non-image source.
 
@@ -383,7 +395,11 @@ def call_llm(client, source: str, artifact_path: str, slug: str) -> tuple[dict, 
         text = None
     elif source == 'generated':
         image_paths = [artifact_path]
-        source_input = {'image_hash': path_hash(artifact_path)}
+        # Pixel-content hash (not file-byte hash) so the cache shares with
+        # the in-loop `eval_structured_features` call site, which receives a
+        # PIL.Image directly and has no file path to work with at the moment
+        # of extraction.
+        source_input = {'image_hash': image_hash(artifact_path)}
         text = None
     else:
         text = _build_text_for_source(source, artifact_path)
@@ -457,6 +473,85 @@ def call_llm(client, source: str, artifact_path: str, slug: str) -> tuple[dict, 
 
     result = cached_call('structured_features', inputs, _live, format='json')
     return result['parsed'], result['usage']
+
+
+def extract_features_from_pil(pil_image, slug: str = '_eval_') -> dict:
+    '''Extract the 13-field structured-features dict from a PIL.Image directly.
+
+    Used by the in-loop quality signal (`eval_image.eval_structured_features`)
+    so we don't have to round-trip the candidate image through disk first.
+    Cache namespace and inputs dict are constructed identically to the
+    `--source generated` path in call_llm() — both call sites compute the
+    same cache key for the same image, so a generated image scored in-loop
+    AND analyzed post-hoc via `--source generated` shares one cache entry.
+
+    Lazy OpenAI client construction so test/import paths that never hit live
+    don't require OPENAI_API_KEY in the environment.
+
+    pil_image: PIL.Image (any mode; converted to RGB internally).
+    slug: short tag stamped into the cache-key inputs and into the user
+          prompt (purely informational; does not change extraction behavior).
+          Defaults to '_eval_' for in-loop callers that don't have a slug
+          handy.
+    Returns: parsed feature dict.'''
+    inputs = {
+        'model': LLM_MODEL,
+        'temperature': LLM_TEMPERATURE,
+        'max_tokens': LLM_MAX_TOKENS,
+        'prompt_version': EXTRACTION_PROMPT_VERSION,
+        'prompt_sha256': EXTRACTION_PROMPT_SHA256,
+        'schema_name': 'structured_features_v1',
+        'source': 'generated',
+        'slug': slug,
+        'image_hash': image_hash(pil_image),
+    }
+
+    def _live() -> dict:
+        load_dotenv()
+        api_key = os.environ.get('OPENAI_API_KEY')
+        if not api_key:
+            raise RuntimeError('OPENAI_API_KEY not set; cannot run live extraction.')
+        try:
+            from openai import OpenAI
+        except ImportError:
+            raise RuntimeError('`openai` package not installed.')
+        client = OpenAI(api_key=api_key)
+
+        header = (
+            f'Product slug: {slug}. Extract the structured visual features '
+            f'from this product image and return them as JSON per the schema.'
+        )
+        user_content = [
+            {'type': 'text', 'text': header},
+            {'type': 'image_url', 'image_url': {'url': _pil_to_data_url(pil_image)}},
+        ]
+        resp = client.chat.completions.create(
+            model=LLM_MODEL,
+            temperature=LLM_TEMPERATURE,
+            max_tokens=LLM_MAX_TOKENS,
+            response_format={
+                'type': 'json_schema',
+                'json_schema': {
+                    'name': 'structured_features_v1',
+                    'strict': True,
+                    'schema': STRUCTURED_FEATURES_SCHEMA_V1,
+                },
+            },
+            messages=[
+                {'role': 'system', 'content': EXTRACTION_PROMPT_SYSTEM_V1},
+                {'role': 'user', 'content': user_content},
+            ],
+        )
+        raw = (resp.choices[0].message.content or '').strip()
+        parsed = json.loads(raw)
+        usage = {
+            'input_tokens': resp.usage.prompt_tokens if resp.usage else 0,
+            'output_tokens': resp.usage.completion_tokens if resp.usage else 0,
+        }
+        return {'parsed': parsed, 'usage': usage}
+
+    result = cached_call('structured_features', inputs, _live, format='json')
+    return result['parsed']
 
 
 ## VALIDATION ##

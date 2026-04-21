@@ -21,11 +21,12 @@ import json
 import math
 import os
 from datetime import datetime
+from typing import Callable
 
 import torch
+from PIL import Image as PILImage
 
 from prompt_writer import PromptWriter
-from eval_image import evalImage
 from gen_image_flux import generate_flux
 from gen_image_gpt import generate_gpt_image
 
@@ -105,7 +106,7 @@ def agentLoop(
     dataloader,
     model,
     tokenizer,
-    ground_truth_text: str,
+    quality_signal_fn: Callable[[PILImage.Image], float],
     descriptivenessThreshold: float,
     iterStart: int,
     iterMin: int,
@@ -118,6 +119,13 @@ def agentLoop(
 ):
     '''Outer orchestration: generate imageCount images, refitting descriptiveness
     threshold and per-image iteration budget via quadratic fit between runs.
+
+    quality_signal_fn(img: PIL.Image) -> float in [0, 1] (or thereabouts).
+    Higher = better. Driver constructs this closure based on --quality-signal
+    and --reference flags; agentLoop is signal-agnostic. Examples:
+    - lambda img: compImage(img, title)                       # v1
+    - lambda img: compImage(img, initial_prompt_text)         # v2
+    - lambda img: eval_structured_features(img, ref_features) # v3
 
     Returns (itersTaken, descriptivenesses, prompts, images, qualities, run_dir).
     The first five are lists of length imageCount; run_dir is the absolute-ish
@@ -149,8 +157,11 @@ def agentLoop(
         img = genImage(current_prompt, imageModelNum)
         images.append(img)
 
-        # 3. Evaluate against ground-truth text via CLIP image-vs-text cosine.
-        q_score = evalImage(img, ground_truth_text)
+        # 3. Evaluate via the driver-supplied quality_signal_fn closure.
+        # The function signature is opaque to agentLoop — the driver decided
+        # which metric (CLIP image-vs-text, structured-feature agreement, etc.)
+        # and which reference (title, initial_prompt, ...) to use.
+        q_score = quality_signal_fn(img)
         qualities.append(q_score)
 
         # Save per-iteration artifacts.
