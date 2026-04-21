@@ -198,16 +198,28 @@ def _list_product_images(slug: str, images_dir: str) -> list[str]:
 REVIEWS_ONLY_TOP_N = DEFAULT_TOP_N
 
 
-def source_artifact_path(slug: str, source: str, pdir: str, image_path_override: str | None = None) -> str | None:
+def source_artifact_path(slug: str, source: str, pdir: str,
+                          image_path_override: str | None = None,
+                          config_name: str | None = None,
+                          model_tag: str | None = None) -> str | None:
     '''Return the expected filesystem path for a product/source pair.
-    Returns None for 'generated' when no --image-path is supplied.
+    Returns None for 'generated' when no --image-path is supplied and no
+    (config_name, model_tag) pair is provided to derive the path.
+
+    When config_name AND model_tag are both provided, the per-config
+    artifacts from the agent loop are read instead of canonical pointers:
+    - source=converged: `converged_prompt_{model}_{config}.txt`
+    - source=generated: `generated_image_{model}_{config}.png`
 
     For metadata_only and reviews_only, the path points at the source-of-truth
     file on disk (metadata.json or reviews_ranked.jsonl); the actual text
     sent to the LLM is constructed from that file's contents at call time.'''
+    per_config = config_name is not None and model_tag is not None
     if source == 'initial':
         return os.path.join(pdir, 'initial_prompt.txt')
     if source == 'converged':
+        if per_config:
+            return os.path.join(pdir, f'converged_prompt_{model_tag}_{config_name}.txt')
         return os.path.join(pdir, 'converged_prompt.txt')
     if source == 'prompt_context':
         return os.path.join(pdir, 'prompt_context.txt')
@@ -220,7 +232,11 @@ def source_artifact_path(slug: str, source: str, pdir: str, image_path_override:
         # enumerates the files and applies GROUND_TRUTH_IMAGE_EXCLUDES.
         return os.path.join(pdir, 'images')
     if source == 'generated':
-        return image_path_override
+        if image_path_override is not None:
+            return image_path_override
+        if per_config:
+            return os.path.join(pdir, f'generated_image_{model_tag}_{config_name}.png')
+        return None
     raise ValueError(f'unknown source: {source}')
 
 
@@ -293,8 +309,24 @@ def _build_reviews_only_text(reviews: list[dict]) -> str:
     return '\n'.join(lines) + '\n'
 
 
-def output_paths(slug: str, pdir: str, source: str) -> tuple[str, str]:
-    base = os.path.join(pdir, f'structured_features_{source}_{EXTRACTION_PROMPT_VERSION}')
+def output_paths(slug: str, pdir: str, source: str,
+                  config_name: str | None = None,
+                  model_tag: str | None = None) -> tuple[str, str]:
+    '''Compute the JSON + meta output paths.
+
+    When config_name AND model_tag are provided AND source is
+    converged/generated, the output filenames carry a {model}_{config}
+    suffix so per-config Phase 4 extractions don't overwrite each other.
+    Otherwise the canonical naming is used.'''
+    per_config = (config_name is not None and model_tag is not None
+                   and source in ('converged', 'generated'))
+    if per_config:
+        base = os.path.join(
+            pdir,
+            f'structured_features_{source}_{model_tag}_{config_name}_{EXTRACTION_PROMPT_VERSION}'
+        )
+    else:
+        base = os.path.join(pdir, f'structured_features_{source}_{EXTRACTION_PROMPT_VERSION}')
     return base + '.json', base + '_meta.json'
 
 
@@ -599,13 +631,22 @@ def estimate_cost(n_calls: int, source: str, avg_input_chars: int = 6000) -> tup
 ## PER-PRODUCT DRIVER ##
 
 def process(slug: str, pdir: str, source: str, client, args) -> dict:
-    artifact_path = source_artifact_path(slug, source, pdir, args.image_path)
+    artifact_path = source_artifact_path(
+        slug, source, pdir,
+        image_path_override=args.image_path,
+        config_name=getattr(args, 'config_name', None),
+        model_tag=getattr(args, 'model', None),
+    )
     if artifact_path is None:
-        return {'slug': slug, 'skipped': True, 'reason': 'no --image-path for source=generated'}
+        return {'slug': slug, 'skipped': True, 'reason': 'no --image-path or --config-name+--model for source=generated'}
     if not os.path.exists(artifact_path):
         return {'slug': slug, 'skipped': True, 'reason': f'missing input: {artifact_path}'}
 
-    out_json, out_meta = output_paths(slug, pdir, source)
+    out_json, out_meta = output_paths(
+        slug, pdir, source,
+        config_name=getattr(args, 'config_name', None),
+        model_tag=getattr(args, 'model', None),
+    )
     if os.path.exists(out_json) and not args.force:
         return {'slug': slug, 'skipped': True, 'reason': 'output exists (use --force)'}
 
@@ -661,18 +702,37 @@ def main():
     parser.add_argument('--only', default=None,
                         help='Substring-match a single product slug.')
     parser.add_argument('--image-path', default=None,
-                        help='For --source generated: path to the generated image file.')
+                        help='For --source generated: path to the generated image file. '
+                             'Optional if --config-name and --model are set (auto-derives '
+                             'data/{slug}/generated_image_{model}_{config}.png).')
+    parser.add_argument('--config-name', default=None,
+                        help='For --source converged or generated: read the per-config '
+                             'agent-loop artifact (converged_prompt_{model}_{config}.txt or '
+                             'generated_image_{model}_{config}.png) and write to a '
+                             'correspondingly-suffixed output. Requires --model.')
+    parser.add_argument('--model', choices=['flux', 'gpt'], default=None,
+                        help='Required when --config-name is set. Which image-model '
+                             'flavor of the per-config artifact to extract from.')
     parser.add_argument('--force', action='store_true',
                         help='Regenerate even if output exists.')
     parser.add_argument('--dry-run', action='store_true',
                         help='Show prompt + cost estimate, no API calls.')
     args = parser.parse_args()
 
-    if args.source == 'generated' and not args.only:
-        print('[!] --source generated requires --only <slug> (and --image-path).')
+    # Validate the (--config-name, --model) pairing.
+    if (args.config_name is None) != (args.model is None):
+        print('[!] --config-name and --model must be provided together.')
         sys.exit(1)
-    if args.source == 'generated' and not args.image_path:
-        print('[!] --source generated requires --image-path.')
+    if args.config_name is not None and args.source not in ('converged', 'generated'):
+        print(f'[!] --config-name only applies to --source converged or generated; '
+              f'got --source={args.source!r}.')
+        sys.exit(1)
+
+    if args.source == 'generated' and not args.only:
+        print('[!] --source generated requires --only <slug> (and --image-path or --config-name+--model).')
+        sys.exit(1)
+    if args.source == 'generated' and not args.image_path and not args.config_name:
+        print('[!] --source generated requires --image-path OR (--config-name AND --model).')
         sys.exit(1)
 
     products = discover_products()
@@ -690,8 +750,17 @@ def main():
     to_do: list[tuple[str, str]] = []
     skipped: list[tuple[str, str]] = []
     for slug, pdir in selected.items():
-        artifact = source_artifact_path(slug, args.source, pdir, args.image_path)
-        out_json, _ = output_paths(slug, pdir, args.source)
+        artifact = source_artifact_path(
+            slug, args.source, pdir,
+            image_path_override=args.image_path,
+            config_name=args.config_name,
+            model_tag=args.model,
+        )
+        out_json, _ = output_paths(
+            slug, pdir, args.source,
+            config_name=args.config_name,
+            model_tag=args.model,
+        )
         if artifact is None:
             skipped.append((slug, 'no --image-path'))
             continue
