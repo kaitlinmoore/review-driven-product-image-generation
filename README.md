@@ -21,13 +21,13 @@ contributed to the work.
 ```
 .
 ├── src/                      # production scripts (run the pipeline end-to-end)
-├── notebooks/                # development artifacts; not the runnable path
 ├── exploration/              # methodology artifacts (candidate scoring, gate experiment)
 ├── data/
 │   ├── filter_caches/        # cached LLM gate decisions — committed, scientific
 │   └── {product}/            # per-product metadata, images, intermediate outputs
 ├── replay_cache/             # cached API / model outputs for offline re-runs (see REPRODUCIBILITY.md)
-├── docs/                     # candidate-product documentation
+├── docs/
+│   └── handoff/              # team handoff docs for writeup + presentation drafting
 ├── requirements.txt
 ├── REPRODUCIBILITY.md
 └── README.md
@@ -61,17 +61,45 @@ python src/preprocess_reviews.py
 python src/build_prompt_context.py
 python src/generate_initial_prompt.py
 
-# 7. Extract structured visual features for the four comparison sources
-#    (prompt_context, metadata_only, reviews_only, ground_truth). Feeds Q2/Q3.
+# 7. Extract structured visual features for the five reference comparison
+#    sources. Feeds Q2/Q3 evaluation.
+python src/extract_structured_features.py --source initial
 python src/extract_structured_features.py --source prompt_context
 python src/extract_structured_features.py --source metadata_only
 python src/extract_structured_features.py --source reviews_only
 python src/extract_structured_features.py --source ground_truth
+
+# 8. Run the agent loop (iterative refinement + image generation) for the
+#    three ablation configurations. Each writes per-config artifacts plus
+#    canonical pointers. See REPRODUCIBILITY.md "Agent-Loop Run Configs".
+python src/run_agent_pipeline.py --config-name v1_title_clip
+python src/run_agent_pipeline.py --config-name v2_initial_prompt_clip \
+    --quality-signal clip_text --reference initial_prompt
+python src/run_agent_pipeline.py --config-name v3_initial_prompt_features \
+    --quality-signal structured_features --reference initial_prompt \
+    --quality-target 0.7
+
+# 9. Extract structured features from each agent-loop output (per-config
+#    converged prompts and generated images), for ablation comparison.
+for product in backpack chess_set espresso_machine headphones jeans water_bottle; do
+  for model in flux gpt; do
+    for config in v1_title_clip v2_initial_prompt_clip v3_initial_prompt_features; do
+      python src/extract_structured_features.py --source converged \
+          --only $product --config-name $config --model $model
+      python src/extract_structured_features.py --source generated \
+          --only $product --config-name $config --model $model
+    done
+  done
+done
 ```
 
-After these steps, each product directory contains an `initial_prompt.txt`
-ready for the image-generation + refinement loop, and a
-`structured_features/` subdirectory with the four comparison artifacts.
+After these steps, each product directory contains the full set of
+artifacts: the initial prompt, the per-config refined prompts and
+generated images from each agent-loop run, and structured-feature
+extractions from each comparison source (initial, ground_truth,
+metadata-only, reviews-only, prompt_context, plus per-config converged
+and generated). The `data/{product}/` files are flat (not in a
+subdirectory) and named by source and config tag.
 
 ### GPU users: install CUDA-enabled PyTorch
 
@@ -146,6 +174,3 @@ See [REPRODUCIBILITY.md](REPRODUCIBILITY.md). Record vs. replay modes, what's
 deterministic vs. stochastic, and exact model versions used for the canonical
 run.
 
----
-
-*DRAFT*

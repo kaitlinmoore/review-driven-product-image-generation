@@ -50,7 +50,8 @@ stable across machines with different absolute paths. System-prompt strings
 are hashed into the inputs dict so prompt edits invalidate the cache
 automatically.
 
-All six production call sites are wrapped (see "What Gets Cached" below).
+All eleven production call sites are wrapped (see "What Gets Cached"
+below for the full list).
 
 ## Experimental Design — No Ground-Truth Leakage
 
@@ -68,22 +69,25 @@ boundary.
 | `generate_initial_prompt.py` | No | Reads `prompt_context.txt` (metadata + filtered reviews) |
 | `PromptWriter.stepPrompt` | No | Reads review batches from the DataLoader |
 | `PromptWriter.ratePrompt` | No | Mistral self-scores prompt descriptiveness |
-| `agent_loop.agentLoop` | Title only | Uses `evalImage(img, ground_truth_text)` where `ground_truth_text` is the product **title string** from metadata — not image-derived |
+| `agent_loop.agentLoop` | No | Receives a `quality_signal_fn` callable from the driver. Across all three canonical configs (v1/v2/v3) the references are: product title, `initial_prompt.txt` content, or pre-extracted `structured_features_initial_v1.json` — none of which are derived from ground-truth images |
+| `run_agent_pipeline.py --reference {title,initial_prompt}` | No | The CLI flag literally has no `ground_truth` choice; argparse rejects it before any script logic runs |
 | `gen_image_flux.py` / `gen_image_gpt.py` | No | Prompt-only inputs |
+| `eval_image.eval_structured_features` (in-loop, v3) | No | Reference parameter is the initial-prompt features dict; loaded from `structured_features_initial_v1.json`, which was extracted from text not images |
 | `extract_structured_features.py --source ground_truth` | Yes | **Evaluation artifact.** Writes JSON to disk; no generation-path script reads its output |
 
-The title-string signal inside `agentLoop` is considered fair: any real-world
-caller of a text-to-image pipeline has *some* name for the product they want
-to generate, and the title is the minimal identifying string. It is
-metadata, not image-derived.
+The title-string signal in v1's `quality_signal_fn` is considered fair: any
+real-world caller of a text-to-image pipeline has *some* name for the
+product they want to generate, and the title is the minimal identifying
+string. It is metadata, not image-derived.
 
 **Status.** As of 2026-04, we are awaiting course-staff guidance on whether
 ground-truth-informed refinement would be considered fair game for this
-assignment. The pipeline is structured so an opt-in variant (e.g. a
-`stepPromptWithGT` method that takes a ground-truth feature record alongside
-the review batch) could be added without rearchitecting. **If the design
-changes, update this section, the `stepPrompt` row in the table below, and
-any affected Q2/Q3 report framing.**
+assignment as an additional config (v4). The pipeline is structured so an
+opt-in variant could be added cleanly: extending the `--reference` CLI
+choice to accept `ground_truth` would route in `structured_features_ground_truth_v1.json`
+as the comparison reference. The current canonical run holds the boundary
+strictly. **If the design changes, update this section, the matching rows
+in the table above, and any affected Q2/Q3 report framing.**
 
 ## Deterministic vs. Stochastic
 
@@ -255,6 +259,22 @@ config name is stamped into the per-run artifact filenames and into the
 different designs (different quality signal, hyperparameters, etc.) stay
 distinguishable on disk.
 
+**Quality-signal selection.** Two CLI flags pick the agent loop's
+quality signal and reference text/features:
+
+```
+--quality-signal {clip_text, structured_features}   default: clip_text
+--reference      {title, initial_prompt}            default: title
+```
+
+The three canonical ablation configs combine these as:
+
+| Config name | Quality signal | Reference | Quality target |
+|---|---|---|---|
+| `v1_title_clip` | `clip_text` | `title` | `0.5` (default) |
+| `v2_initial_prompt_clip` | `clip_text` | `initial_prompt` | `0.5` |
+| `v3_initial_prompt_features` | `structured_features` | `initial_prompt` | `0.7` (calibrated to feature-agreement scale) |
+
 **Per-config artifacts** (always written):
 
     data/{product}/converged_prompt_{model}_{config}.txt
@@ -266,8 +286,6 @@ distinguishable on disk.
     data/{product}/converged_prompt_{model}.txt
     data/{product}/generated_image_{model}.png
     data/{product}/converged_prompt.txt        # = FLUX-config converged
-                                                 (the path extract_structured_features
-                                                 --source converged reads by default)
 
 The per-config files are the true record. The canonical pointers are
 convenience aliases for downstream stages that don't know which config
@@ -275,21 +293,57 @@ is currently blessed. Running a second config with `--no-promote`
 preserves the first config as canonical while still capturing the
 ablation on disk.
 
-**Typical ablation workflow:**
+**Per-config Phase 4 extractions.** `extract_structured_features.py`
+accepts `--config-name` and `--model` flags so the per-(product, model,
+config) converged prompts and generated images can each be extracted
+into their own structured-features file:
 
-```powershell
-# First run — promote to canonical.
-python src/run_agent_pipeline.py --config-name v1_title_clip_eval
-
-# Hypothesis-driven change, second run — keep v1 canonical, capture v2 as ablation.
-python src/run_agent_pipeline.py --config-name v2_image_clip_eval --no-promote
-
-# If v2 wins, re-run promoted:
-python src/run_agent_pipeline.py --config-name v2_image_clip_eval --force
+```bash
+python src/extract_structured_features.py --source converged \
+    --only water_bottle --config-name v1_title_clip --model flux
+# Reads converged_prompt_flux_v1_title_clip.txt
+# Writes structured_features_converged_flux_v1_title_clip_v1.json
 ```
 
-Both the v1 and v2 artifact triplets remain on disk. The Q2/Q3 writeup
-references each config by name and compares the two.
+The cache key is image-content-hash-based (via `image_hash` in
+`replay.py`) for image sources, so identical pixel content shares a
+single cache entry across the in-loop call (during the agent loop) and
+the post-hoc Phase 4 extraction.
+
+**Typical ablation workflow:**
+
+```bash
+# v1: canonical baseline.
+python src/run_agent_pipeline.py --config-name v1_title_clip
+
+# v2: change reference text only. Promotes to canonical (overwrites v1's pointers).
+python src/run_agent_pipeline.py --config-name v2_initial_prompt_clip \
+    --quality-signal clip_text --reference initial_prompt
+
+# v3: change metric. Different scale, calibrated quality_target.
+python src/run_agent_pipeline.py --config-name v3_initial_prompt_features \
+    --quality-signal structured_features --reference initial_prompt \
+    --quality-target 0.7
+
+# Phase 4: extract structured features from all 36 (product, model, config) outputs
+# for ablation comparison against ground_truth and initial features.
+for product in backpack chess_set espresso_machine headphones jeans water_bottle; do
+  for model in flux gpt; do
+    for config in v1_title_clip v2_initial_prompt_clip v3_initial_prompt_features; do
+      python src/extract_structured_features.py --source converged \
+          --only $product --config-name $config --model $model
+      python src/extract_structured_features.py --source generated \
+          --only $product --config-name $config --model $model
+    done
+  done
+done
+```
+
+All three configs' artifacts and per-config feature extractions remain
+on disk. The Q2/Q3 writeup references each config by name and compares
+their per-config converged prompts and generated images against the
+shared `structured_features_initial_v1.json` and
+`structured_features_ground_truth_v1.json` references.
 
 ## Ground-Truth Image Selection
 
@@ -300,4 +354,4 @@ packaging shots, or lifestyle scenes that would contaminate the feature
 extraction). The exclusion list lives in `GROUND_TRUTH_IMAGE_EXCLUDES` at
 the top of `extract_structured_features.py` and is per-product. Graders
 reproducing via replay mode do not need to touch this — the cached
-`structured_extract` entries already reflect the canonical exclusion list.
+`structured_features` entries already reflect the canonical exclusion list.
