@@ -104,9 +104,9 @@ numerical comparisons; per-product JSONs for narrative detail.
 
 | What | Where (replace placeholders with actual values) |
 |---|---|
-| The refined prompt | `data/{product}/converged_prompt_{model}_{config}.txt` |
-| The generated image | `data/{product}/generated_image_{model}_{config}.png` |
-| In-loop trajectory provenance | `data/{product}/agent_run_{model}_{config}_meta.json` |
+| The refined prompt (best iteration) | `data/{product}/converged_prompt_{model}_{config}.txt` |
+| The generated image (best iteration) | `data/{product}/generated_image_{model}_{config}.png` |
+| In-loop trajectory provenance (all iterations, numeric) | `data/{product}/agent_run_{model}_{config}_meta.json` |
 | Structured features extracted from generated image | `data/{product}/structured_features_generated_{model}_{config}_v1.json` |
 | Structured features extracted from converged prompt | `data/{product}/structured_features_converged_{model}_{config}_v1.json` |
 
@@ -114,6 +114,26 @@ numerical comparisons; per-product JSONs for narrative detail.
 - `v1_title_clip` (CLIP cosine vs product title — baseline)
 - `v2_initial_prompt_clip` (CLIP cosine vs initial_prompt.txt content)
 - `v3_initial_prompt_features` (structured-feature agreement vs initial features)
+
+### Per-Iteration Trajectories
+
+For each (product, model, config), all 3 image attempts (not just the
+best-selected one) are browsable under:
+
+```
+data/{product}/trajectories/{model}_{config}/
+    iteration_0/
+        prompt.txt           | refined prompt used for this image
+        generated_image.png  | image produced from that prompt
+        metadata.json        | score, descriptiveness, iters_taken
+    iteration_1/ ...
+    iteration_2/ ...
+```
+
+Use for:
+- Slide-deck "refinement trajectory" walkthroughs (iter 0 → iter 1 → iter 2 side-by-side)
+- Failure-mode spot-checks where the numeric summary ("quality went down") needs visual confirmation
+- Qualitative analysis of how prompts evolved across iterations
 
 ### Numerical Comparison Evidence (the eval results CSV)
 
@@ -283,6 +303,7 @@ For each common writeup question, the single most useful starting file:
 | Filter pass rates per product | `03_data_processing.md` § "Filter Pass Rates" |
 | Initial prompt example for a product | `data/{product}/initial_prompt.txt` |
 | Generated image for a (product, model, config) | `data/{product}/generated_image_{model}_{config}.png` |
+| Per-iteration prompt + image + metadata | `data/{product}/trajectories/{model}_{config}/iteration_{N}/` |
 | Numeric scores for any comparison | `eval_results/summary.csv` |
 | Per-field breakdown for failure-mode analysis | `eval_results/per_product/{slug}.json` |
 | In-loop trajectory for a (product, model, config) | `data/{product}/agent_run_{model}_{config}_meta.json` |

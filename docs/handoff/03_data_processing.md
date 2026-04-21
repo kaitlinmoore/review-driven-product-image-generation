@@ -250,7 +250,8 @@ contains artifacts from each stage:
 **Agent-loop output (Phase 3):**
 For each (image-model, config) combination | 6 combinations per
 product (2 models × 3 configs):
-- `converged_prompt_{model}_{config}.txt` | final refined prompt
+- `converged_prompt_{model}_{config}.txt` | final refined prompt (the
+  best iteration)
 - `generated_image_{model}_{config}.png` | best-iteration image
 - `agent_run_{model}_{config}_meta.json` | provenance with hyperparams,
   iteration counts, descriptiveness and quality trajectories
@@ -259,6 +260,26 @@ Plus canonical pointers for downstream tooling that doesn't need to
 know which config is "blessed":
 - `converged_prompt_{model}.txt`, `generated_image_{model}.png` per model
 - `converged_prompt.txt` (a copy of the FLUX-promoted converged prompt)
+
+**Per-iteration trajectories (Phase 3 detail):**
+For each (model, config) combination, the 3 per-image-attempt artifacts
+(not just the best-selected one) are organized under
+`data/{product}/trajectories/{model}_{config}/`:
+
+    data/{product}/trajectories/{model}_{config}/
+        iteration_0/
+            prompt.txt           | the refined prompt used for this attempt
+            generated_image.png  | the image produced
+            metadata.json        | per-iteration score, descriptiveness, iters_taken
+        iteration_1/ ...
+        iteration_2/ ...
+
+18 iteration folders per product (6 combinations × 3 iterations). Useful
+for slide-deck trajectories and failure-mode spot-checks where the
+numeric summary isn't enough and the writer wants to see the actual
+prompt and image at each step. The script `src/extract_iteration_trajectories.py`
+regenerates this layout from the timestamped `runs/` subdirectories
+after a fresh agent-loop run.
 
 **Structured-feature extractions (Stage 5):**
 The 13-field schema is extracted from each of the seven source types
