@@ -1,0 +1,30 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic dark blue denim jeans with a clean and simple design.",
+    "primary_colors": [
+      "dark blue"
+    ],
+    "product_type": "jeans",
+    "shape_and_form": "Straight-leg jeans with a fitted waist and flared bottom.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "button",
+      "pockets",
+      "belt loops",
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 103
+  }
+}

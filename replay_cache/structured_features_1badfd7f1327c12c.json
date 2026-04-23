@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "washed",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic and versatile dark blue bootcut jeans with a clean, smooth finish.",
+    "primary_colors": [
+      "dark blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "These jeans have a fitted waist and hips with a slight flare at the bottom.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pockets",
+      "belt loops",
+      "seams"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 108
+  }
+}

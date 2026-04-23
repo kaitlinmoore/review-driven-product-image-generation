@@ -1,0 +1,28 @@
+{
+  "parsed": {
+    "brand_description": "HYDRO CELL text logo on the front in white.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A sleek and modern water bottle with a minimalist design.",
+    "primary_colors": [
+      "green"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "Cylindrical bottle with a spout lid.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "lid",
+      "spout"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1591,
+    "output_tokens": 105
+  }
+}

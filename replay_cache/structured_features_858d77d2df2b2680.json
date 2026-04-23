@@ -1,0 +1,27 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "elastane"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic high-rise jeans with a deep navy hue and modern allure.",
+    "primary_colors": [
+      "navy"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "Subtly defined bootcut shape that gradually widens towards the ankles.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 925,
+    "output_tokens": 106
+  }
+}

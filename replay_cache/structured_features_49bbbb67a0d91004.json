@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": "B logo on the ear cup.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [
+      "camouflage pattern"
+    ],
+    "finish": "matte",
+    "materials": [
+      "plastic",
+      "synthetic leather"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Modern and stylish with a bold camouflage pattern.",
+    "primary_colors": [
+      "blue",
+      "black"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Over-ear headphones with a padded headband and ear cups.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "headband",
+      "ear cups",
+      "cushions"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 112
+  }
+}

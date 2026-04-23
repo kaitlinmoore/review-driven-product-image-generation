@@ -1,0 +1,32 @@
+{
+  "parsed": {
+    "brand_description": "Leather patch on the back waistband.",
+    "brand_visibility": "subtle",
+    "decorative_elements": [
+      "contrast stitching"
+    ],
+    "finish": "unspecified",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic and sleek navy jeans with contrast stitching.",
+    "primary_colors": [
+      "navy"
+    ],
+    "product_type": "jeans",
+    "shape_and_form": "Straight-leg jeans with a high waist and full length.",
+    "size_descriptor": "unspecified",
+    "texture": "smooth",
+    "visible_parts": [
+      "pockets",
+      "belt loops",
+      "button",
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 108
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": "Red 'beats' text logo on the headband and red 'b' logo on the ear cups.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [
+      "camouflage pattern"
+    ],
+    "finish": "matte",
+    "materials": [
+      "plastic",
+      "synthetic leather"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Bold and modern with a striking camouflage pattern and vibrant red accents.",
+    "primary_colors": [
+      "blue",
+      "red"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Over-ear headphones with a rounded headband and circular ear cups.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "headband",
+      "ear cups",
+      "cushions"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 131
+  }
+}

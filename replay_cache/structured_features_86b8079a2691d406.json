@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic dark blue jeans with a flared silhouette.",
+    "primary_colors": [
+      "dark blue"
+    ],
+    "product_type": "jeans",
+    "shape_and_form": "These jeans have a fitted waist and thighs with a flared leg opening.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": [
+      "pockets",
+      "seams"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 104
+  }
+}

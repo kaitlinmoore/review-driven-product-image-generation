@@ -1,0 +1,30 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "matte",
+    "materials": [
+      "stainless steel",
+      "plastic"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A modern and functional water bottle with a vibrant color contrast.",
+    "primary_colors": [
+      "green",
+      "pink"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "Tall cylindrical shape with a wide mouth and a handle on the lid.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "lid",
+      "handle"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1591,
+    "output_tokens": 102
+  }
+}

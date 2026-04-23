@@ -1,0 +1,30 @@
+{
+  "parsed": {
+    "brand_description": "WallFlower text logo on a brown leather patch.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic and sleek with a modern fit.",
+    "primary_colors": [
+      "navy",
+      "brown"
+    ],
+    "product_type": "jeans",
+    "shape_and_form": "Form-fitting with a classic five-pocket design.",
+    "size_descriptor": "unspecified",
+    "texture": "smooth",
+    "visible_parts": [
+      "pockets",
+      "belt loops",
+      "button"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 104
+  }
+}

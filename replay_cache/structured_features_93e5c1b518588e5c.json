@@ -1,0 +1,34 @@
+{
+  "parsed": {
+    "brand_description": "Beats logo on the ear cup and 'beats' text on the headband.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [
+      "blue camouflage pattern"
+    ],
+    "finish": "matte",
+    "materials": [
+      "plastic",
+      "synthetic leather"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Modern and stylish with a bold camouflage pattern.",
+    "primary_colors": [
+      "blue",
+      "black",
+      "red"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Over-ear headphones with a rounded headband and circular ear cups.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "headband",
+      "ear cups",
+      "ear pads"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 124
+  }
+}

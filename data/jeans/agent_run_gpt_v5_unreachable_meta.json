@@ -1,0 +1,41 @@
+{
+  "slug": "jeans",
+  "image_model_num": 2,
+  "model_tag": "gpt",
+  "config_name": "v5_unreachable",
+  "quality_signal": "structured_features",
+  "reference": "ground_truth",
+  "reference_summary": "structured_features_ground_truth_v1.json (LEAKY; intentional v4 ablation)",
+  "image_count": 5,
+  "descriptiveness_threshold": 60.0,
+  "iter_start": 3,
+  "iter_min": 1,
+  "iter_max": 5,
+  "quality_target": 0.92,
+  "iters_taken_per_image": [
+    3,
+    2,
+    2,
+    2,
+    2
+  ],
+  "descriptivenesses": [
+    55.0,
+    55.0,
+    55.0,
+    55.0,
+    55.0
+  ],
+  "qualities": [
+    0.46190476190476193,
+    0.48644688644688644,
+    0.24358974358974358,
+    0.4849112426035503,
+    0.37172739541160593
+  ],
+  "best_idx": 1,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260422_235936",
+  "elapsed_seconds": 123.26,
+  "timestamp_utc": "2026-04-23T04:01:39Z"
+}

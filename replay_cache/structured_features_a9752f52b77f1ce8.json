@@ -1,0 +1,26 @@
+{
+  "parsed": {
+    "brand_description": "HYDRO CELL text logo on the bottle.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "powder-coated",
+    "materials": [
+      "stainless steel"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A sleek and modern water bottle with vibrant colors and ergonomic design.",
+    "primary_colors": [
+      "Army Green",
+      "Electric Fuchsia"
+    ],
+    "product_type": "water bottle",
+    "shape_and_form": "Sleek and modern with an ergonomic structure.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 915,
+    "output_tokens": 107
+  }
+}

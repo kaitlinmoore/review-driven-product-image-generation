@@ -1,0 +1,25 @@
+{
+  "brand_description": null,
+  "brand_visibility": "absent",
+  "decorative_elements": [
+    "hand-carved decorations"
+  ],
+  "finish": "warm",
+  "materials": [
+    "beech wood",
+    "birch wood"
+  ],
+  "measurements": "21.65 x 21.65 in",
+  "overall_aesthetic": "The chess set exudes an old world artisanal charm with its rich, warm finish and intricate carvings.",
+  "primary_colors": [
+    "brown"
+  ],
+  "product_type": "chess set",
+  "shape_and_form": "The chessboard is square with a large playing surface.",
+  "size_descriptor": "large",
+  "texture": "grainy",
+  "visible_parts": [
+    "board",
+    "pieces"
+  ]
+}

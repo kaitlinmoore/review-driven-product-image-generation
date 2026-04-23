@@ -380,7 +380,11 @@ addressed by completing each Q's deliverables faithfully.
 - 6 products instead of required 3 (2× the diversity)
 - Two leading-edge image models (FLUX + gpt-image) instead of just any two
 - Three structured ablation configs (v1/v2/v3) testing different
-  prompt-engineering signals — most teams will run one configuration
+  prompt-engineering signals — most teams will run one configuration.
+  A follow-up experiment (v5_unreachable) extending the ablation
+  with image_count=5 and an unreachable target is documented in
+  05_decisions_log.md § "Experimental phase 2"; summary.csv
+  includes v5 rows.
 - 13-field structured schema enabling cross-source comparison —
   most teams will compare on holistic numeric metrics only
 - Surrogate-projected adaptive iteration control — novel agentic

@@ -1,0 +1,27 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "premium cotton",
+      "polyester",
+      "elastane"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A refined aesthetic with a timeless fusion of traditional and contemporary style.",
+    "primary_colors": [
+      "navy"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "Subtle bootcut silhouette gently expands toward the ankle.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 924,
+    "output_tokens": 102
+  }
+}

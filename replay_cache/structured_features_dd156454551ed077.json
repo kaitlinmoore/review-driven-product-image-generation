@@ -1,0 +1,27 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "elastane"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A harmonious blend of classic elegance and modern allure in a deep navy blue hue.",
+    "primary_colors": [
+      "navy blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "Subtle bootcut silhouette with a high-rise waist.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 924,
+    "output_tokens": 106
+  }
+}

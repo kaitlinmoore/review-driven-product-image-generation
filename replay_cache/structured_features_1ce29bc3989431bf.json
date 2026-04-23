@@ -1,0 +1,29 @@
+{
+  "parsed": {
+    "brand_description": "Wallflower text logo at the top.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic dark blue bootcut jeans with a sleek and modern look.",
+    "primary_colors": [
+      "dark blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "These are fitted jeans with a slight flare at the bottom.",
+    "size_descriptor": "unspecified",
+    "texture": "smooth",
+    "visible_parts": [
+      "pockets",
+      "button",
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 109
+  }
+}

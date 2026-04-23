@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "polished",
+    "materials": [
+      "wood",
+      "metal"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A classic and elegant chess set with a polished wooden board and metallic pieces.",
+    "primary_colors": [
+      "brown",
+      "beige",
+      "gold"
+    ],
+    "product_type": "chess set",
+    "shape_and_form": "Square board with alternating colored squares and standard chess pieces.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pieces",
+      "board"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1590,
+    "output_tokens": 104
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [
+      "ornate border",
+      "carved details"
+    ],
+    "finish": "varnished",
+    "materials": [
+      "wood"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "A classic and ornate wooden chess set with a varnished finish.",
+    "primary_colors": [
+      "brown",
+      "beige"
+    ],
+    "product_type": "chess set",
+    "shape_and_form": "Square board with carved pieces.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "pieces",
+      "board",
+      "clasps"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1590,
+    "output_tokens": 105
+  }
+}

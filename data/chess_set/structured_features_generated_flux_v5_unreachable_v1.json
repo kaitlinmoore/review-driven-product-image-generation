@@ -1,0 +1,25 @@
+{
+  "brand_description": null,
+  "brand_visibility": "absent",
+  "decorative_elements": [
+    "carvings"
+  ],
+  "finish": "polished",
+  "materials": [
+    "wood"
+  ],
+  "measurements": null,
+  "overall_aesthetic": "A classic and elegant wooden chess set with a polished finish and decorative carvings.",
+  "primary_colors": [
+    "brown",
+    "beige"
+  ],
+  "product_type": "chess set",
+  "shape_and_form": "Square board with carved edges and standard chess pieces.",
+  "size_descriptor": "medium",
+  "texture": "smooth",
+  "visible_parts": [
+    "pieces",
+    "board"
+  ]
+}

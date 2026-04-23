@@ -1,0 +1,25 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic and sleek high-rise jeans with a vintage vibe.",
+    "primary_colors": [
+      "navy"
+    ],
+    "product_type": "jeans",
+    "shape_and_form": "High-rise jeans with a flared leg.",
+    "size_descriptor": "unspecified",
+    "texture": "smooth",
+    "visible_parts": []
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 89
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [
+      "hand-sculpted design",
+      "unique grain pattern"
+    ],
+    "finish": "warm",
+    "materials": [
+      "beech wood",
+      "birch wood"
+    ],
+    "measurements": "21.65 x 21.65 in",
+    "overall_aesthetic": "An elegant and traditional European design with intricate craftsmanship.",
+    "primary_colors": [
+      "brown"
+    ],
+    "product_type": "chess set",
+    "shape_and_form": "A square board with intricately sculpted pieces.",
+    "size_descriptor": "large",
+    "texture": "grainy",
+    "visible_parts": [
+      "board",
+      "pieces"
+    ]
+  },
+  "usage": {
+    "input_tokens": 921,
+    "output_tokens": 115
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": null,
+    "brand_visibility": "absent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "cotton",
+      "polyester",
+      "elastane"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Vintage-inspired, slimming and flattering fit.",
+    "primary_colors": [
+      "dark blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "High-rise waist with a classic bootcut style.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": [
+      "pockets",
+      "button",
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 104
+  }
+}

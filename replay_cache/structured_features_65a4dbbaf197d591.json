@@ -1,0 +1,31 @@
+{
+  "parsed": {
+    "brand_description": "White 'b' logo on the ear cup.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [
+      "camouflage pattern"
+    ],
+    "finish": "matte",
+    "materials": [
+      "plastic"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Modern and vibrant with a bold camouflage pattern.",
+    "primary_colors": [
+      "blue",
+      "pink"
+    ],
+    "product_type": "headphones",
+    "shape_and_form": "Over-ear headphones with a circular ear cup design.",
+    "size_descriptor": "medium",
+    "texture": "smooth",
+    "visible_parts": [
+      "headband",
+      "ear cups"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 105
+  }
+}

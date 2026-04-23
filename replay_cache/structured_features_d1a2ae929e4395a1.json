@@ -1,0 +1,30 @@
+{
+  "parsed": {
+    "brand_description": "WallFlower text logo on the top left corner.",
+    "brand_visibility": "prominent",
+    "decorative_elements": [],
+    "finish": "unspecified",
+    "materials": [
+      "denim"
+    ],
+    "measurements": null,
+    "overall_aesthetic": "Classic and versatile bootcut jeans with a clean, dark blue wash.",
+    "primary_colors": [
+      "blue"
+    ],
+    "product_type": "bootcut jeans",
+    "shape_and_form": "Classic bootcut with a mid-rise waist and flared legs.",
+    "size_descriptor": "unspecified",
+    "texture": "unspecified",
+    "visible_parts": [
+      "pockets",
+      "belt loops",
+      "button",
+      "zipper"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1589,
+    "output_tokens": 116
+  }
+}

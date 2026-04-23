@@ -1,0 +1,67 @@
+{
+  "product": "headphones",
+  "model": "gpt",
+  "config": "v5_unreachable",
+  "iterations": [
+    {
+      "product": "headphones",
+      "model": "gpt",
+      "config": "v5_unreachable",
+      "iteration": 0,
+      "descriptiveness": 68.0,
+      "iters_taken": 1,
+      "score_family_c": 0.8406759906759907,
+      "clip_img_vs_gt_mean": 0.8628845095634461,
+      "dinov2_vs_gt_mean": 0.8052853465080261,
+      "siglip_vs_gt_mean": 0.8958488821983337
+    },
+    {
+      "product": "headphones",
+      "model": "gpt",
+      "config": "v5_unreachable",
+      "iteration": 1,
+      "descriptiveness": 55.0,
+      "iters_taken": 1,
+      "score_family_c": 0.6719114219114218,
+      "clip_img_vs_gt_mean": 0.8221332430839539,
+      "dinov2_vs_gt_mean": 0.7789064049720764,
+      "siglip_vs_gt_mean": 0.8418798446655273
+    },
+    {
+      "product": "headphones",
+      "model": "gpt",
+      "config": "v5_unreachable",
+      "iteration": 2,
+      "descriptiveness": 68.0,
+      "iters_taken": 1,
+      "score_family_c": 0.6867312175004483,
+      "clip_img_vs_gt_mean": 0.8155938982963562,
+      "dinov2_vs_gt_mean": 0.7785641551017761,
+      "siglip_vs_gt_mean": 0.8380599856376648
+    },
+    {
+      "product": "headphones",
+      "model": "gpt",
+      "config": "v5_unreachable",
+      "iteration": 3,
+      "descriptiveness": 68.0,
+      "iters_taken": 1,
+      "score_family_c": 0.6846999154691462,
+      "clip_img_vs_gt_mean": 0.8333792924880982,
+      "dinov2_vs_gt_mean": 0.777620255947113,
+      "siglip_vs_gt_mean": 0.8325376749038697
+    },
+    {
+      "product": "headphones",
+      "model": "gpt",
+      "config": "v5_unreachable",
+      "iteration": 4,
+      "descriptiveness": 55.0,
+      "iters_taken": 1,
+      "score_family_c": 0.6863905325443788,
+      "clip_img_vs_gt_mean": 0.8335411667823791,
+      "dinov2_vs_gt_mean": 0.7887359380722045,
+      "siglip_vs_gt_mean": 0.8538321137428284
+    }
+  ]
+}

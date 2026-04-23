@@ -1,0 +1,41 @@
+{
+  "slug": "water_bottle",
+  "image_model_num": 1,
+  "model_tag": "flux",
+  "config_name": "v5_unreachable",
+  "quality_signal": "structured_features",
+  "reference": "ground_truth",
+  "reference_summary": "structured_features_ground_truth_v1.json (LEAKY; intentional v4 ablation)",
+  "image_count": 5,
+  "descriptiveness_threshold": 60.0,
+  "iter_start": 3,
+  "iter_min": 1,
+  "iter_max": 5,
+  "quality_target": 0.92,
+  "iters_taken_per_image": [
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "descriptivenesses": [
+    65.0,
+    65.0,
+    65.0,
+    68.0,
+    55.0
+  ],
+  "qualities": [
+    0.7390734265734266,
+    0.6425049309664694,
+    0.7756410256410257,
+    0.7262327416173571,
+    0.7445759368836291
+  ],
+  "best_idx": 2,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260423_000202",
+  "elapsed_seconds": 181.17,
+  "timestamp_utc": "2026-04-23T04:05:03Z"
+}

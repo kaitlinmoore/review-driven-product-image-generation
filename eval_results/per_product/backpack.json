@@ -389,6 +389,31 @@
       },
       "conv_features_present": true
     },
+    "flux_v5_unreachable": {
+      "in_loop_best_q": null,
+      "in_loop_best_idx": null,
+      "iters_taken_per_image": null,
+      "qualities": null,
+      "descriptivenesses": null,
+      "agent_run_present": false,
+      "clip_img_vs_gt_mean": null,
+      "clip_img_vs_gt_max": null,
+      "dinov2_vs_gt_mean": null,
+      "dinov2_vs_gt_max": null,
+      "siglip_vs_gt_mean": null,
+      "siglip_vs_gt_max": null,
+      "gen_image_present": false,
+      "gen_features_vs_initial": null,
+      "gen_features_vs_ground_truth": null,
+      "gen_per_field_vs_initial": null,
+      "gen_per_field_vs_ground_truth": null,
+      "gen_features_present": false,
+      "conv_features_vs_initial": null,
+      "conv_features_vs_ground_truth": null,
+      "conv_per_field_vs_initial": null,
+      "conv_per_field_vs_ground_truth": null,
+      "conv_features_present": false
+    },
     "gpt_v1_title_clip": {
       "in_loop_best_q": 0.30951130390167236,
       "in_loop_best_idx": 0,
@@ -775,6 +800,31 @@
         "overall_aesthetic": 0.23809523809523808
       },
       "conv_features_present": true
+    },
+    "gpt_v5_unreachable": {
+      "in_loop_best_q": null,
+      "in_loop_best_idx": null,
+      "iters_taken_per_image": null,
+      "qualities": null,
+      "descriptivenesses": null,
+      "agent_run_present": false,
+      "clip_img_vs_gt_mean": null,
+      "clip_img_vs_gt_max": null,
+      "dinov2_vs_gt_mean": null,
+      "dinov2_vs_gt_max": null,
+      "siglip_vs_gt_mean": null,
+      "siglip_vs_gt_max": null,
+      "gen_image_present": false,
+      "gen_features_vs_initial": null,
+      "gen_features_vs_ground_truth": null,
+      "gen_per_field_vs_initial": null,
+      "gen_per_field_vs_ground_truth": null,
+      "gen_features_present": false,
+      "conv_features_vs_initial": null,
+      "conv_features_vs_ground_truth": null,
+      "conv_per_field_vs_initial": null,
+      "conv_per_field_vs_ground_truth": null,
+      "conv_features_present": false
     }
   }
 }
