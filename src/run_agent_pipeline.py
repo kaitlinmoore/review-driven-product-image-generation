@@ -214,6 +214,20 @@ def read_initial_features(pdir: str) -> dict:
         return json.load(f)
 
 
+def read_ground_truth_features(pdir: str) -> dict:
+    '''Pre-extracted 13-field structured-features dict from
+    structured_features_ground_truth_v1.json. The reference for v4 —
+    the leaky variant where the in-loop signal compares generated images
+    against ground-truth features directly. This is an INTENTIONAL
+    violation of the no-ground-truth-leakage boundary, used as an
+    ablation to measure "what if leakage were allowed".
+
+    The canonical v1/v2/v3 configs DO NOT use this.'''
+    path = os.path.join(pdir, 'structured_features_ground_truth_v1.json')
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
 def build_quality_signal_fn(quality_signal: str, reference: str,
                              pdir: str, slug: str):
     '''Return (quality_signal_fn, reference_summary).
@@ -240,6 +254,9 @@ def build_quality_signal_fn(quality_signal: str, reference: str,
         if reference == 'initial_prompt':
             ref_features = read_initial_features(pdir)
             ref_summary = 'structured_features_initial_v1.json'
+        elif reference == 'ground_truth':
+            ref_features = read_ground_truth_features(pdir)
+            ref_summary = 'structured_features_ground_truth_v1.json (LEAKY; intentional v4 ablation)'
         else:
             raise ValueError(
                 f'--quality-signal=structured_features does not support --reference={reference!r}')
@@ -412,13 +429,17 @@ def main():
                              'image-vs-text cosine. structured_features: per-field '
                              'agreement against a reference 13-field feature dict '
                              'extracted from --reference. Default: clip_text.')
-    parser.add_argument('--reference', choices=['title', 'initial_prompt'],
+    parser.add_argument('--reference', choices=['title', 'initial_prompt', 'ground_truth'],
                         default='title',
                         help='Reference text/features that the quality signal '
                              'compares against. title: product title from '
                              'metadata.json (v1). initial_prompt: contents of '
                              'initial_prompt.txt (v2) or its pre-extracted '
                              'structured_features_initial_v1.json (v3). '
+                             'ground_truth: pre-extracted '
+                             'structured_features_ground_truth_v1.json (v4, '
+                             'LEAKY — intentional ablation using ground-truth '
+                             'features as the in-loop refinement target). '
                              'Default: title.')
     args = parser.parse_args()
 
@@ -427,6 +448,7 @@ def main():
         ('clip_text', 'title'),
         ('clip_text', 'initial_prompt'),
         ('structured_features', 'initial_prompt'),
+        ('structured_features', 'ground_truth'),   # v4: intentional leaky ablation
     }
     if (args.quality_signal, args.reference) not in valid_combos:
         parser.error(
