@@ -195,8 +195,7 @@ the initial prompt's features (v3 in-loop scores rise iteration over
 iteration), but that refinement does not translate into images that
 look more like the actual product. The preservation signal and the
 accuracy signal are effectively orthogonal on this metric, sometimes
-anti-correlated. This finding motivated the v5 follow-up experiment
-below.
+anti-correlated.
 
 ### Controller parameter logging gap (limitation)
 
@@ -227,108 +226,6 @@ Instrumenting `agent_loop.py` to persist retune values (per-image
 a fixable pipeline gap **not addressed in this pass**. Trajectory
 analysis in `exploration/analyze_trajectories.py` works around the
 gap by reasoning from observable proxies.
-
-### Experimental phase 2: iteration stress test (v5_unreachable)
-
-The v1/v2/v3 ablation was designed to compare quality-signal choices
-under a common calibration rule, not to test whether adaptive
-iteration itself produces image-level improvement. With
-`image_count=3`, only image 2 benefits from a fully-determined
-quadratic retune — earlier images use default or weakly-retuned
-controller parameters. This bounds what the canonical matrix alone
-can say about whether adaptive iteration specifically produces
-image-level improvement versus whether the in-loop signal just
-optimizes its own metric.
-
-An intermediate experiment (per-product calibrated targets at
-`image_count=3`) was run during the design iteration of this
-follow-up and then retired: per-product calibration proved brittle
-because iter-0 scores spanned ~0.68 across pairs, producing uneven
-refinement budgets across products. Findings were consistent with
-the v5 results below and informed v5's single-unreachable-target
-design; artifacts are not retained in the repo.
-
-v5_unreachable is the retained follow-up:
-
-- **Signal:** accuracy-driven — structured-feature agreement against
-  ground-truth features (`--quality-signal structured_features
-  --reference ground_truth`). Breaks the no-ground-truth-leakage
-  boundary intentionally; documented as a controlled opt-in
-  ablation (see "No ground-truth leakage boundary" subsection above).
-- **`image_count=5`** — gives the controller 4 retune opportunities.
-  Images 3–4 both benefit from fully-determined fits.
-- **`quality_target=0.92`** — above the observed Family C ceiling of
-  ~0.84 across the v1/v2/v3 matrix. Forces the loop to exhaust its
-  full outer-loop budget rather than short-circuiting. 0.92 is chosen
-  as "safely unreachable" without over-extrapolating the quadratic
-  controller: far enough above the ceiling that no pair's iter-0
-  score approaches it, but not so far that retune roots become
-  pathological.
-- **Products:** chess_set, headphones, jeans, water_bottle × 2
-  models = 8 pairs. Skipped: backpack (no reviews for refinement
-  regardless of config) and espresso (iter-0 already at the metric
-  ceiling in canonical runs).
-- **Other hyperparameters:** unchanged from canonical defaults
-  (`iter_start=3`, `iter_min=1`, `iter_max=5`,
-  `descriptiveness_threshold=60.0`) so `image_count` and target are
-  the only variables changed.
-
-Research question: does per-iteration Family B trend positive across
-images 0→4 when given a full refinement budget? Does Family C
-improvement (the signal the loop optimizes) correlate with Family B
-improvement (the orthogonal check), or do they anti-correlate?
-
-#### Observed controller behavior (correction to prior prediction)
-
-Pre-run expectation was that `iters_taken` would saturate toward
-`iter_max=5` as the quadratic retune extrapolated more aggressively
-between images under an unreachable target. **That prediction was
-wrong.** No pair's per-image `iters_taken` exceeded 3; the maximum
-observed total across 5 images was 11 (jeans × 2). The controller
-consistently preferred to "spread effort across the outer loop"
-rather than saturate the inner loop on any single image.
-
-Three distinct allocation patterns emerged across the 8 runs:
-
-| Pattern | iters_taken profile | Example pairs | Interpretation |
-|---|---|---|---|
-| **Truncate** | [n, n, 0, 0, 0] or [n, n, n, n, 0] | chess_set flux, water_bottle gpt | Controller shuts inner loop off mid-run (retune drops `descriptivenessThreshold` ≤ current, making improvementLoop exit at 0 iters) |
-| **Sustained** | [1, 1, 1, 1, 1] | headphones × 2 | 1 inner iter per image, fully active — narrowly above threshold each image |
-| **Heavy** | [3, 2, 2, 2, 2] | jeans × 2 | 2–3 inner iters per image, highest total work. These are also the only pairs with consistent positive Family B slope |
-
-The pattern correlates with review availability and initial-prompt
-quality: pairs with low iter-0 Family C (jeans) do the most work;
-pairs already at ceiling (chess_set gpt, water_bottle gpt) truncate
-earliest. This is expected under quadratic-retune dynamics when the
-target is extrapolated beyond what the current trajectory supports —
-the fit produces roots outside feasible `iterStart` range, the
-clamp kicks in, and the resulting in-loop behavior depends more on
-the drift of `descriptivenessThreshold` than on `iterStart` itself.
-
-Takeaway for the controller logging gap (previous subsection): the
-observable proxies turned out to be sufficient for this analysis,
-but a writeup wanting to claim "the controller explored the budget
-space under unreachable targets" cannot be supported from what's
-persisted. Only "the controller allocated effort non-uniformly
-across outer iterations" can be claimed from observable data.
-
-#### v5 headline result
-
-iter-4 vs iter-0 Family B delta across the 8 pairs: **only jeans × 2
-show positive slope on ≥2 of 3 encoders**. On jeans/gpt specifically,
-Family B CLIP Δ = +0.221 and DINOv2 Δ = +0.062, while Family C Δ =
--0.090. This is the cleanest case of Family B and Family C
-anti-correlating under accuracy-driven refinement: the signal the
-loop optimizes (Family C) worsened while the orthogonal image-
-similarity metric it does not see (Family B) improved.
-
-The other 6 pairs produced flat or slightly-worse Family B outcomes.
-headphones flux deserves a note: full-budget iteration produced
--0.063 CLIP Δ and -0.113 DINOv2 Δ — a regression on every
-independent encoder despite the controller engaging fully across all
-5 images. Extra iterations moved this pair away from ground truth,
-not toward. A cautionary data point against "more iteration is
-better" as a general claim for this pipeline.
 
 ### Iter / threshold parameter values
 

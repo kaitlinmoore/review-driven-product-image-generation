@@ -225,18 +225,6 @@ adaptive behavior in practice (e.g., "image 0 ran 10 refinement
 iters; after the retune, image 1 ran 2 iters; the agent allocated
 proportionally to observed quality gain").
 
-The `v5_unreachable` follow-up experiment is the primary evidence
-source for *whether* adaptive iteration produces measurable image-
-level gains under a full refinement budget (image_count=5). See:
-
-| What | Where |
-|---|---|
-| Three observed allocation patterns (truncate / sustained / heavy) | `docs/handoff/05_decisions_log.md` § "Experimental phase 2: iteration stress test" |
-| v5 headline result (iter-4 vs iter-0 Family B delta, jeans × 2 as the only positive pairs) | `docs/handoff/05_decisions_log.md` § "v5 headline result" |
-| Per-(product, model, iteration) Family B + Family C + descriptiveness + iters_taken | `eval_results/per_product/v5_trajectories/{product}_{model}.json` |
-| v5 matrix numbers (aggregate best_q per pair) | `eval_results/summary.csv` `config == 'v5_unreachable'` rows |
-| Reproducible analysis script | `exploration/analyze_trajectories.py --config v5_unreachable --products chess_set,headphones,jeans,water_bottle --iterations 0-4` |
-
 ### Reproducibility
 
 | Claim | Evidence |
