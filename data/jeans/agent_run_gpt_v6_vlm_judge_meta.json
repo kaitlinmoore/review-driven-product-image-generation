@@ -1,0 +1,41 @@
+{
+  "slug": "jeans",
+  "image_model_num": 2,
+  "model_tag": "gpt",
+  "config_name": "v6_vlm_judge",
+  "quality_signal": "vlm_judge",
+  "reference": "ground_truth",
+  "reference_summary": "data\\jeans\\images\\main.jpg (LEAKY; gpt-4o vision directly compares generated image to ground-truth photo)",
+  "image_count": 5,
+  "descriptiveness_threshold": 60.0,
+  "iter_start": 3,
+  "iter_min": 1,
+  "iter_max": 5,
+  "quality_target": 0.88,
+  "iters_taken_per_image": [
+    3,
+    1,
+    1,
+    1,
+    1
+  ],
+  "descriptivenesses": [
+    55.0,
+    55.0,
+    55.0,
+    55.0,
+    55.0
+  ],
+  "qualities": [
+    0.72,
+    0.45,
+    0.72,
+    0.45,
+    0.45
+  ],
+  "best_idx": 0,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260423_063819",
+  "elapsed_seconds": 61.1,
+  "timestamp_utc": "2026-04-23T10:39:20Z"
+}

@@ -1,0 +1,11 @@
+{
+  "differences": [
+    "Color is darker in Image B",
+    "Stitching color differs",
+    "Material texture appears smoother in Image B",
+    "Button and rivet details differ"
+  ],
+  "raw": "{\"differences\": [\"Color is darker in Image B\", \"Stitching color differs\", \"Material texture appears smoother in Image B\", \"Button and rivet details differ\"], \"score\": 72}",
+  "score": 0.72,
+  "score_raw_integer": 72
+}

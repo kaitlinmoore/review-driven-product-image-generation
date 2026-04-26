@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B has a camouflage pattern, while Image A is solid blue.",
+    "The logo on Image B is white, whereas in Image A it is metallic.",
+    "Image B has pink accents on the headband, which are absent in Image A.",
+    "The ear cup design in Image B is more rounded compared to Image A."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image B has a camouflage pattern, while Image A is solid blue.\",\n    \"The logo on Image B is white, whereas in Image A it is metallic.\",\n    \"Image B has pink accents on the headband, which are absent in Image A.\",\n    \"The ear cup design in Image B is more rounded compared to Image A.\"\n  ],\n  \"score\": 0.50\n}",
+  "score": 0.5
+}

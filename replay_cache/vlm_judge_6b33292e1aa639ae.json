@@ -1,0 +1,9 @@
+{
+  "differences": [
+    "Image B shows bottles with a different cap design compared to Image A.",
+    "The color options in Image B do not match those in Image A.",
+    "The logo and text placement are consistent, but the font size appears slightly different."
+  ],
+  "score": 0.72,
+  "score_raw_integer": 72
+}

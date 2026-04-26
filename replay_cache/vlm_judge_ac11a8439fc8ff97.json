@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "The color in Image B is a brighter blue compared to the darker navy blue in Image A.",
+    "The logo on the ear cup in Image B is white, whereas in Image A it is metallic.",
+    "The text 'studio3' is positioned differently and appears in a different color in Image B.",
+    "The ear cushions in Image B appear to have a different texture and finish."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"The color in Image B is a brighter blue compared to the darker navy blue in Image A.\",\n    \"The logo on the ear cup in Image B is white, whereas in Image A it is metallic.\",\n    \"The text 'studio3' is positioned differently and appears in a different color in Image B.\",\n    \"The ear cushions in Image B appear to have a different texture and finish.\"\n  ],\n  \"score\": 0.50\n}",
+  "score": 0.5
+}

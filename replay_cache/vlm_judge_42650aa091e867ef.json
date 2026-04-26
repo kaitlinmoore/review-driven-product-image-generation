@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Color: Image B shows a darker blue denim compared to Image A.",
+    "Stitching: Image B has less visible contrast stitching than Image A.",
+    "Wash: Image A has a more pronounced faded wash effect.",
+    "Button: The button in Image B appears darker and less detailed."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Color: Image B shows a darker blue denim compared to Image A.\",\n    \"Stitching: Image B has less visible contrast stitching than Image A.\",\n    \"Wash: Image A has a more pronounced faded wash effect.\",\n    \"Button: The button in Image B appears darker and less detailed.\"\n  ],\n  \"score\": 0.70\n}",
+  "score": 0.7
+}

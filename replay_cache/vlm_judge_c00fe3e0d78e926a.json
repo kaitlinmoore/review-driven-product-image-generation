@@ -1,0 +1,9 @@
+{
+  "differences": [
+    "Image B has a different color gradient, transitioning from blue to purple, while Image A shows a solid blue bottle.",
+    "The logo placement and size differ; Image B has a smaller logo compared to Image A.",
+    "The cap design in Image B appears different, with a flip-top feature not visible in Image A."
+  ],
+  "score": 0.72,
+  "score_raw_integer": 72
+}

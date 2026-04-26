@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Color variations are different between the two images.",
+    "The cap design differs; Image A has a metallic cap, while Image B has a black cap with a handle.",
+    "Image A includes additional accessories like straws and an alternative cap.",
+    "The gradient effect on some bottles in Image A is not present in Image B."
+  ],
+  "score": 0.45,
+  "score_raw_integer": 45
+}

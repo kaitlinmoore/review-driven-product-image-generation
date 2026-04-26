@@ -344,3 +344,196 @@ def eval_structured_features(image_input, reference_features: dict,
 
     extracted = extract_features_from_pil(img, slug=slug)
     return feature_agreement(extracted, reference_features)
+
+
+## VLM-AS-JUDGE QUALITY SIGNAL ##
+#
+# Used by the agent loop when --quality-signal=vlm_judge. Scores
+# how faithfully a generated image depicts a target product versus
+# a ground-truth reference photograph, using gpt-4o vision as a
+# direct judge. Returns a float in [0, 1].
+#
+# This signal is LEAKY by design — it compares generated images
+# directly against ground-truth photographs. Documented as a
+# controlled opt-in violation of the no-leakage boundary in
+# docs/handoff/05_decisions_log.md.
+#
+# The prompt is explicitly tuned to score product-level similarity
+# and IGNORE composition / framing / background / styling. This
+# reduces the signal's tendency to reward compositional shifts
+# toward the ground truth photograph's styling (lifestyle vs.
+# retail layout) rather than actual product rendering improvement.
+
+import base64
+import hashlib
+import json
+import mimetypes
+import os
+
+VLM_JUDGE_MODEL = 'gpt-4o'
+VLM_JUDGE_TEMPERATURE = 0
+VLM_JUDGE_MAX_TOKENS = 400
+
+VLM_JUDGE_SYSTEM = (
+    'You are a careful product-image evaluator. Your job is to judge how '
+    'faithfully a generated image depicts a target product, regardless of '
+    'how the product is staged or presented. Ground your score in '
+    'product-level visual evidence; use the full 0-100 range as the '
+    'evidence warrants. Do not anchor to round numbers.'
+)
+
+VLM_JUDGE_PROMPT = '''You will see two images of a product.
+Image A: the actual product (reference photograph).
+Image B: a generated image attempting to depict the same product.
+
+Your job is to rate how faithfully Image B depicts the product itself,
+regardless of how it is staged or presented.
+
+Focus ONLY on the product's intrinsic visual properties:
+  - Color, wash, finish, material appearance
+  - Shape, silhouette, proportions
+  - Texture and construction details (stitching, hardware, patterns)
+  - Logos, branding, text on the product itself
+  - Distinctive features
+
+IGNORE these (they are NOT product-level differences):
+  - Composition and framing (retail layout vs lifestyle vs studio)
+  - Background, props, lighting, camera angle
+  - Whether a model is present
+  - Image cropping, aspect ratio
+  - Text overlays, watermarks, marketing elements
+
+Step 1: List 3-5 product-level differences between B's and A's
+depiction of the product. If the products are depicted equivalently
+despite different framing, the list may be very short.
+
+Step 2: Rate how faithfully Image B depicts the same product as
+Image A, as an INTEGER from 0 to 100:
+  0   = wrong product entirely
+  100 = visually identical product depiction
+
+Your score should reflect how much of the product's identity
+(color, shape, material, details, branding) Image B preserves.
+
+Use the full 0-100 range. Different image pairs should produce
+distinctly different scores -- do NOT cluster at round numbers
+like 50, 65, 70, 75. Scores like 37, 52, 63, 81 are preferred
+over 25, 50, 75 when the evidence supports them.
+
+Return the score as an integer.
+
+JSON only:
+{
+  "differences": ["diff1", "diff2", "..."],
+  "score": <integer 0-100>
+}
+'''
+
+
+def _image_data_url(path: str) -> str:
+    mime, _ = mimetypes.guess_type(path)
+    if mime is None:
+        mime = 'image/jpeg'
+    with open(path, 'rb') as f:
+        b64 = base64.b64encode(f.read()).decode('ascii')
+    return f'data:{mime};base64,{b64}'
+
+
+def _sha256_bytes(b: bytes) -> str:
+    return hashlib.sha256(b).hexdigest()
+
+
+def vlm_judge_eval(image_input, ground_truth_image_path: str,
+                    slug: str = '_eval_') -> float:
+    '''Quality signal: ask gpt-4o vision to score how faithfully a
+    generated image depicts the same product as a ground-truth
+    reference photograph. Returns a float in [0, 1].
+
+    Used by the agent loop when --quality-signal=vlm_judge. The prompt
+    is tuned to score product-level similarity and explicitly ignore
+    composition / framing / background / styling differences.
+
+    image_input: PIL.Image or path to generated image.
+    ground_truth_image_path: path to the ground-truth product photo
+                              (typically data/{slug}/images/main.jpg).
+    slug: product slug for telemetry; included in the cache-key inputs
+          so different products don't cross-pollinate the cache.
+    Returns: float in [0, 1].
+    '''
+    # Lazy import to avoid a top-of-module circular with openai.
+    from openai import OpenAI
+
+    if not os.path.exists(ground_truth_image_path):
+        raise FileNotFoundError(
+            f'ground truth image missing: {ground_truth_image_path}')
+
+    # Resolve the generated image to bytes for hashing + to a path for the
+    # data URL. PIL.Image inputs get written to a temp file.
+    if isinstance(image_input, (str, Path)):
+        generated_path = str(image_input)
+        with open(generated_path, 'rb') as f:
+            gen_bytes = f.read()
+    else:
+        import io as _io
+        buf = _io.BytesIO()
+        image_input.convert('RGB').save(buf, format='PNG')
+        gen_bytes = buf.getvalue()
+        # Write to a deterministic temp path for the data URL.
+        import tempfile
+        tmp = tempfile.NamedTemporaryFile(
+            prefix=f'vlm_judge_{slug}_', suffix='.png', delete=False)
+        tmp.write(gen_bytes)
+        tmp.close()
+        generated_path = tmp.name
+
+    with open(ground_truth_image_path, 'rb') as f:
+        gt_bytes = f.read()
+
+    inputs = {
+        'kind': 'vlm_judge',
+        'slug': slug,
+        'model': VLM_JUDGE_MODEL,
+        'temperature': VLM_JUDGE_TEMPERATURE,
+        'system_prompt': VLM_JUDGE_SYSTEM,
+        'user_prompt': VLM_JUDGE_PROMPT,
+        'ground_truth_sha256': _sha256_bytes(gt_bytes),
+        'generated_sha256': _sha256_bytes(gen_bytes),
+    }
+
+    def _live() -> dict:
+        client = OpenAI()
+        resp = client.chat.completions.create(
+            model=VLM_JUDGE_MODEL,
+            temperature=VLM_JUDGE_TEMPERATURE,
+            max_tokens=VLM_JUDGE_MAX_TOKENS,
+            response_format={'type': 'json_object'},
+            messages=[
+                {'role': 'system', 'content': VLM_JUDGE_SYSTEM},
+                {
+                    'role': 'user',
+                    'content': [
+                        {'type': 'text', 'text': VLM_JUDGE_PROMPT},
+                        {'type': 'image_url',
+                         'image_url': {'url': _image_data_url(ground_truth_image_path)}},
+                        {'type': 'image_url',
+                         'image_url': {'url': _image_data_url(generated_path)}},
+                    ],
+                },
+            ],
+        )
+        content = resp.choices[0].message.content
+        parsed = json.loads(content)
+        raw = parsed.get('score', 0)
+        try:
+            score = float(raw) / 100.0
+        except (TypeError, ValueError):
+            score = 0.0
+        score = max(0.0, min(1.0, score))
+        return {
+            'differences': parsed.get('differences', []),
+            'score': score,
+            'score_raw_integer': raw,
+        }
+
+    result = cached_call('vlm_judge', inputs, _live, format='json')
+    return float(result['score'])

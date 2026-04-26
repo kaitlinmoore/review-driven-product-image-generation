@@ -69,7 +69,8 @@ PRODUCTS = ['backpack', 'chess_set', 'espresso_machine',
 MODELS = ['flux', 'gpt']
 CONFIGS = ['v1_title_clip', 'v2_initial_prompt_clip',
            'v3_initial_prompt_features',
-           'v5_unreachable']
+           'v5_unreachable',
+           'v6_vlm_judge']
 
 SCHEMA_FIELDS = (
     'product_type', 'primary_colors', 'materials', 'finish', 'texture',

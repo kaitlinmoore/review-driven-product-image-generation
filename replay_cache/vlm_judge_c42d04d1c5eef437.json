@@ -1,0 +1,9 @@
+{
+  "differences": [
+    "Image B has a darker wash compared to Image A.",
+    "Image A shows prominent contrast stitching, while Image B has less visible stitching.",
+    "The texture and fading details are more pronounced in Image A than in Image B."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image B has a darker wash compared to Image A.\",\n    \"Image A shows prominent contrast stitching, while Image B has less visible stitching.\",\n    \"The texture and fading details are more pronounced in Image A than in Image B.\"\n  ],\n  \"score\": 0.70\n}",
+  "score": 0.7
+}

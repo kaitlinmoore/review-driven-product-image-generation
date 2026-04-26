@@ -82,7 +82,7 @@ import time
 from dotenv import load_dotenv
 
 from agent_loop import agentLoop
-from eval_image import compImage, eval_structured_features
+from eval_image import compImage, eval_structured_features, vlm_judge_eval
 from prompt_writer import load_mistral
 from reviews_dataloader import make_reviews_dataloader
 
@@ -228,6 +228,22 @@ def read_ground_truth_features(pdir: str) -> dict:
         return json.load(f)
 
 
+def read_ground_truth_image_path(pdir: str) -> str:
+    '''Return the path to the canonical ground-truth product photograph
+    (data/{slug}/images/main.jpg). Reference for the leaky vlm_judge
+    signal, which asks gpt-4o vision to directly compare generated
+    images against this photograph.
+
+    This is an INTENTIONAL opt-in violation of the no-ground-truth-
+    leakage boundary, used as an ablation. The canonical v1/v2/v3
+    configs DO NOT use this.'''
+    path = os.path.join(pdir, 'images', 'main.jpg')
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f'expected ground-truth image at {path}')
+    return path
+
+
 def build_quality_signal_fn(quality_signal: str, reference: str,
                              pdir: str, slug: str):
     '''Return (quality_signal_fn, reference_summary).
@@ -261,6 +277,16 @@ def build_quality_signal_fn(quality_signal: str, reference: str,
             raise ValueError(
                 f'--quality-signal=structured_features does not support --reference={reference!r}')
         return (lambda img: eval_structured_features(img, ref_features, slug=slug)), ref_summary
+
+    if quality_signal == 'vlm_judge':
+        if reference == 'ground_truth':
+            gt_image_path = read_ground_truth_image_path(pdir)
+            ref_summary = (f'{gt_image_path} (LEAKY; gpt-4o vision directly '
+                           'compares generated image to ground-truth photo)')
+        else:
+            raise ValueError(
+                f'--quality-signal=vlm_judge does not support --reference={reference!r}')
+        return (lambda img: vlm_judge_eval(img, gt_image_path, slug=slug)), ref_summary
 
     raise ValueError(f'unknown --quality-signal: {quality_signal!r}')
 
@@ -423,12 +449,15 @@ def main():
                              f'natural range depends on --quality-signal: '
                              f'CLIP cosines are typically 0.20-0.40; structured-feature '
                              f'agreement is in [0, 1].')
-    parser.add_argument('--quality-signal', choices=['clip_text', 'structured_features'],
+    parser.add_argument('--quality-signal', choices=['clip_text', 'structured_features', 'vlm_judge'],
                         default='clip_text',
                         help='Quality signal for the agent loop. clip_text: CLIP '
                              'image-vs-text cosine. structured_features: per-field '
                              'agreement against a reference 13-field feature dict '
-                             'extracted from --reference. Default: clip_text.')
+                             'extracted from --reference. vlm_judge: gpt-4o vision '
+                             'directly compares the generated image to a ground-truth '
+                             'photograph (LEAKY; requires --reference=ground_truth). '
+                             'Default: clip_text.')
     parser.add_argument('--reference', choices=['title', 'initial_prompt', 'ground_truth'],
                         default='title',
                         help='Reference text/features that the quality signal '
@@ -450,6 +479,7 @@ def main():
         ('clip_text', 'initial_prompt'),
         ('structured_features', 'initial_prompt'),
         ('structured_features', 'ground_truth'),   # leaky ablation: opt-in violation of no-leakage boundary
+        ('vlm_judge', 'ground_truth'),             # leaky ablation: gpt-4o vision judges generated vs. GT photograph
     }
     if (args.quality_signal, args.reference) not in valid_combos:
         parser.error(

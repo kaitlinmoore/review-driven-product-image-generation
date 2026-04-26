@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B has a darker denim color compared to Image A.",
+    "The stitching in Image B is less prominent than in Image A.",
+    "Image A shows a faded effect on the thighs, which is absent in Image B.",
+    "The footwear in Image A is sandals, while in Image B it is boots."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image B has a darker denim color compared to Image A.\",\n    \"The stitching in Image B is less prominent than in Image A.\",\n    \"Image A shows a faded effect on the thighs, which is absent in Image B.\",\n    \"The footwear in Image A is sandals, while in Image B it is boots.\"\n  ],\n  \"score\": 0.65\n}",
+  "score": 0.65
+}

@@ -1,0 +1,9 @@
+{
+  "differences": [
+    "Image B shows a different lid design compared to Image A.",
+    "The color gradient in Image B is more vibrant and less smooth than in Image A.",
+    "Image B lacks the logo and branding present in Image A."
+  ],
+  "score": 0.62,
+  "score_raw_integer": 62
+}

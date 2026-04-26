@@ -1,0 +1,41 @@
+{
+  "slug": "chess_set",
+  "image_model_num": 2,
+  "model_tag": "gpt",
+  "config_name": "v6_vlm_judge",
+  "quality_signal": "vlm_judge",
+  "reference": "ground_truth",
+  "reference_summary": "data\\chess_set\\images\\main.jpg (LEAKY; gpt-4o vision directly compares generated image to ground-truth photo)",
+  "image_count": 5,
+  "descriptiveness_threshold": 60.0,
+  "iter_start": 3,
+  "iter_min": 1,
+  "iter_max": 5,
+  "quality_target": 0.88,
+  "iters_taken_per_image": [
+    1,
+    1,
+    0,
+    0,
+    0
+  ],
+  "descriptivenesses": [
+    68.0,
+    65.0,
+    65.0,
+    65.0,
+    65.0
+  ],
+  "qualities": [
+    0.45,
+    0.65,
+    0.65,
+    0.65,
+    0.65
+  ],
+  "best_idx": 1,
+  "final_prompt_is_best": false,
+  "run_dir": "runs\\run_20260423_063517",
+  "elapsed_seconds": 10.08,
+  "timestamp_utc": "2026-04-23T10:35:27Z"
+}

@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B lacks the diamond pattern texture present in Image A.",
+    "The logo in Image B is white, while in Image A it is black.",
+    "Image B shows a yellow rain cover, which is not visible in Image A.",
+    "The front pocket design differs between the two images."
+  ],
+  "score": 0.72,
+  "score_raw_integer": 72
+}

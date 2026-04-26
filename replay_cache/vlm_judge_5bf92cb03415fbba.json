@@ -1,0 +1,8 @@
+{
+  "differences": [
+    "Image B depicts jeans, while Image A depicts a chess set.",
+    "The products are entirely different categories: clothing vs. board game."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image B depicts jeans, while Image A depicts a chess set.\",\n    \"The products are entirely different categories: clothing vs. board game.\"\n  ],\n  \"score\": 0.00\n}",
+  "score": 0.0
+}

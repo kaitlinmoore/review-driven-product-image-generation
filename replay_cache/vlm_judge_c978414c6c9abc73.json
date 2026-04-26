@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B has a darker wash compared to Image A.",
+    "The stitching in Image B is less prominent than in Image A.",
+    "Image B lacks the faded details present in Image A.",
+    "The button and rivet details are not visible in Image B."
+  ],
+  "score": 0.45,
+  "score_raw_integer": 45
+}

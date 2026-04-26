@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B has a different color scheme with gold and dark brown pieces, while Image A has light and dark wood pieces.",
+    "The board in Image B has a different pattern and color, with a more intricate border design compared to Image A.",
+    "The chess pieces in Image B have a different shape and design, lacking the carved details seen in Image A.",
+    "Image B does not show the alphanumeric labels present on the board in Image A."
+  ],
+  "score": 0.2,
+  "score_raw_integer": 20
+}

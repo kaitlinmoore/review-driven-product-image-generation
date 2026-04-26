@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B shows a different lid design with a handle, while Image A shows a plain lid.",
+    "Image B does not depict the gradient color options shown in Image A.",
+    "Image B only shows two color options, whereas Image A shows multiple colors.",
+    "The logo and text placement are consistent, but the lid style differs."
+  ],
+  "score": 0.65,
+  "score_raw_integer": 65
+}

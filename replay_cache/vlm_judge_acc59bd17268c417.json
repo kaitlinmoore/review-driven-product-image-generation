@@ -1,0 +1,11 @@
+{
+  "differences": [
+    "Image B lacks the textured pattern seen on the front of Image A.",
+    "Image B does not show any of the external pockets or zippers present in Image A.",
+    "The straps and buckles in Image B are simpler and lack the detailed hardware seen in Image A.",
+    "Image B does not display any branding or text that is visible in Image A.",
+    "The overall shape and structure in Image B appear more streamlined and less complex than in Image A."
+  ],
+  "score": 0.15,
+  "score_raw_integer": 15
+}

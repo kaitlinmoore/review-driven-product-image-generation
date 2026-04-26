@@ -1,0 +1,11 @@
+{
+  "differences": [
+    "Image B depicts jeans, while Image A depicts a chess set.",
+    "The color and material in Image B are denim, whereas Image A shows wood.",
+    "Image B has stitching details typical of jeans, not present in Image A.",
+    "Image B includes branding and text related to jeans, absent in Image A."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image B depicts jeans, while Image A depicts a chess set.\",\n    \"The color and material in Image B are denim, whereas Image A shows wood.\",\n    \"Image B has stitching details typical of jeans, not present in Image A.\",\n    \"Image B includes branding and text related to jeans, absent in Image A.\"\n  ],\n  \"score\": 0\n}",
+  "score": 0.0,
+  "score_raw_integer": 0
+}

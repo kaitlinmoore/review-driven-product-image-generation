@@ -1,0 +1,9 @@
+{
+  "differences": [
+    "Image A is a chess set, while Image B is a pair of jeans.",
+    "Image A features a wooden chessboard and pieces, whereas Image B shows denim material.",
+    "Image A has a brown and beige color scheme, while Image B is primarily dark blue."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image A is a chess set, while Image B is a pair of jeans.\",\n    \"Image A features a wooden chessboard and pieces, whereas Image B shows denim material.\",\n    \"Image A has a brown and beige color scheme, while Image B is primarily dark blue.\"\n  ],\n  \"score\": 0.00\n}",
+  "score": 0.0
+}

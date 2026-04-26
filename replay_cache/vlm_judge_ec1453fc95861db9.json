@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B has a double button closure, while Image A has a single button.",
+    "The flare of the jeans in Image B is more pronounced than in Image A.",
+    "Image B shows a distressed detail on the upper thigh, which is not present in Image A.",
+    "The color in Image B is slightly darker than in Image A."
+  ],
+  "score": 0.45,
+  "score_raw_integer": 45
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "name": "baseline_identical",
+    "score": 1.0,
+    "differences": [],
+    "expectation": "very high (>= 0.90)"
+  },
+  {
+    "name": "cross_product_negative",
+    "score": 0.0,
+    "differences": [
+      "Image B depicts jeans, while Image A depicts a chess set.",
+      "The color and material in Image B are denim, whereas Image A shows wood.",
+      "Image B has stitching details typical of jeans, not present in Image A.",
+      "Image B includes branding and text related to jeans, absent in Image A."
+    ],
+    "expectation": "very low (< 0.20)"
+  },
+  {
+    "name": "jeans_gpt_iter0",
+    "score": 0.72,
+    "differences": [
+      "Color is darker in Image B",
+      "Stitching color differs",
+      "Material texture appears smoother in Image B",
+      "Button and rivet details differ"
+    ],
+    "expectation": "baseline for jeans_gpt_iter4 comparison"
+  },
+  {
+    "name": "jeans_gpt_iter4",
+    "score": 0.72,
+    "differences": [
+      "Image B has a darker wash compared to Image A.",
+      "The stitching in Image B is less prominent and appears darker.",
+      "Image A shows a more pronounced faded effect on the thighs.",
+      "The button and rivets in Image B are less visible."
+    ],
+    "expectation": "strictly > jeans_gpt_iter0 score"
+  },
+  {
+    "name": "headphones_flux_iter0",
+    "score": 0.72,
+    "differences": [
+      "The color in Image B is a brighter blue compared to the darker navy blue in Image A.",
+      "The logo on the ear cup in Image B is white, whereas it is metallic in Image A.",
+      "The text 'studio3' is positioned differently and appears in a different color in Image B.",
+      "The ear cushions in Image B appear to have a different texture and finish compared to Image A."
+    ],
+    "expectation": "baseline for headphones_flux_iter4 comparison"
+  },
+  {
+    "name": "headphones_flux_iter4",
+    "score": 0.3,
+    "differences": [
+      "Image B has a camouflage pattern, while Image A is solid blue.",
+      "The color in Image B is a lighter blue compared to the darker blue in Image A.",
+      "Image B has pink accents on the headband, which are not present in Image A.",
+      "The logo color differs: Image B has a white logo, while Image A has a metallic logo."
+    ],
+    "expectation": "strictly < headphones_flux_iter0 score"
+  },
+  {
+    "name": "chess_set_flux_iter0",
+    "score": 0.2,
+    "differences": [
+      "Image B has a different color scheme for the chess pieces, using gold and black instead of light and dark wood tones.",
+      "The chessboard in Image B has a different wood pattern and lacks the decorative border seen in Image A.",
+      "The chess pieces in Image B have a different design and shape compared to those in Image A.",
+      "Image B does not show the numbering and lettering on the chessboard edges present in Image A.",
+      "The material appearance of the chess pieces in Image B is more polished and shiny compared to the carved wood look in Image A."
+    ],
+    "expectation": "baseline for chess_set_flux_iter4 comparison"
+  },
+  {
+    "name": "chess_set_flux_iter4",
+    "score": 0.2,
+    "differences": [
+      "Image B has a different color scheme with a more uniform wood tone, while Image A has contrasting light and dark squares.",
+      "The chess pieces in Image B have a smoother, more polished finish compared to the carved details in Image A.",
+      "Image B lacks the intricate patterns and numbering on the board present in Image A.",
+      "The border design in Image B is ornate and carved, unlike the simpler border in Image A."
+    ],
+    "expectation": "approximately equal to chess_set_flux_iter0 score"
+  }
+]

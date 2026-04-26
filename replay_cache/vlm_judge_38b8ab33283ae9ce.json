@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B lacks the 'Hydro Cell' logo present in Image A.",
+    "The color gradient in Image B is different, with a more prominent blue and purple transition.",
+    "The cap design in Image B appears different, with a loop handle not seen in Image A.",
+    "The text on the bottle in Image B reads 'HYDRO' instead of 'HYDRO CELL'."
+  ],
+  "score": 0.45,
+  "score_raw_integer": 45
+}

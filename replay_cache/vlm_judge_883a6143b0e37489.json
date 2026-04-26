@@ -1,0 +1,11 @@
+{
+  "differences": [
+    "Image B has a darker wash compared to Image A.",
+    "The stitching in Image B is less prominent and appears darker.",
+    "Image A shows a more pronounced faded effect on the thighs.",
+    "The button and rivets in Image B are less visible."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image B has a darker wash compared to Image A.\",\n    \"The stitching in Image B is less prominent and appears darker.\",\n    \"Image A shows a more pronounced faded effect on the thighs.\",\n    \"The button and rivets in Image B are less visible.\"\n  ],\n  \"score\": 72\n}",
+  "score": 0.72,
+  "score_raw_integer": 72
+}

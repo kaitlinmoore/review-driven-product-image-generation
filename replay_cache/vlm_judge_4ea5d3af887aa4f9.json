@@ -1,0 +1,11 @@
+{
+  "differences": [
+    "Image B has a different color scheme with red and yellow squares, while Image A has brown and beige squares.",
+    "The chess pieces in Image B are metallic and black, whereas in Image A they are wooden and light/dark brown.",
+    "The board in Image B has a glossy finish, while Image A has a matte wooden finish.",
+    "Image B features a different design and style for the chess pieces compared to Image A.",
+    "Image B has text 'Thes Mdeets' on the board, which is not present in Image A."
+  ],
+  "score": 0.15,
+  "score_raw_integer": 15
+}

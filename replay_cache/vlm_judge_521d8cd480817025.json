@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B has a different logo and text ('HYPRRY CELL' vs 'HYDRO CELL').",
+    "The color in Image B is a solid pink, while Image A shows a variety of colors.",
+    "The cap design in Image B is different, featuring a loop handle.",
+    "Image B has text and symbols on the bottle that are not present in Image A."
+  ],
+  "score": 0.25,
+  "score_raw_integer": 25
+}

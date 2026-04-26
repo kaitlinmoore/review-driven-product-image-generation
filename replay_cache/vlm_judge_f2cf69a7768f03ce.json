@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B depicts a black bottle, while Image A shows bottles in various colors.",
+    "The logo on Image B is missing the flame icon present in Image A.",
+    "The cap design in Image B includes a loop, which is not present in Image A.",
+    "Image B lacks the gradient and color variations seen in Image A."
+  ],
+  "score": 0.25,
+  "score_raw_integer": 25
+}

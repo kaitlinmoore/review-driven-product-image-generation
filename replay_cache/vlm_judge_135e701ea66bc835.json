@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B has a different color scheme with a more uniform brown tone, while Image A has a mix of light and dark wood colors.",
+    "The chess pieces in Image B are more stylized and uniform in design compared to the detailed carvings in Image A.",
+    "The chessboard in Image B has a decorative border, whereas Image A has a simpler design with numbered and lettered edges.",
+    "Image B's chessboard squares are larger and have a more polished finish compared to the rustic look in Image A."
+  ],
+  "raw": "{\n  \"differences\": [\n    \"Image B has a different color scheme with a more uniform brown tone, while Image A has a mix of light and dark wood colors.\",\n    \"The chess pieces in Image B are more stylized and uniform in design compared to the detailed carvings in Image A.\",\n    \"The chessboard in Image B has a decorative border, whereas Image A has a simpler design with numbered and lettered edges.\",\n    \"Image B's chessboard squares are larger and have a more polished finish compared to the rustic look in Image A.\"\n  ],\n  \"score\": 0.50\n}",
+  "score": 0.5
+}

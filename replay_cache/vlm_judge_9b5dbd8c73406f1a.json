@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Color: Image A has a lighter blue wash, while Image B is a darker blue.",
+    "Stitching: Image A has more prominent contrast stitching.",
+    "Material appearance: Image A appears to have a more faded, worn look.",
+    "Button and hardware: Image A has visible button details that are not as clear in Image B."
+  ],
+  "score": 0.45,
+  "score_raw_integer": 45
+}

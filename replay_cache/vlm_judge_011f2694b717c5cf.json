@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B shows a textured surface, while Image A has a smooth finish.",
+    "Image B bottles have a different shape and proportions compared to Image A.",
+    "The lids in Image B are different in design from those in Image A.",
+    "Image B features a different color palette and pattern compared to Image A."
+  ],
+  "score": 0.2,
+  "score_raw_integer": 20
+}

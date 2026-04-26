@@ -1,0 +1,10 @@
+{
+  "differences": [
+    "Image B shows a different lid design with a handle, while Image A shows a simple screw cap.",
+    "Image B depicts a textured finish, whereas Image A has a smooth finish.",
+    "The color options in Image B (green and pink) do not match the gradient and solid colors in Image A.",
+    "The logo and text placement are consistent, but the overall bottle shape in Image B appears shorter and wider."
+  ],
+  "score": 0.55,
+  "score_raw_integer": 55
+}

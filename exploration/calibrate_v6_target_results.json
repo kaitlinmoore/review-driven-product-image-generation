@@ -1,0 +1,60 @@
+{
+  "per_pair_scores": [
+    {
+      "slug": "backpack",
+      "model": "flux",
+      "score_float": 0.15,
+      "score_int": 15
+    },
+    {
+      "slug": "backpack",
+      "model": "gpt",
+      "score_float": 0.72,
+      "score_int": 72
+    },
+    {
+      "slug": "chess_set",
+      "model": "flux",
+      "score_float": 0.25,
+      "score_int": 25
+    },
+    {
+      "slug": "chess_set",
+      "model": "gpt",
+      "score_float": 0.4,
+      "score_int": 40
+    },
+    {
+      "slug": "jeans",
+      "model": "flux",
+      "score_float": 0.78,
+      "score_int": 78
+    },
+    {
+      "slug": "jeans",
+      "model": "gpt",
+      "score_float": 0.45,
+      "score_int": 45
+    },
+    {
+      "slug": "water_bottle",
+      "model": "flux",
+      "score_float": 0.25,
+      "score_int": 25
+    },
+    {
+      "slug": "water_bottle",
+      "model": "gpt",
+      "score_float": 0.45,
+      "score_int": 45
+    }
+  ],
+  "distribution": {
+    "min": 0.15,
+    "median": 0.45,
+    "max": 0.78,
+    "spread": 0.63
+  },
+  "recommended_target": 0.8300000000000001,
+  "target_rule": "max + 0.05, clamped to [0.60, 0.95]"
+}
