@@ -30,6 +30,7 @@ is in [`docs/AI_USE.md`](docs/AI_USE.md).
 │   ├── PROMPTS.md            # all five LLM prompts with SHA-256 hashes
 │   ├── decisions_log.md      # methodology decisions and rationale
 │   ├── artifact_map.md       # per-question evidence map
+│   ├── IMAGES.md             # where to find every generated image on disk
 │   ├── pipeline_diagram.png  # agent architecture diagram
 │   └── AI_USE.md             # AI-use disclosure
 ├── requirements.txt
@@ -104,6 +105,11 @@ extractions from each comparison source (initial, ground_truth,
 metadata-only, reviews-only, prompt_context, plus per-config converged
 and generated). The `data/{product}/` files are flat (not in a
 subdirectory) and named by source and config tag.
+
+See [`docs/IMAGES.md`](docs/IMAGES.md) for the file-path pattern that
+locates every generated image, refined prompt, and per-iteration
+trajectory artifact on disk, with worked examples for the four products
+discussed in the report.
 
 ### GPU users: install CUDA-enabled PyTorch
 

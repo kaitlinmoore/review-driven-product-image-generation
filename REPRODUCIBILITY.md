@@ -156,6 +156,14 @@ without downloading ~2 GB of model checkpoints.
 `REPLAY_MODE=replay` in the environment and run the same script sequence
 as record mode. No API keys, no GPU, no gated-model access.
 
+**Locating the outputs after a run.** Every generated image, refined
+prompt, per-iteration trajectory artifact, and run-metadata file lands
+under `data/{product}/` in a flat naming convention. See
+[`docs/IMAGES.md`](docs/IMAGES.md) for the file-path patterns, the legal
+values for `{product}` / `{model}` / `{config}`, worked examples, and the
+`best_idx` mechanism that links a top-level canonical image back to its
+source iteration in `trajectories/`.
+
 ## Environment Setup — GPU Wheel Selection
 
 `pip install -r requirements.txt` does NOT automatically give you a
