@@ -13,8 +13,8 @@ and that description drives a diffusion model. Iterative refinement is used for 
 
 CMU Heinz 94-844 Generative AI Lab, Spring 2026. Team of 5.
 
-An AI-use disclosure at the end of the final report details how AI tools
-contributed to the work.
+An AI-use disclosure documenting how AI tools contributed to the work
+is in [`docs/AI_USE.md`](docs/AI_USE.md).
 
 ## Repository Layout
 
@@ -27,7 +27,11 @@ contributed to the work.
 │   └── {product}/            # per-product metadata, images, intermediate outputs
 ├── replay_cache/             # cached API / model outputs for offline re-runs (see REPRODUCIBILITY.md)
 ├── docs/
-│   └── handoff/              # team handoff docs for writeup + presentation drafting
+│   ├── PROMPTS.md            # all five LLM prompts with SHA-256 hashes
+│   ├── decisions_log.md      # methodology decisions and rationale
+│   ├── artifact_map.md       # per-question evidence map
+│   ├── pipeline_diagram.png  # agent architecture diagram
+│   └── AI_USE.md             # AI-use disclosure
 ├── requirements.txt
 ├── REPRODUCIBILITY.md
 └── README.md

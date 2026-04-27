@@ -80,15 +80,6 @@ real-world caller of a text-to-image pipeline has *some* name for the
 product they want to generate, and the title is the minimal identifying
 string. It is metadata, not image-derived.
 
-**Status.** As of 2026-04, we are awaiting course-staff guidance on whether
-ground-truth-informed refinement would be considered fair game for this
-assignment as an additional config (v4). The pipeline is structured so an
-opt-in variant could be added cleanly: extending the `--reference` CLI
-choice to accept `ground_truth` would route in `structured_features_ground_truth_v1.json`
-as the comparison reference. The current canonical run holds the boundary
-strictly. **If the design changes, update this section, the matching rows
-in the table above, and any affected Q2/Q3 report framing.**
-
 ## Deterministic vs. Stochastic
 
 | Stage | Behavior |
