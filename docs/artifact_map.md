@@ -18,12 +18,11 @@ What evidence exists, and what to cite for each part of Q1.
 
 | What you need | Where to find it |
 |---|---|
-| Why these 6 products | `docs/handoff/03_data_processing.md` § "Selection Criteria for the Canonical Six" — write-ready paragraphs |
-| Why this approach (visual variety, popularity, brand visibility) | `docs/handoff/05_decisions_log.md` § "Six products from at least 3 categories" |
+| Why this approach (visual variety, popularity, brand visibility) | `docs/decisions_log.md` § "Six products from at least 3 categories" |
 | The candidate pool considered before final selection | `exploration/candidates/*.csv` — 40+ candidate CSVs by category × popularity-band |
 | The product-selection methodology (search strategy) | `exploration/explore_candidates.py` |
-| Why backpack despite low review signal | `docs/handoff/05_decisions_log.md` § "Backpack as the limit case" |
-| Why headphones added late | `docs/handoff/05_decisions_log.md` § "Headphones added late" |
+| Why backpack despite low review signal | `docs/decisions_log.md` § "Backpack as the limit case" |
+| Why headphones added late | `docs/decisions_log.md` § "Headphones added late" |
 
 ### Per-Product Collected Data
 
@@ -92,8 +91,8 @@ reviews capture finish/color nuance).
 ### Filter Pass Rates by Product (Q2 writeup table)
 
 Pull from `data/filter_caches/*.json` (counted via aggregation).
-Pre-computed reference table in `docs/handoff/03_data_processing.md`
-§ "Filter Pass Rates by Product".
+The pass rates per product are also reported in Table 2 of the final
+report.
 
 ## Q3 | Image Generation with Diffusion Model
 
@@ -170,9 +169,8 @@ v3", pull from
 
 Use `summary.csv`. For each (product, config), compare flux row vs
 gpt row on `gen_features_vs_ground_truth` (the most interpretable
-metric). Writeup-ready preliminary findings already in
-`docs/handoff/04_evaluation_plan.md` and the eval-output discussion
-in this session's history.
+metric). The model comparison is also reported in Table 9 of the
+final report.
 
 ### Quality-Signal Ablation (v1 → v2 → v3)
 
@@ -205,7 +203,7 @@ Architecture and reproducibility evidence.
 | Driver (iterates products, calls agentLoop, persists artifacts) | `src/run_agent_pipeline.py` |
 | Quality-signal closure construction | `src/run_agent_pipeline.py` `build_quality_signal_fn` |
 | Reproducibility wrapper | `src/replay.py` `cached_call` |
-| Pipeline diagram | `docs/handoff/pipeline_diagram.png` (also Mermaid source in `02_pipeline_overview.md`) |
+| Pipeline diagram | `docs/pipeline_diagram.png` |
 
 ### Surrogate-Projected Adaptive Iteration Control
 
@@ -253,7 +251,7 @@ Where to point reviewers:
 |---|---|
 | 6 products instead of required 3 | `data/` directory listing + Q1 rationale |
 | 2 leading-edge image models (FLUX + gpt-image), not "any two" | `src/gen_image_flux.py`, `src/gen_image_gpt.py` |
-| 3 ablation configs testing different prompt-engineering signals | `eval_results/summary.csv` v1/v2/v3 rows; `docs/handoff/05_decisions_log.md` § "Three quality-signal configurations as ablations" |
+| 3 ablation configs testing different prompt-engineering signals | `eval_results/summary.csv` v1/v2/v3 rows; `docs/decisions_log.md` § "Three quality-signal configurations as ablations" |
 | 13-field structured schema enabling cross-source comparison | `src/extract_structured_features.py` `STRUCTURED_FEATURES_SCHEMA_V1` |
 | Surrogate-projected adaptive iteration control (novel mechanism) | `src/agent_loop.py` + Jason's whitepaper PDF |
 
@@ -266,7 +264,7 @@ Where the analytical depth lives:
 | Per-product per-config trajectory analysis | `agent_run_*_meta.json` `qualities`, `descriptivenesses`, `iters_taken_per_image`, `best_idx` |
 | Refinement-helps-vs-hurts pattern (best_idx distribution) | `eval_results/summary.csv` `in_loop_best_idx` column |
 | The CLIP-vs-features divergence finding (CLIP says similar; features say different) | `eval_results/summary.csv` row for backpack flux: `clip_img_vs_gt_mean=0.81, gen_features_vs_ground_truth=0.16` |
-| Why the backpack baseline | `docs/handoff/05_decisions_log.md` + `docs/handoff/03_data_processing.md` |
+| Why the backpack baseline | `docs/decisions_log.md` § "Backpack as the limit case" |
 | Per-config v1/v2/v3 comparison with independent verification | `eval_results/summary.csv` ground-truth columns |
 
 ### Insights (30% — biggest single component)
@@ -288,7 +286,7 @@ Specific findings to report (with file paths to back them):
 | What | Where |
 |---|---|
 | Code quality and module separation | `src/` directory — single-responsibility modules |
-| Documentation | `README.md`, `REPRODUCIBILITY.md`, `docs/handoff/` |
+| Documentation | `README.md`, `REPRODUCIBILITY.md`, `docs/` |
 | Reproducibility | Replay cache + REPRODUCIBILITY.md instructions |
 | Provenance trails on every artifact | `*_meta.json` sidecars throughout `data/` |
 | Versioned prompts with SHA invalidation | System-prompt SHAs baked into cache keys |

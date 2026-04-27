@@ -39,7 +39,7 @@ Output
 
 Controller parameter logging gap: per-image retune values
 (descriptivenessThreshold, iterStart) are not persisted. See
-docs/handoff/05_decisions_log.md. This analyzer works around the
+docs/decisions_log.md. This analyzer works around the
 gap by surfacing the observable proxies (iters_taken per image,
 final descriptivenesses per image).
 '''
